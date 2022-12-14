@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react' ; 
+import {useState} from 'react' ; 
 // package connect to blockchain like web3js
 import { ethers, BigNumber} from 'ethers';
 import RAIKYRIE from './Raikyrie.json';
