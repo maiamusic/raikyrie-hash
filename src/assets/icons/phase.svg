@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="100" viewBox="0 0 400 100">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 4.477px;
+        font-family: "Old computer St";
+      }
+
+      .cls-1, .cls-2 {
+        fill: #fff;
+        text-anchor: middle;
+      }
+
+      .cls-2 {
+        font-size: 82px;
+        font-family: "Yusei Magic";
+      }
+
+      .cls-3 {
+        font-family: Gunplay;
+      }
+
+      .cls-4 {
+        font-family: "Killer boots";
+        font-size: 60px;
+      }
+    </style>
+  </defs>
+  <text id="Lorem_Ipsum" data-name="Lorem Ipsum" class="cls-1" x="87.098" y="51.158"><tspan x="87.098">Lorem Ipsum</tspan></text>
+  <text id="段階_1_" data-name="段階 1 &gt;&gt;&gt; " class="cls-2" x="213.235" y="81.806"><tspan x="213.235">段階 1 <tspan class="cls-3">&gt;&gt;&gt;<tspan class="cls-4"> </tspan></tspan></tspan></text>
+</svg>
