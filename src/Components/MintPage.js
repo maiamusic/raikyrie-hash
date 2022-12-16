@@ -38,15 +38,15 @@ const MintPage = () => {
             <div class="flex justify-around left-1.5 items-center p-4 md:p-8 transition-all w-full fixed  "> 
     
                 {/* FIRST NAV ITEM */}
-                <a class="header__logo items-start float-left " base href="/universe">
+                <a class="header__logo items-start float-left " base href="/shinnverse">
                     <img class="w-24 lg:w-32 " src={logo}></img>
                 </a>
             
                 
                 <div class="flex right-0 top-5  w-[50vw] bg-black bg-opacity-75 justify-around items-center invisible sm:visible mx-auto " >
-                    <Link to ='/universe' class="text-white">
+                    <Link to ='/shinnverse' class="text-white">
                         <button class="font-body p-[5px] disabled  hover:text-neutral-900 hover:bg-neutral-300   "> 
-                        UNIVERSE
+                        SHINNVERSE
                         </button>
     
                     </Link>

@@ -11,9 +11,9 @@
     <nav class="bg-transparent px-2 sm:px-4 py-2.5 absolute w-[0%] z-20 top-0 left-0 md:w-[100%]">
         
         <div class="flex absolute right-0 top-5 w-[50vw] bg-black bg-opacity-75 justify-around items-center md:visible " >
-            <a href="universe" class="text-white">
+            <a href="shinnverse" class="text-white">
                 <button class="font-body p-[5px] disabled cursor-not-allowed hover:text-neutral-900 hover:bg-neutral-300  "> 
-                UNIVERSE
+                SHINNVERSE
                 </button>
 
             </a>

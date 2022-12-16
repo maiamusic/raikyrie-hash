@@ -43,7 +43,7 @@ class NavBar extends React.Component {
     render(){
         return( 
             
-            <div class="flex relative  z-auto min-h-screen flex flex-col transition-all duration-200 overflow-hidden ">
+            <div class="flex relative  z-auto min-h-screen flex flex-col transition-all duration-200 overflow-hidden selection:bg-teal-800 ">
 
             
                 {/* NAV */} 
@@ -54,23 +54,23 @@ class NavBar extends React.Component {
                     <div class="flex justify-between sm:justify-around left-1.5 items-center p-2 md:p-8 transition-all w-full fixed  "> 
 
                         {/* FIRST NAV ITEM */}
-                        <a class="header__logo items-start float-left " base href="/universe">
+                        <a class="header__logo items-start float-left " base href="/shinnverse">
                             <img class="w-24 lg:w-32 " src={logo}></img>
                         </a>
                     
                         
                         <div class="flex right-0 top-5  w-[50vw] bg-black bg-opacity-75 justify-around items-center   mx-auto invisible sm:visible " >
                             
-                                <LinkDom to ='/universe'  class="text-white">
-                                    <button class="font-body p-[5px] disabled hover:text-neutral-900 hover:bg-neutral-300 bg-teal-400 w-28  "> 
-                                    UNIVERSE
+                                <LinkDom to ='/shinnverse'  class="text-white">
+                                    <button class="font-body p-[5px] disabled hover:text-neutral-900 hover:bg-neutral-300 bg-teal-400 w-28   "> 
+                                    SHINNVERSE
                                     </button>
 
                                 </LinkDom>
 
 
                                 <LinkDom to = '/mint' class="text-white">
-                                    <button class="font-body p-[5px] disabled hover:text-defaultdark hover:bg-neutral-300 ">
+                                    <button class="font-body p-[5px] disabled hover:text-defaultdark hover:bg-neutral-300 w-20 ">
                                     MINT 
                                     </button>
                                 </LinkDom>
@@ -325,7 +325,7 @@ class NavBar extends React.Component {
                                                 RAIKYRIE 
                                                 </div>
                                                 
-                                                <div class="text-md font-medium text-sm md:text-md">
+                                                <div class="font-medium text-md">
                                                 December 2022, 3,333 CC0 NFT 
                                                 </div>
                                             </div>
@@ -353,7 +353,7 @@ class NavBar extends React.Component {
                                 
 
                                 {/* COLUMN2 */}
-                                <div class="flex box-content justify-between bg-white/70 border rounded-tr-xl mt-2 md:h-16 h-10 w-64 md:w-96 p-2 mt-1.5 rounded-lg opacity-40 ">
+                                <div class="flex box-content justify-between bg-white/70 border rounded-tr-xl mt-2 md:h-16 h-12 w-64 md:w-96 p-2 mt-1.5 rounded-lg opacity-40 ">
                                         
                                         {/* FRONTAL */}
                                         <div class="flex">
@@ -365,10 +365,10 @@ class NavBar extends React.Component {
 
                                             <div class="flex flex-col justify-center text-black font-EuroStyle text-md md:text-lg"> 
                                                 <div class="tracking-widest font-bold">
-                                                BLIZZARD「THE MERGE」
+                                                STORM RAIKYRIE 「THE MERGE」
                                                 </div>
                                                 
-                                                <div class="text-md font-medium text-md">
+                                                <div class="text-md font-medium ">
                                                 2023 Feb
                                                 </div>
                                             </div>
@@ -515,7 +515,7 @@ class NavBar extends React.Component {
 
 
                     {/* BACKGROUND */}
-                        <div class=" -z-10 background__trojan  absolute object-cover overflow-hidden ">
+                        <div class=" -z-10 background__trojan  absolute object-cover overflow-hidden  ">
 
                         </div>
 
@@ -533,11 +533,11 @@ class NavBar extends React.Component {
                     {/* 3RD DIV */}
 
                 
-                    <div class="flex div-about visible mx-auto h-[2000px] md:h-full md:min-h-screen w-full -top-[20px]  bg-about2 bg-cover bg-center relative bg-fixed clearfix ">
+                    <div class=" flex div-about visible mx-auto h-[2000px] md:h-auto md:min-h-screen w-full -top-[20px]  bg-about2 bg-cover bg-center relative bg-fixed clearfix ">
                                     
                             
                             {/* BLACK GRADIENT */}
-                            <div class="bg-gradient-to-t from-defaultdark to-defaultdark/0 h-96 absolute bottom-0 left-0 right-0 w-full fixed z-50"></div>
+                            <div class="bg-gradient-to-t from-defaultdark to-defaultdark/0 h-96 absolute bottom-0 left-0 right-0 w-full fixed z-40"></div>
                         
 
                             
@@ -566,7 +566,7 @@ class NavBar extends React.Component {
 
 
 
-                                                <div class="flex flex-col w-full pt-8">
+                                                <div class="flex flex-col w-full pt-8 z-50">
 
 
                                                     <h1 class=" pt-6 text-base pb-4 text-[#EFE6DD] font-bold font-Orbitron">「 FAQ 」</h1>
@@ -782,7 +782,7 @@ class NavBar extends React.Component {
                             {/* add -z-50  later */}
                            
                                     <div class="absolute fixed right-[4%] bottom-[92%] shadow-indigo-300/40 shadow-lg bg-black/70 p-2 border hover:bg-neutral-700 ">
-                                        <Link to ='/universe' onClick={this.scrollToTop}  class="text-white">                                  
+                                        <Link to ='/shinnverse' onClick={this.scrollToTop}  class="text-white">                                  
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hover:bg-neutral-700 cursor-pointer w-6 h-6">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l7.5-7.5 7.5 7.5m-15 6l7.5-7.5 7.5 7.5" />
                                             </svg>

@@ -42,11 +42,11 @@ function App() {
            
 
             <Route path="/" element={<NavBar />}/> 
-            <Route  path="/universe" element={<NavBar />}/>
-             <Route  path="/" element={() => (<Navigate to='/universe'/>)} />  
+            <Route  path="/shinnverse" element={<NavBar />}/>
+             <Route  path="/" element={() => (<Navigate to='/shinnverse'/>)} />  
             
 
-          {/* <Route path="/" element={<Navigate to="/universe" />}/> */}
+          {/* <Route path="/" element={<Navigate to="/shinnverse" />}/> */}
             
         
             

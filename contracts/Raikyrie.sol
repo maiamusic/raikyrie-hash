@@ -1355,10 +1355,11 @@ contract Raikyrie is ERC721A, Ownable, ReentrancyGuard {
     uint   public MAX_FREE_PER_WALLET = 1; 
     uint   public MAX_FREE         = 555;
     uint   public MAX_RAIKYRIES     = 3333;
-    uint   public maxPerTx          = 5;
+    uint   public maxPerTx          = 10;
     bool   public mintEnabled;
     bool   public revealed = false;
-    uint   public totalFreeMinted = 0;
+
+    uint   public totalFreeMinted = 0  ;  
     string public baseURI = "ipfs://QmVQ2RbRkz464wXzo61iT7Z4QnXQhsMBhkWA2CGvvs2Zxa";
     
     mapping(address => uint256) public _mintedFreeAmount;
@@ -1388,7 +1389,8 @@ contract Raikyrie is ERC721A, Ownable, ReentrancyGuard {
 
     function mint(uint256 count) external payable {
         uint256 cost = COST;
-        bool isFree = ((totalFreeMinted + count < MAX_FREE + 1) &&
+        uint  _totalFreeMinted ;
+        bool isFree = ((_totalFreeMinted + count < MAX_FREE + 1) &&
             (_mintedFreeAmount[msg.sender] < MAX_FREE_PER_WALLET));
 
         if (isFree) { 
@@ -1399,13 +1401,14 @@ contract Raikyrie is ERC721A, Ownable, ReentrancyGuard {
             {
              require(msg.value >= (count * cost) - ((MAX_FREE_PER_WALLET - _mintedFreeAmount[msg.sender]) * cost), "Please send the exact ETH amount");
              _mintedFreeAmount[msg.sender] = MAX_FREE_PER_WALLET;
-             totalFreeMinted += MAX_FREE_PER_WALLET;
+             _totalFreeMinted += MAX_FREE_PER_WALLET;
             }
             else if(count < (MAX_FREE_PER_WALLET - _mintedFreeAmount[msg.sender]))
             {
              require(msg.value >= 0, "Please send the exact ETH amount");
              _mintedFreeAmount[msg.sender] += count;
-             totalFreeMinted += count;
+             _totalFreeMinted += count;
+             
             }
         }
         else{
@@ -1414,7 +1417,7 @@ contract Raikyrie is ERC721A, Ownable, ReentrancyGuard {
         require(totalSupply() + count <= MAX_RAIKYRIES, "No more");
         require(count <= maxPerTx, "Max per TX reached.");
         }
-
+        totalFreeMinted = _totalFreeMinted;
         _safeMint(msg.sender, count);
     }
 

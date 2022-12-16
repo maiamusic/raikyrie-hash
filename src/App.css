@@ -14,7 +14,9 @@ html {
  
 }
 
-
+mark {
+  background-color: lime;
+}
 
 
 @font-face{
