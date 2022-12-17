@@ -1,0 +1,44 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+.parth{
+background: #00f4cf;
+height: 100vh;
+margin: 0;
+padding: 0;
+display: -webkit-flex;
+display: -moz-flex;
+display: -ms-flex;
+display: -o-flex;
+display: flex;
+justify-content: center;
+align-items: center;            
+}
+.parth h2 {
+position: relative;
+margin: 0;
+padding: 0;
+color: #fff;
+text-transform: uppercase;
+font-weight: 900;
+}
+.parth h2:before{
+/* color: #ff5a1d ; */
+
+color: #d03800; 
+white-space: nowrap;
+content: attr(data-text);
+position: absolute;
+top: 0;
+left: 0;
+width: 0;            
+transition: 1s;
+overflow: hidden;
+}
+
+
+
+.parth h2:hover:before{
+width: 100%;
+}

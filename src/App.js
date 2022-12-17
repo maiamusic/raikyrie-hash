@@ -6,13 +6,15 @@ import ReactDOM from 'react-dom/client';
 
 
 
-
+import Menu from './Menu';
 import MainMint from './MainMint';
 import NavBar from './NavBar';
-
 import MintPage from './Components/MintPage';
-
 import License from './Components/License';
+
+
+
+
 
 
 
@@ -24,57 +26,64 @@ function App() {
     
   
     <div className="overlay">
-    <div className="App overflow-hidden "> 
+      <div className="App  "> 
 
-
-    
-      <BrowserRouter>
-        
-
-        <Routes> 
-              <Route path="mint" element={<MintPage/>} >
-                    <Route path="/mint" element={<MainMint accounts = {accounts} setAccounts = {setAccounts}/>}></Route>
-              </Route>
-      
-        </Routes> 
-
-        <Routes>
-           
-
-            <Route path="/" element={<NavBar />}/> 
-            <Route  path="/shinnverse" element={<NavBar />}/>
-             <Route  path="/" element={() => (<Navigate to='/shinnverse'/>)} />  
-            
-
-          {/* <Route path="/" element={<Navigate to="/shinnverse" />}/> */}
-            
-        
-            
-           
-            <Route path="/mint" element={<MainMint accounts = {accounts} setAccounts = {setAccounts}/>}> </Route>
-            
-        
-            
-            <Route path="license" element={ <License/>} />
-
-           
-             
-           
-            
-            {/* <Route path="mint">
-              <MainMint accounts = {accounts} setAccounts = {setAccounts} />
-
-            </Route> */}
 
       
-        </Routes>
-      </BrowserRouter>
-      {/* <MainMint path="mint" accounts = {accounts} setAccounts = {setAccounts} /> */}
+        <BrowserRouter>
+          
 
-     
-       
-    
-    </div>
+          <Routes> 
+                <Route path="mint" element={<MintPage/>} >
+                      <Route path="/mint" element={<MainMint accounts = {accounts} setAccounts = {setAccounts}/>}></Route>
+                </Route>
+        
+          </Routes> 
+
+          <Routes>
+            
+              {/* MENU */}
+
+              <Route path="/" element={ <Menu/> } />
+              <Route  path="/menu" element={<Menu />}/>
+              <Route  path="/" element={() => (<Navigate to='/menu'/>)} />  
+
+
+              {/* NAVBAR  */}
+
+              {/* <Route path="/" element={<NavBar />}/>  */}
+              <Route  path="/shinnverse" element={<NavBar />}/>
+              {/* <Route  path="/" element={() => (<Navigate to='/shinnverse'/>)} />   */}
+              
+
+
+            {/* <Route path="/" element={<Navigate to="/shinnverse" />}/> */}
+              
+              
+              
+            
+              <Route path="/mint" element={<MainMint accounts = {accounts} setAccounts = {setAccounts}/>}> </Route>
+              
+              <Route path="license" element={ <License/>} />
+
+            
+              
+            
+              
+              {/* <Route path="mint">
+                <MainMint accounts = {accounts} setAccounts = {setAccounts} />
+
+              </Route> */}
+
+        
+          </Routes>
+        </BrowserRouter>
+        {/* <MainMint path="mint" accounts = {accounts} setAccounts = {setAccounts} /> */}
+
+      
+        
+      
+      </div>
     </div>
 
    

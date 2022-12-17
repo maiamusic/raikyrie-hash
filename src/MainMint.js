@@ -7,7 +7,7 @@ import './App.css' ;
 import ms1 from './assets/samples/2140_cropped.png';
 
 // contract
-const RAIKYRIEAddress = "0x6595b7590a59B498104F33923f8A12d033917b4F";
+const RAIKYRIEAddress = "0x1286Bc5A8452cB9AF1e56D46Ddd462De0375d897";
 
 
 const MainMint = ({accounts, setAccounts}) => {
@@ -17,18 +17,15 @@ const MainMint = ({accounts, setAccounts}) => {
     const isConnected = Boolean(accounts[0]);
   
 
-
-  
-        async function connectAccount() {
-            if (window.ethereum){
-                const accounts = await window.ethereum.request({
-                    method: "eth_requestAccounts",
-                });
-                setAccounts(accounts);
-            }
+    async function connectAccount() {
+        if (window.ethereum){
+            const accounts = await window.ethereum.request({
+                method: "eth_requestAccounts",
+            });
+            setAccounts(accounts);
         }
+    }
  
-
 
     async function handleMint(){
         if (window.ethereum){
@@ -58,19 +55,14 @@ const MainMint = ({accounts, setAccounts}) => {
     const handleDecrement = () => {
         if (mintAmount<=1) return;
         setMintAmount(mintAmount-1);
-        console.log(mintAmount);
-       
+     
         calculateTotal(((mintAmount-1) * 0.0033).toFixed(4));
-
-
-       
        
         };
 
+
     const handleIncrement = () => {
         if (mintAmount >= 10) return;
-     
-        console.log(mintAmount);
         setMintAmount(mintAmount+1);
     
         
@@ -87,7 +79,7 @@ const MainMint = ({accounts, setAccounts}) => {
     return( 
 
     <div class="z-50 bg-black ">
-        <div class="selection:bg-lime-300 flex justify-center items-center content-center relative sm:-top-[34rem] md:-top-[42rem] lg:-top-[30rem] 2xl:-top-[41rem] z-50  " >
+        <div class="selection:bg-[#ff5a1d] flex justify-center items-center content-center relative sm:-top-[34rem] md:-top-[42rem] lg:-top-[30rem] 2xl:-top-[36rem] z-50  " >
 
             {/* <div class="bg-gradient-to-t from-fsource to-fsource/0 h-96 w-full absolute left-0 bottom-0 top-0 "></div>  */}
             
@@ -195,8 +187,7 @@ const MainMint = ({accounts, setAccounts}) => {
 
 
                             <div class=" flex flex-row items-center mt-10 mb-16 justify-center mx-0">
-                            <button  onClick={handleMint} 
-                                class="font-bold font-Orbitron border-4 hover:border-[#597689] shadow-neutral-100/40 shadow-lg rounded-[32px] cursor-pointer h-16 w-max px-14 bg-white text-base md:text-lg tracking-widest text-black mint-text hover:bg-neutral-100 "> 
+                            <button  onClick={handleMint} class="font-bold font-Orbitron border-4 hover:border-[#597689] shadow-neutral-100/40 shadow-lg rounded-[32px] cursor-pointer h-16 w-max px-14 bg-white text-base md:text-lg tracking-widest text-black mint-text hover:bg-neutral-100 "> 
                                 MINT YOUR RAIKYRIE
                             </button>
                             </div>

@@ -19,7 +19,7 @@ import './App.css';
 
 // footer
 
-import evolKraken from "./assets/background/Trojan.png";
+import TrojanShinnevolform from "./assets/background/Trojan.png";
 
 
 
@@ -43,7 +43,7 @@ class NavBar extends React.Component {
     render(){
         return( 
             
-            <div class="flex relative  z-auto min-h-screen flex flex-col transition-all duration-200 overflow-hidden selection:bg-teal-800 ">
+            <div class="flex relative  z-auto min-h-screen flex flex-col transition-all duration-200 overflow-hidden selection:bg-[#ff5a1d] ">
 
             
                 {/* NAV */} 
@@ -54,9 +54,9 @@ class NavBar extends React.Component {
                     <div class="flex justify-between sm:justify-around left-1.5 items-center p-2 md:p-8 transition-all w-full fixed  "> 
 
                         {/* FIRST NAV ITEM */}
-                        <a class="header__logo items-start float-left " base href="/shinnverse">
+                        <LinkDom to ="/menu" class="header__logo items-start float-left" >
                             <img class="w-24 lg:w-32 " src={logo}></img>
-                        </a>
+                        </LinkDom>
                     
                         
                         <div class="flex right-0 top-5  w-[50vw] bg-black bg-opacity-75 justify-around items-center   mx-auto invisible sm:visible " >
@@ -161,7 +161,7 @@ class NavBar extends React.Component {
                         </div> 
 
                         {/* BLACK OVERLAY */}
-                        <div class="absolute top-0 h-screen w-full bg-black/60"></div>
+                        <div class="absolute top-0 h-screen w-full bg-black/40"></div>
 
                         {/* BLACK GRADIENT */}
                         {/* <div class="bg-gradient-to-t from-defaultdark to-defaultdark/0 h-96  bottom-28 left-0 right-0 z-50 fixed"></div>   */}
@@ -706,7 +706,7 @@ class NavBar extends React.Component {
                                     </section>
                                     
                                     <div class="overflow-hidden align-middle content-center	">
-                                            <div class="lg:visible invisible  block max-w-[1030px] bg-black "><img class="bottom-8 -ml-[4em] w-[60vh] absolute max-w-full block " src={ava_about}></img></div>
+                                            <div class="lg:visible invisible  block max-w-[1030px] bg-black "><img class="bottom-8 -ml-[4em] w-[58vh] absolute max-w-full block " src={ava_about}></img></div>
                                             
                                     </div>
 
@@ -754,7 +754,8 @@ class NavBar extends React.Component {
                                             </div>
 
                                             <div class="overflow-hidden pt-24">
-                                                <div class="visible md:invisible block w-full mx-auto "><img class="  w-[60vh] absolute max-w-full " src={ava_about}></img></div>
+                                                <div class="visible md:invisible block w-full mx-auto "><img class="  w-[60vh] absolute max-w-full " src={ava_about}>
+                                                    </img></div>
                                             
                                             </div> 
                                         </div>
@@ -796,7 +797,7 @@ class NavBar extends React.Component {
               
                                         <section class="legal-logo  ">
                                             <div class="section-block-1 w-[120px] sm:max-w-[120px] ">
-                                                <img src={evolKraken}></img>
+                                                <img src={TrojanShinnevolform}></img>
                                             </div>
                                         </section>
                                     
@@ -836,7 +837,7 @@ class NavBar extends React.Component {
                                                 </p>
 
                                                 <p class="tracking-wide brightness-200 text-sm md:text-xl"> 
-                                                IRONSTUDIOS@SHINNVERSE.COM
+                                                KOINONSTUDIOS@SHINNVERSE.COM
 
                                                 </p>
                                         </section>

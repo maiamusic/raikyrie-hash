@@ -21,7 +21,7 @@ const License = () => {
 
     return( 
                
-<div class="selection:bg-teal-800">
+<div class="selection:bg-[#ff5a1d]">
 
  
     {/* NAV */} 
