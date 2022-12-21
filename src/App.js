@@ -1,19 +1,17 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
+import { useGlobalState } from './store';
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate, HashRouter} from "react-router-dom";
-import ReactDOM from 'react-dom/client';
 
 
 
 
 import Menu from './Menu';
-import MainMint from './MainMint';
-import NavBar from './NavBar';
+import MainMint from './Components/MainMint';
 import MintPage from './Components/MintPage';
+import NavBar from './NavBar';
 import License from './Components/License';
-
-
-
+import MintLoc from './Components/MintLoc';
 
 
 
@@ -21,6 +19,7 @@ import License from './Components/License';
 
 function App() {
   const [accounts, setAccounts] = useState([]);
+  const [nfts] = useGlobalState('nfts');
   
   return (
     
@@ -33,20 +32,23 @@ function App() {
         <BrowserRouter>
           
 
-          <Routes> 
+          {/* <Routes> 
                 <Route path="mint" element={<MintPage/>} >
-                      <Route path="/mint" element={<MainMint accounts = {accounts} setAccounts = {setAccounts}/>}></Route>
+                      <Route path="/mint" element={<MainMint nfts= {nfts} accounts = {accounts} setAccounts = {setAccounts}/>}></Route>
                 </Route>
         
-          </Routes> 
+          </Routes>  */}
 
           <Routes>
+            
             
               {/* MENU */}
 
               <Route path="/" element={ <Menu/> } />
-              <Route  path="/menu" element={<Menu />}/>
+              {/* <Route  path="/menu" element={<Menu />}/>
               <Route  path="/" element={() => (<Navigate to='/menu'/>)} />  
+ */}
+
 
 
               {/* NAVBAR  */}
@@ -60,9 +62,8 @@ function App() {
             {/* <Route path="/" element={<Navigate to="/shinnverse" />}/> */}
               
               
-              
+              <Route path="/mint" element={ <MintLoc accounts = {accounts} setAccounts = {setAccounts}/>} />
             
-              <Route path="/mint" element={<MainMint accounts = {accounts} setAccounts = {setAccounts}/>}> </Route>
               
               <Route path="license" element={ <License/>} />
 
@@ -78,7 +79,7 @@ function App() {
         
           </Routes>
         </BrowserRouter>
-        {/* <MainMint path="mint" accounts = {accounts} setAccounts = {setAccounts} /> */}
+   
 
       
         

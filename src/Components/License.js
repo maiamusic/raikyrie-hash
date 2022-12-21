@@ -32,7 +32,7 @@ const License = () => {
         <div class="flex justify-around left-1.5 items-center p-4 md:p-8 transition-all w-full fixed  "> 
 
             {/* FIRST NAV ITEM */}
-            <a class="header__logo items-start float-left " base href="/shinnverse">
+            <a class="header__logo items-start float-left " base href="/">
                 <img class="w-32 " src={logo}></img>
             </a>
         
@@ -132,7 +132,7 @@ const License = () => {
                     RAIKYRIE (hereon referred to as “ACA (Codename for RAIKYRIE) ”) website is provided to you in accordance with the following terms and conditions (“Terms”). It is important that you read the terms carefully, as by using the website you automatically agree to be bound by the terms and conditions set forth herein.
                     
                     <p class="mb-2  "></p>
-                    <div class="font-bold text-yellow-400 font-[sans-serif]">
+                    <div class="font-bold text-[#ff5a1d] font-[sans-serif]">
 
                     DISCLAIMER AND LIMITATION OF LIABILITY
 
@@ -156,7 +156,7 @@ const License = () => {
                 Notwithstanding the foregoing, if ACA is found to be liable (i) with respect to any loss, damage or cause of action (contractual, out-of-contract or otherwise) arising out of or in connection with these Terms or Features or the Web; The functionality of the Site or its content, or your use or inability to use, our liability shall not exceed the amount paid for use or access. or (ii) for any product sold through the site. The company’s liability is strictly limited to the selling price of that product. 
                 <p class="mb-2  "></p>
 
-                <div class="font-bold text-yellow-400 text-xl font-[sans-serif]"  >
+                <div class="font-bold text-[#ff5a1d] text-xl font-[sans-serif]"  >
                 GOVERNING LAW AND DISPUTE RESOLUTION
                 </div>
             

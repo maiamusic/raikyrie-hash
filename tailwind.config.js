@@ -5,8 +5,6 @@
 module.exports = {
   
 
-  
-
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
     './src/**/*.{html,js}', 
@@ -20,6 +18,8 @@ module.exports = {
         Azonix: ['Azonix'],
         EuroStyle: ['EuroStyle'],
         Orbitron: ['Orbitron'],
+        LightNovel: ['07LightNovelPOP'],
+        
         
       },
       colors: {
@@ -38,6 +38,8 @@ module.exports = {
         
        
       },
+        
+       
       backgroundColor: {
         'background': 
       

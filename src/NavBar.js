@@ -1,15 +1,14 @@
 import React from 'react';
 // import {Link, WithRouter} from 'react-router-dom';
-import {WithRouter, Link as LinkDom} from 'react-router-dom';
+import {Link as LinkDom} from 'react-router-dom';
 
 
 import {Link, animateScroll as scroll} from 'react-scroll'
 import logo from './assets/icons/logo.png';
-import background from './assets/background/ACABGAIRCRAFT.mp4';
+import background from './assets/background/ACAbackground_update.mp4';
 import ava_about from './assets/background/ganko.png';
 import phase from './assets/icons/phase.svg';
 import ms1 from './assets/samples/2140_cropped.png';
-import ms2C from './assets/samples/1491_cropped.png';
 import ms2B from './assets/samples/3271_cropped.png';
 import none from './assets/icons/icon_none.png'
 import arrowb from './assets/icons/arrow_bottom2.png';
@@ -46,20 +45,33 @@ class NavBar extends React.Component {
             <div class="flex relative  z-auto min-h-screen flex flex-col transition-all duration-200 overflow-hidden selection:bg-[#ff5a1d] ">
 
             
-                {/* NAV */} 
-
-                
-                <div class=" flex z-50 absolute justify-end top-0 right-0 bg-transparent min-w-full ">
+                {/* NAV */}      
+            
+                <div class=" flex z-50 absolute top-0 right-0 left-0  bg-transparent min-w-full z-50 ">
                         
-                    <div class="flex justify-between sm:justify-around left-1.5 items-center p-2 md:p-8 transition-all w-full fixed  "> 
+                    <div class="flex justify-between p-3.5 md:justify-around md:left-1.5 items-center md:p-8  w-full fixed  "> 
 
-                        {/* FIRST NAV ITEM */}
-                        <LinkDom to ="/menu" class="header__logo items-start float-left" >
-                            <img class="w-24 lg:w-32 " src={logo}></img>
-                        </LinkDom>
+                        {/* MOBILE */}
+                       <LinkDom to ="/" class="header__logo " >
+                            <div class="w-20 lg:w-32">
+                                <img class="" src={logo}></img>
+                            </div>
+                        </LinkDom> 
+                        <div class="md:invisible visible md:hidden float-right">
+
+                            <LinkDom to ='/mint' class="text-white ">
+                                <button class="navMint   hover:text-defaultdark hover:bg-neutral-300
+                            ">
+                                    MINT
+                                </button>
+                            </LinkDom>
+
+                        </div>  
+
+                  
                     
-                        
-                        <div class="flex right-0 top-5  w-[50vw] bg-black bg-opacity-75 justify-around items-center   mx-auto invisible sm:visible " >
+                        {/* LINK */}
+                        <div class="flex right-0 top-5  w-[50vw] bg-black bg-opacity-75 justify-around items-center   mx-auto hidden md:flex " >
                             
                                 <LinkDom to ='/shinnverse'  class="text-white">
                                     <button class="font-body p-[5px] disabled hover:text-neutral-900 hover:bg-neutral-300 bg-teal-400 w-28   "> 
@@ -75,19 +87,7 @@ class NavBar extends React.Component {
                                     </button>
                                 </LinkDom>
 
-                {/* 
-                                <LinkDom to ='/mission-center' class="text-white">
-                                    <button class="font-body p-[5px] disabled hover:text-defaultdark hover:bg-neutral-300 ">
-                                    <span class="capitalize"> MISSION CENTER</span>
-                                    </button> 
-                                </LinkDom>
-                */}
-
-                                {/* <LinkDom to ='/about-us' class="text-white">
-                                    <button class="font-body p-[5px] disabled  hover:text-defaultdark hover:bg-neutral-300 ">
-                                    ABOUT
-                                    </button>
-                                </LinkDom > */}
+        
 
                                 <LinkDom to = '/the-pilgrimage' class="text-white cursor-not-allowed temp-disabled-link">
                                     <button class="font-body p-[5px] disabled hover:text-defaultdark hover:bg-neutral-300 temp-disabled-link  " >
@@ -101,17 +101,12 @@ class NavBar extends React.Component {
                                 </LinkDom>
                                 
                         
-                        
-
-
-
-
-
+                
 
                         </div>
 
 
-                        <div class="flex hidden sm:flex  text-white float-right  place-items-center justify-end ">
+                        <div class="flex hidden sm:flex  text-white float-right  items-center justify-end ">
                             <a href="https://twitter.com/raikyrieNFT" class="inline-block transition-all duration-350 hover:opacity-60 " rel="noopener noreferrer" target="_blank">
                                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-8 sm:w-8 mr-5" fill="currentcolor"><title>Twitter</title><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path></svg>
                             </a>
@@ -129,50 +124,41 @@ class NavBar extends React.Component {
 
                         </div>
 
-                        <div class="md:invisible visible md:hidden">
-
-                            <LinkDom to ='/mint' class="text-white m-0.5 ">
-                                <button class="navMint font-body p-[2px] hover:text-defaultdark hover:bg-neutral-300
-                            ">
-                                    MINT
-                                </button>
-                            </LinkDom>
-
-
-                        </div>
-                        
-                
-                
+    
 
                     </div>
-                    
+
+
                 </div>
+                
 
             
 
                 {/* 1ST DIV */}
                 <main class="flex-1 ">
                     {/* STAGE-1 - DIV - 1 */}
-                    <div class=" visible min-h-screen justify-center bg-cover bg-center bg-no-repeat signs Z-40 ">
+                    <div class=" visible min-h-screen justify-center bg-cover bg-center bg-no-repeat  ">
                         <div class="top-[-5px] absolute w-full bg-bottom  ">
-                            <video class="video-background w-full h-screen absolute object-cover overflow-hidden " autoplay="autoplay" loop="" playsinline="" muted="" type="video/mp4">
-                                <source src={background} type="video/mp4"/> 
+                            <video class="video-background w-full h-screen absolute object-cover overflow-hidden " autoplay="autoplay"  loop playsinline="" muted="" type="video/mp4">
+                                 <source src={background} type="video/mp4"/>  
                             </video>
+                            <div class="relative top-0 h-screen w-full bg-black/40"></div> 
                         </div> 
 
                         {/* BLACK OVERLAY */}
-                        <div class="absolute top-0 h-screen w-full bg-black/40"></div>
+                         <div class="absolute top-0 h-screen w-full bg-black/40 "></div> 
 
                         {/* BLACK GRADIENT */}
-                        {/* <div class="bg-gradient-to-t from-defaultdark to-defaultdark/0 h-96  bottom-28 left-0 right-0 z-50 fixed"></div>   */}
+                        {/* <div class="bg-gradient-to-t from-black/10 to-black/10 h-screen bottom-0 left-0 right-0 z-50 fixed"></div>   */}
                     
-                        {/* TITLE INTRO */}
-                        <div class="relative text-center text-white p-40 place-content-center flex flex-col items-center justify-center h-screen ">
+                        {/* TITLE FRONTPAGE */}
+
+                        <div class="relative text-center text-white  md:p-40 place-content-center flex flex-col items-center justify-center h-screen  ">
 
                             
                             <Link to="featured" spy={true} smooth={true} offset={10} duration={500}>
-                                <h1 class="hero glitch layers lg:text-[8rem] text-[4rem] mb-6 hover:text-[#1fbba6] transition-all duration-350 cursor-pointer" data-text="銃使">
-                                    <span class="lg:text-[8rem] text-[4rem] ">銃使</span> 
+                                <h1 class="hero glitch layers lg:text-[8rem] text-[4rem] mb-6 hover:text-[#1fbba6] transition-all duration-350 cursor-pointer  " data-text="銃使">
+                                    <span class="xl:text-[11rem] md:text-[9rem] text-[6rem] ">銃使</span> 
                                 </h1>
                             </Link>
 
@@ -180,8 +166,8 @@ class NavBar extends React.Component {
                             
                             <br/>
                         
-                            <div class="flex ">
-                                <h2 class="font-Azonix text-white md:text-2xl text-md mb-6 p-2 cursor-default  " >Our Land, Shinorechi, the City Of Ruins</h2>
+                            <div class="flex md:w-auto w-screen  ">
+                                <h2 class="font-Azonix text-white lg:text-2xl md:text-base text-sm mb-6 p-4 md:p-2 cursor-default   " >Our Land, Shinorechi, the City Of Ruins</h2>
 
                                     <div class="mt-5 md:visible invisible md:block hidden">
                                         <span class="font-Azonix mr-2 text-5xl  animation-delay-200 transition-all duration-400 animate-blinker">.</span>
@@ -223,305 +209,276 @@ class NavBar extends React.Component {
 
                     </div>
 
-                
-                                {/* BORDER*/}
-
-                    {/* <div class="running">
-                            <div class="looper">
-                                <div class="looper__innerList" data-animate="true">
-                                
-                                    <div class="tracking-wider text-7xl w-max will-change-transform  flex direction-reverse duration-3s animate-slideAnim" >
-                                        <h3> 段 階 1 >>> </h3>
-                                    </div>
-                                    <div class="tracking-wider text-7xl w-max will-change-transform flex direction-reverse duration-3s animate-slideAnim" >
-                                        <h3> 段 階 1 >>> </h3>
-                                    </div>
-
-                
-
-                                    <div class="tracking-wider text-7xl w-max will-change-transform flex direction-reverse duration-3s animate-slideAnim" >
-                                        <h3> 段 階 1 >>> </h3>
-                                    </div>
-                                    
-                                    <div class="tracking-wider text-7xl w-max will-change-transform flex direction-reverse duration-3s animate-slideAnim" >
-                                        <h3> 段 階 1 >>> </h3>
-                                    </div>
-
-                                    <div class="tracking-wider text-7xl w-max will-change-transform flex direction-reverse duration-3s animate-slideAnim" >
-                                        <h3> 段 階 1 >>> </h3>
-                                    </div>
-
-                                    <div class="tracking-wider text-7xl w-max will-change-transform flex direction-reverse duration-3s animate-slideAnim " >
-                                        <h3> 段 階 1 >>> </h3>
-                                    </div>
-
-                                    
-                                <div class="tracking-wider text-7xl w-max will-change-transform flex direction-reverse duration-3s animate-slideAnim" >
-                                        <h3> 段 階 1 >>> </h3>
-                                    </div> 
-
-
-
-
-                                
-
-                                </div>
-                            </div>
-                    </div>  */}
 
 
 
 
                     {/* 2ND DIV */}
-
-                
-                    <div class="flex  flex-col md:flex-row min-h-screen  justify-between relative -top-4 w-full" id="featured" >
+                    
+                    <div class="relative min-h-full justify-center  ">
                         
-
-                            <section class="flex h-[600px] md:w-3/5 mr-10 relative ">
-                                <div class=" pt-4 md:pt-[133px] md:ml-[59px] md:mr-[17px] flex flex-col ml-4 h-[600px] md:h-screen  ">
-
-                                    <div class="titleTrack">
-                                        <h2 class=" text-white font-Orbitron text-2xl md:text-4xl tracking-wider " >The 
-                                        <br/>Shinnverse</h2>
-                                    </div>
-                                    <div> 
-                                        <div class="pb-2 md:pb-9 font-EuroStyle text-white text-xl md:text-2xl tracking-wide font-[550]   ">
-                                            <p>
-                                            The Shinn Universe is the story of Raikyries, who are filled with hope of the dangers ahead.
-                                            <br/>
-                                            who feel they are reputable to join forces with humans besieged by the evil incarnate to save mankind from further destruction.
-
-                                    
-                                            </p>
-
-                                        </div>
-                                    </div>
-                                    
-
-                                </div>
-                            </section>
-
-
-                            <section class="flex h-[900px] md:w-2/5 md:h-screen">
-                            <div class="split-two flex flex-col relative md:pt-20 h-2 ">
-                                {/* SERIES */}
-                                <div class="pb-3 text-white font-Orbitron text-xl md:text-2xl">Series</div>
-                                
-                                {/* COLUMN 1 */}
-                                <div>
-                                    <div class="flex box-content justify-between bg-white/70 border rounded-tr-xl mt-2 md:h-16 h-14 w-64 md:w-96 p-2 mt-1.5 rounded-lg  ">
-                                        
-                                        {/* FRONTAL */}
-                                        <div class="flex">
-                                            <div class="leftBoxRaikyrie m-1 pl-1 pr-4 pt-0.5 pb-0.5" > 
-
-                                                <img class="ms1 object-contain max-w-full max-h-full rounded-md" src={ms1}></img>
-
-                                            </div>
-
-                                            <div class="flex flex-col justify-center text-black font-EuroStyle text-base md:text-lg "> 
-                                                <div class="tracking-widest font-bold">
-                                                RAIKYRIE 
-                                                </div>
-                                                
-                                                <div class="font-medium text-md">
-                                                December 2022, 3,333 CC0 NFT 
-                                                </div>
-                                            </div>
-                                                                                                    
-                                        </div>
-                                    
-                                        {/* BACK */}
-                                        <div class="flex">
-                                            <div class="flex justify-center items-center h-14 w-14 m-1.5">
-                                                <div class=""> 
-                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="black" class="w-8 sm:w-14 h-8">
-                                                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                                                    </svg>
-
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-
-                                    
-
-                                    </div>
-                                </div>
-                                
-
-                                {/* COLUMN2 */}
-                                <div class="flex box-content justify-between bg-white/70 border rounded-tr-xl mt-2 md:h-16 h-12 w-64 md:w-96 p-2 mt-1.5 rounded-lg opacity-40 ">
-                                        
-                                        {/* FRONTAL */}
-                                        <div class="flex">
-                                            <div class="leftBoxRaikyrie m-1 pl-1 pr-4 pt-0.5 pb-0.5" > 
-
-                                                <img class="ms2 object-contain max-w-full max-h-full rounded-md" src={ms2B}></img>
-
-                                            </div>
-
-                                            <div class="flex flex-col justify-center text-black font-EuroStyle text-md md:text-lg"> 
-                                                <div class="tracking-widest font-bold">
-                                                STORM RAIKYRIE 「THE MERGE」
-                                                </div>
-                                                
-                                                <div class="text-md font-medium ">
-                                                2023 Feb
-                                                </div>
-                                            </div>
-                                                                                                    
-                                        </div>
-                                    
-                                        {/* BACK */}
-                                        <div class="flex">
-                                            <div class="flex justify-center items-center h-14 w-14 m-1.5">
-                                                <div class=""> 
-                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="black" class="w-8 sm:w-14 h-8">
-                                                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                                                    </svg>
-
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                </div>
-
-
-                                    {/* COLUMN  3*/}
-                                <div class="flex box-content justify-between bg-white/70 border rounded-tr-xl mt-2 md:h-16 h-10 w-64 md:w-96 p-2 mt-1.5 rounded-lg  opacity-40  ">
-                                    
-                                    {/* FRONTAL */}
-                                    <div class="flex">
-                                        <div class="leftBoxRaikyrie m-1 pl-1 pr-4 pt-0.5 pb-0.5" > 
-
-                                            <img class="ms1 object-contain max-w-full max-h-full rounded-md" src={none}></img>
-
-                                        </div>
-
-                                        <div class="flex flex-col justify-center text-black font-EuroStyle text-base md:text-lg "> 
-                                            <div class="tracking-widest font-bold ">
-                                            DEERS 
-                                            </div>
-                                            
-                                            <div class="text-md font-medium text-md">
-                                            2023
-                                            </div>
-                                        </div>
-                                                                                                    
-                                    </div>
-                                    
-                                    {/* BACK */}
-                                    <div class="flex">
-                                        <div class="flex justify-center items-center h-14 w-14 m-1.5">
-                                            <div class=""> 
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="black" class="w-8 sm:w-14 h-8">
-                                                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                                                </svg>
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                {/* COLUMN 4 */}
-                                <div class="flex box-content justify-between bg-white/70 border rounded-tr-xl mt-2 md:h-16 h-10 w-64 md:w-96 p-2 mt-1.5 rounded-lg  opacity-40  ">
-                                    
-                                    {/* FRONTAL */}
-                                    <div class="flex">
-                                        <div class="leftBoxRaikyrie m-1 pl-1 pr-4 pt-0.5 pb-0.5" > 
-
-                                            <img class="ms1 object-contain max-w-full max-h-full rounded-md" src={none}></img>
-
-                                        </div>
-
-                                        <div class="flex flex-col justify-center text-black font-EuroStyle text-base md:text-lg "> 
-                                            <div class="tracking-widest font-bold">
-                                            THE CAPSULE
-                                            </div>
-                                            
-                                            <div class="text-md font-medium text-md">
-                                            2023-2024
-                                            </div>
-                                        </div>
-                                                                                                    
-                                    </div>
-                                    
-                                    {/* BACK */}
-                                    <div class="flex">
-                                        <div class="flex justify-center items-center h-14 w-14 m-1.5">
-                                            <div class=""> 
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="black" class="w-8 sm:w-14 h-8">
-                                                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                                                </svg>
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-                                {/* COLUMN 5 */}
-                                <div class="flex box-content justify-between bg-white/70 border rounded-tr-xl mt-2 md:h-16 h-10 w-64 md:w-96 p-2 mt-1.5 rounded-lg  opacity-40">
-                                    
-                                    {/* FRONTAL */}
-                                    <div class="flex">
-                                        <div class="leftBoxRaikyrie m-1 pl-1 pr-4 pt-0.5 pb-0.5" > 
-
-                                            <img class="ms1 object-contain max-w-full max-h-full rounded-md" src={none}></img>
-
-                                        </div>
-
-                                        <div class="flex flex-col justify-center text-black font-EuroStyle text-base md:text-lg "> 
-                                            <div class="tracking-widest font-bold">
-                                            TROJAN SHINN
-                                            </div>
-                                            
-                                            <div class="text-md font-medium text-md">
-                                            2024
-                                            </div>
-                                        </div>
-                                                                                                    
-                                    </div>
-                                    
-                                    {/* BACK */}
-                                    <div class="flex">
-                                        <div class="flex justify-center items-center h-14 w-14 m-1.5">
-                                            <div class=""> 
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="black" class="w-8 sm:w-14 h-8">
-                                                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                                                </svg>
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-                            </div>
-
-                            </section>
+                        {/* trojan */}
+                            <div class=" background__trojan"></div>
 
                         
+                        <div class="flex flex-col lg:flex-row  justify-between items-center relative -top-4 w-full  " id="featured" >
+                                    
+                                
+                                {/* shinnverse */}
+                                <section class="flex h-[600px] lg:w-3/5 mr-10 relative z-30 ">
+
+
+                                    
+                                    <div class=" pt-4 md:pt-[133px] md:ml-[59px] md:mr-[17px]  mx-auto h-full lg:h-screen  ">
+
+                                        <div class="titleTrack">
+                                            <h2 class=" text-white font-Orbitron text-2xl md:text-4xl tracking-wider " >The 
+                                            <br/>Shinnverse</h2>
+                                        </div>
+                                        <div> 
+                                            <div class="pb-2 md:pb-9 font-EuroStyle text-white text-xl md:text-2xl tracking-wide font-[550]   ">
+                                                <p>
+                                                The Shinn Universe is the story of Raikyries, who are filled with hope of the dangers ahead.
+                                                <br/>
+                                                who feel they are reputable to join forces with humans besieged by the evil incarnate to save mankind from further destruction.
+
+                                        
+                                                </p>
+
+                                            </div>
+                                        </div>
+                                        
+
+                                    </div>
+                                </section>
+                            {/*  sm:max-w-[120px] */}
+                                {/* series */}
+                                <section class="flex h-full w-full lg:w-2/5 md:h-screen flex flex-col z-30   ">
+
+                                    {/* WHOLE SERIES BOX */}
+                                    <div class="split-two flex flex-col relative  md:pt-20 md:pb-20 mx-auto  ">                    
+                                        <div class="pb-3 text-white font-Orbitron text-xl md:text-2xl ">Series</div>
+                                        
+                                        {/* COLUMN 1 */}
+                                        {/* flex box-content justify-between bg-white/70 border rounded-tr-xl mt-2 2xl:h-16 h-14 w-64 md:w-80 2xl:w-96 p-2 mt-1.5 rounded-lg */}
+                                        <div>
+                                        <div class="flex box-content justify-between bg-white/70 border rounded-tr-xl mt-2 2xl:h-16 h-14 w-64 md:w-80 2xl:w-96 p-2 mt-1.5 rounded-lg  ">
+                                            
+                                            {/* FRONTAL */}
+                                            <div class="flex">
+                                                <div class="leftBoxRaikyrie m-1 pl-1 pr-4 pt-0.5 pb-0.5" > 
+
+                                                    <img class="ms1 object-contain max-w-full max-h-full rounded-md" src={ms1}></img>
+
+                                                </div>
+
+                                                <div class="flex flex-col justify-center text-black font-EuroStyle text-base xl:text-lg "> 
+                                                    <div class="tracking-widest font-bold">
+                                                    RAIKYRIE 
+                                                    </div>
+                                                    
+                                                    <div class="font-medium text-md">
+                                                    Dec 2022, 3,333 CC0 NFT 
+                                                    </div>
+                                                </div>
+                                                                                                        
+                                            </div>
+                                        
+                                            {/* BACK */}
+                                            <div class="flex">
+                                                <div class="flex justify-center items-center h-14 w-14 m-1.5">
+                                                    <div class=""> 
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="black" class="w-8 sm:w-14 h-8">
+                                                            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                                                        </svg>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+
+                                        
+
+                                        </div>
+                                        </div>
+                                        
+
+                                        {/* COLUMN2 */}
+                                        <div class="flex box-content justify-between bg-white/70 border rounded-tr-xl mt-2 2xl:h-16 h-12 w-64 md:w-80 2xl:w-96 p-2 mt-1.5 rounded-lg opacity-40 ">
+                                                
+                                                {/* FRONTAL */}
+                                                <div class="flex">
+                                                    <div class="leftBoxRaikyrie m-1 pl-1 pr-4 pt-0.5 pb-0.5" > 
+
+                                                        <img class="ms2 object-contain max-w-full max-h-full rounded-md" src={ms2B}></img>
+
+                                                    </div>
+
+                                                    <div class=" flex flex-col justify-center text-black font-EuroStyle text-sm md:text-base 2xl:text-lg"> 
+                                                        <div class="tracking-widest font-bold">
+                                                            <div class="inline-block">
+                                                            STORM RAIKYRIE
+                                                            </div>
+                                                            <div class="font-base inline-block">
+                                                            「MERGE」
+                                                            </div>
+                                                        </div>
                                                         
+                                                        
+                                                        <div class="text-md font-medium  ">
+                                                        2023 Feb
+                                                        </div>
+                                                    </div>
+                                                                                                            
+                                                </div>
+                                            
+                                                {/* BACK */}
+                                                <div class="flex">
+                                                    <div class="flex justify-center items-center h-14 w-14 m-1.5">
+                                                        <div class=""> 
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="black" class="w-8 sm:w-14 h-8">
+                                                                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                                                            </svg>
 
 
-                    {/* BACKGROUND */}
-                        <div class=" -z-10 background__trojan  absolute object-cover overflow-hidden  ">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div>
+
+
+                                            {/* COLUMN  3*/}
+                                        <div class="flex box-content justify-between bg-white/70 border rounded-tr-xl mt-2 2xl:h-16 h-10 w-64 md:w-80 2xl:w-96 p-2 mt-1.5 rounded-lg  opacity-40  ">
+                                            
+                                            {/* FRONTAL */}
+                                            <div class="flex">
+                                                <div class="leftBoxRaikyrie m-1 pl-1 pr-4 pt-0.5 pb-0.5" > 
+
+                                                    <img class="ms1 object-contain max-w-full max-h-full rounded-md" src={none}></img>
+
+                                                </div>
+
+                                                <div class="flex flex-col justify-center text-black font-EuroStyle text-base xl:text-lg "> 
+                                                    <div class="tracking-widest font-bold ">
+                                                    DEERS 
+                                                    </div>
+                                                    
+                                                    <div class="text-md font-medium">
+                                                    2023
+                                                    </div>
+                                                </div>
+                                                                                                            
+                                            </div>
+                                            
+                                            {/* BACK */}
+                                            <div class="flex">
+                                                <div class="flex justify-center items-center h-14 w-14 m-1.5">
+                                                    <div class=""> 
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="black" class="w-8 sm:w-14 h-8">
+                                                            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                                                        </svg>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        {/* COLUMN 4 */}
+                                        <div class="flex box-content justify-between bg-white/70 border rounded-tr-xl mt-2 2xl:h-16 h-10 w-64 md:w-80 2xl:w-96 p-2 mt-1.5 rounded-lg  opacity-40  ">
+                                            
+                                            {/* FRONTAL */}
+                                            <div class="flex">
+                                                <div class="leftBoxRaikyrie m-1 pl-1 pr-4 pt-0.5 pb-0.5" > 
+
+                                                    <img class="ms1 object-contain max-w-full max-h-full rounded-md" src={none}></img>
+
+                                                </div>
+
+                                                <div class="flex flex-col justify-center text-black font-EuroStyle text-base xl:text-lg "> 
+                                                    <div class="tracking-widest font-bold">
+                                                    THE CAPSULE
+                                                    </div>
+                                                    
+                                                    <div class="text-md font-medium text-md">
+                                                    2023-2024
+                                                    </div>
+                                                </div>
+                                                                                                            
+                                            </div>
+                                            
+                                            {/* BACK */}
+                                            <div class="flex">
+                                                <div class="flex justify-center items-center h-14 w-14 m-1.5">
+                                                    <div class=""> 
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="black" class="w-8 sm:w-14 h-8">
+                                                            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                                                        </svg>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                        {/* COLUMN 5 */}
+                                        <div class="flex box-content justify-between bg-white/70 border rounded-tr-xl mt-2 2xl:h-16 h-10 w-64 md:w-80 2xl:w-96 p-2 mt-1.5 rounded-lg  opacity-40">
+                                            
+                                            {/* FRONTAL */}
+                                            <div class="flex">
+                                                <div class="leftBoxRaikyrie m-1 pl-1 pr-4 pt-0.5 pb-0.5" > 
+
+                                                    <img class="ms1 object-contain max-w-full max-h-full rounded-md" src={none}></img>
+
+                                                </div>
+
+                                                <div class="flex flex-col justify-center text-black font-EuroStyle text-base xl:text-lg "> 
+                                                    <div class="tracking-widest font-bold">
+                                                    TROJAN SHINN
+                                                    </div>
+                                                    
+                                                    <div class="text-md font-medium text-md">
+                                                    2024
+                                                    </div>
+                                                </div>
+                                                                                                            
+                                            </div>
+                                            
+                                            {/* BACK */}
+                                            <div class="flex">
+                                                <div class="flex justify-center items-center h-14 w-14 m-1.5">
+                                                    <div class=""> 
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="black" class="w-8 sm:w-14 h-8">
+                                                            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                                                        </svg>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+
+
+
+                                </section>
+
+                            
+                                                            
+
+
+
+
+
 
                         </div>
-
-
-
-
                     </div>
 
 
@@ -529,21 +486,20 @@ class NavBar extends React.Component {
 
        
 
-
                     {/* 3RD DIV */}
 
                 
-                    <div class=" flex div-about visible mx-auto h-[2000px] md:h-auto md:min-h-screen w-full -top-[20px]  bg-about2 bg-cover bg-center relative bg-fixed clearfix ">
+                    <div class=" flex div-about z-30 min-h-screen visible mx-auto  w-full top-0  bg-about2 bg-cover bg-center relative   ">
                                     
                             
                             {/* BLACK GRADIENT */}
-                            <div class="bg-gradient-to-t from-defaultdark to-defaultdark/0 h-96 absolute bottom-0 left-0 right-0 w-full fixed z-40"></div>
+                            <div class="bg-gradient-to-t from-defaultdark to-defaultdark/0 h-96 absolute -bottom-4 left-0 right-0 w-full fixed "></div>
                         
+                            {/* BLACK OVERLAY */}
+                            <div class="absolute top-0 h-full w-screen bg-black/40 -z-10"></div>
 
-                            
 
-
-                            <div class="flex flex-col md:flex-row h-screen w-full  mx-auto md:m-12 md:ml-14 justify-center relative  ">
+                            <div class="relative flex flex-col lg:flex-row min-h-screen w-full mx-auto lg:m-12 lg:ml-14 justify-center">
 
                                 {/* <div class="relative max-w-full">
                             
@@ -558,15 +514,16 @@ class NavBar extends React.Component {
                                     </div>
                                 </div> */}
 
-                                    <section class="flex lg:w-2/5 mt-[600px] md:mt-0 mr-10 md:ml-0 ">
+                                    <section class="flex lg:w-2/5  mr-10 md:ml-0 ">
                                         
 
                                         <div class=""> 
-                                            <h1 class="pt-12 md:pt-15 md:text-[4em] text-[2em] text-[#2dd4bf] font-Azonix  "> About</h1>
+                                            
+                                                <h1 class="pt-12 md:pt-15 md:text-[4em] text-[2em] text-[#2dd4bf] font-Azonix  "> About</h1>
+                                         
 
-
-
-                                                <div class="flex flex-col w-full pt-8 z-50">
+                                                
+                                                <div class="flex flex-col w-full pt-8 z-50 min-h-screen">
 
 
                                                     <h1 class=" pt-6 text-base pb-4 text-[#EFE6DD] font-bold font-Orbitron">「 FAQ 」</h1>
@@ -576,10 +533,10 @@ class NavBar extends React.Component {
 
                                                     <div class="shadow-md flex mb-[20px]">
 
-                                                        <div class=" overflow-hidden border border-2 border-white-200 w-[350px] md:w-full ">
+                                                        <div class=" overflow-hidden border border-2 border-white-200  ">
                                                         <label class="">
                                                             <input class="absolute opacity-0 peer" type="checkbox"/>
-                                                        
+                                                           
                                                             <h4 class="p-2 sm:p-5 text-white text-left text-sm md:text-base bg-transparent hover:bg-bridge/25 inline-block cursor-pointer w-auto uppercase focus:outline-none">
                                                             What Is The Mint Price? </h4>
                                                             
@@ -587,7 +544,7 @@ class NavBar extends React.Component {
                                                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
                                                             </svg>
 
-                                                            <div class=" text-base md:text-xl tracking-wider  overflow-hidden bg-transparent max-h-0 peer-checked:max-h-screen px-[10px] md:px-[50px] ml-[calc(0.01rem_+_30px)] sm:ml-[calc(1.25rem_+_50px)]  md:mb-[10px] border-l-4 border-l-white border-double"><p> First 555 is free,  additional paid at 0.0033 ETH.</p></div>
+                                                            <div class=" text-base md:text-xl tracking-wider  overflow-hidden bg-transparent max-h-0 peer-checked:max-h-screen px-[10px] md:px-[30px] ml-[calc(0.01rem_+_30px)] sm:ml-[calc(1.25rem_+_50px)]  md:mb-[10px] border-l-4 border-l-white border-double"><p> Price is 0.01 ETH, Maximum limit of 10 Raikyries per person. </p></div>
                                                             
                                                         </label>
                                                         </div>
@@ -602,25 +559,83 @@ class NavBar extends React.Component {
                                                             <input class="absolute opacity-0 peer" type="checkbox"/>
                                                         
                                                             <h4 class="p-2 sm:p-5 text-white text-left text-sm md:text-base bg-transparent hover:bg-bridge/25 inline-block cursor-pointer w-auto uppercase focus:outline-none">
-                                                        How many Raikyries can I mint?
+                                                                How Do I Mint?
                                                             </h4>
                                                             
                                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block float-right mt-5 mr-2 cursor-pointer peer-checked:rotate-90">
                                                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
                                                             </svg>
 
-                                                            <div class=" text-base md:text-xl tracking-wider  overflow-hidden bg-transparent max-h-0 peer-checked:max-h-screen px-[10px] md:px-[50px] ml-[calc(0.01rem_+_30px)] sm:ml-[calc(1.25rem_+_50px)]  md:mb-[10px] border-l-4 border-l-white border-double"><p>
+                                                            <div class=" text-base md:text-xl tracking-wider  overflow-hidden bg-transparent max-h-0 peer-checked:max-h-screen px-[10px] md:px-[30px] ml-[calc(0.01rem_+_30px)] sm:ml-[calc(1.25rem_+_50px)]  md:mb-[10px] border-l-4 border-l-white border-double">
                                                                 
-                                                                3,333 Raikyrie angels will be available to mint. Maximum of 5 per person.
+                                                           
+                                                                    <p>
+                                                                       
+                                                                        Mint can be found on 
+                                                                            <div>
+                                                                            <a href="https://raikyrie.xyz/mint" title="raikyrie.xyz/mint"    >
+                                                                                <span class=" font-bold text-[#d03800] underline" >raikyrie.xyz/mint</span>
+                                                                            </a>
+                                                                            </div>
+                                                                        
+
+                                                                            <p>
+                                                                          Stay tuned as the mint portal will be opened an hour prior to when we make an announcement on twitter.
+                                                                          </p>
+                                                                    </p>
+                                                               
+                                                             
 
 
-                                                                </p>
+                                                          
                                                             </div>
                                                             
                                                         </label>
                                                         </div>
                                                         
                                                     </div>
+
+
+                                                    <div class="shadow-md flex mb-[20px]">
+
+                                                        <div class=" overflow-hidden border border-2 border-white-200 w-full ">
+                                                        <label class="">
+                                                            <input class="absolute opacity-0 peer" type="checkbox"/>
+                                                        
+                                                            <h4 class="p-2 sm:p-5 text-white text-left text-sm md:text-base bg-transparent hover:bg-bridge/25 inline-block cursor-pointer w-auto uppercase focus:outline-none">
+                                                            When Is Reveal?
+                                                            </h4>
+                                                            
+                                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block float-right mt-5 mr-2 cursor-pointer peer-checked:rotate-90">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                                                            </svg>
+
+                                                            <div class="text-base md:text-xl tracking-wider  overflow-hidden bg-transparent max-h-0 peer-checked:max-h-screen px-[10px] md:px-[30px] ml-[calc(0.01rem_+_30px)] sm:ml-[calc(1.25rem_+_50px)]  md:mb-[10px] border-l-4 border-l-white border-double"><p>
+
+                                                            Raikyries will be revealed immediately once fully mint out. 
+
+                                                        
+                                                            
+            {/*                                                 
+                                                        
+                                                            The Pilgrimage makes up a mechanic that grants access to hidden messages for Rebel Hunts, Clan building, Market priority, utilities, NFTs and team positions.
+
+                                                            Ranks are only disclosed once someone reaches them. 
+
+                                                            */}
+                                                            </p>
+
+                                                            </div>
+                                                            
+                                                        </label>
+                                                        </div>
+                                                        
+                                                    </div>
+
+
+                                                
+
+                                                    
 
                                                     <div class="shadow-md flex mb-[20px]">
 
@@ -636,12 +651,19 @@ class NavBar extends React.Component {
                                                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
                                                             </svg>
 
-                                                            <div class="text-base md:text-xl tracking-wider  overflow-hidden bg-transparent max-h-0 peer-checked:max-h-screen px-[10px] md:px-[50px] ml-[calc(0.01rem_+_30px)] sm:ml-[calc(1.25rem_+_50px)]  md:mb-[10px] border-l-4 border-l-white border-double"><p>
+                                                            <div class="text-base md:text-xl tracking-wider  overflow-hidden bg-transparent max-h-0 peer-checked:max-h-screen px-[10px] md:px-[30px] ml-[calc(0.01rem_+_30px)] sm:ml-[calc(1.25rem_+_50px)]  md:mb-[10px] border-l-4 border-l-white border-double"><p>
 
-                                                            The ACA was launched with two primary goals in mind: to bring people across the world get into NFT & to have people enjoy
+                                                            The ACA was launched with two primary goals in mind: 
+                                                            
+                                                            <p>
+                                                            1. To encourage people across the world to come together as one through NFTs.
+                                                            </p>
+                                                            
+                                                            <p>
+                                                            2. To have people enjoy
                                                             watching their angels companion slowly evolve overtime while we take the holders on a ride through the up and downs of its lore,
-                                                            incorporated within the mini series.
-
+                                                            incorporated within the our specially curated mini series.
+                                                            </p>
                                                         
                                                             
             {/*                                                 
@@ -677,9 +699,9 @@ class NavBar extends React.Component {
                                                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
                                                             </svg>
 
-                                                            <div class="text-base md:text-xl tracking-wider  overflow-hidden bg-transparent max-h-0 peer-checked:max-h-screen px-[10px] md:px-[50px] ml-[calc(0.01rem_+_30px)] sm:ml-[calc(1.25rem_+_50px)]  md:mb-[10px] border-l-4 border-l-white border-double"><p>
-                                                            Although we've been building for the past 6 months, We decided to launch in stealth. That way to prevent any kind of unfavourable advantage that may or may not occur under a presale system; which are some things we have observed since the beginning of May 
-                                                            as we analyze some of the flaws in these events. Hence we have collectively agree that everyone should have an equal level of chance to mint. While keeping the public's best interest in mind.
+                                                            <div class="text-base md:text-xl tracking-wider overflow-hidden bg-transparent max-h-0 peer-checked:max-h-screen px-[10px] md:px-[30px] ml-[calc(0.01rem_+_30px)] sm:ml-[calc(1.25rem_+_50px)]  md:mb-[10px] border-l-4 border-l-white border-double"><p>
+                                                             We decided to launch this way to create an enviroment where everyone is able to mint their ideal version of Raikyries however as they choose. As we have quietly observed for the past 6 months
+                                                             of some of the drawbacks that came under a presale system. We think this would be the best possible approach while keeping the public's best interest in mind.
     
                                                             
                                         
@@ -704,24 +726,33 @@ class NavBar extends React.Component {
 
 
                                     </section>
+
+                                    {/* TABLET/PC - IMAGE */}
                                     
-                                    <div class="overflow-hidden align-middle content-center	">
-                                            <div class="lg:visible invisible  block max-w-[1030px] bg-black "><img class="bottom-8 -ml-[4em] w-[58vh] absolute max-w-full block " src={ava_about}></img></div>
+                                    {/* <div class="overflow-hidden self-center content-center	"> 
+                                            <div class="lg:block hidden max-w-[1030px] "><img class="bottom-8 -ml-[4em] w-[58vh] absolute max-w-full block " src={ava_about}></img></div>
                                             
+                                    </div> */}
+
+                                    <div >
+                                        <div class=" xl:block hidden justify-center self-center items-center flex relative z-auto -bottom-28 ">
+                                            <img class="w-[60vh] " src={ava_about}></img>
+                                        </div>
                                     </div>
+
 
 
                             
                                     <div class="flex float-right z-50 ml-auto justify-end ">
                                         {/* COLUMN-RIGHT-ABOUT */}
                                         {/* w-[100vw] lg:w-[40vw] pt-28 text-[#CACFD6] items-start */}
-                                        <div class="flex flex-col mx-4 md:mx-0 w-full md:w-[30vw] pt-28 text-[#CACFD5] h-full block  ">
+                                        <div class="flex flex-col mx-12 lg:mx-auto w-full lg:w-[30vw] pt-28 text-[#CACFD5]  h-full block  ">
                 
                                             <img  src={logo }  class="w-24 md:w-44 logo_raikyrie transition-all duration-450  hover:opacity-60  " alt="RAIKYRIES" ></img>
 
-                                            <div class="tracking-wide font-Orbitron  pt-6 pb-2 md:pt-8 md:pb-4   font-bold sm:text-2xl text-[#EFE6DD] ">Adopt & Evolve</div>
+                                            <div class="tracking-wide font-Orbitron  pt-6 pb-2 md:pt-8 md:pb-4   font-bold text-xl lg:text-2xl text-[#EFE6DD] ">Companion For Life</div>
 
-                                            <div class="sm:text-lg text-md ">
+                                            <div class="md:text-xl text-base ">
                                                 {/* <div class="pb-6">Raikyrie is a collection of 3,333 bioengineered androids set in the apocalyptic world on the Ethereum blockchain, as they navigate through the land across timelines that has changed forever. 
                                                             The Shinnverse consist of two different timelines that sets 7 years apart. The angel avatars are trait-rich with distinctive features, each attributable to the world & times in which they represent.</div> */}
 
@@ -740,37 +771,32 @@ class NavBar extends React.Component {
                                             </div>
 
 
-                                            <div class="lg:visible invisible lg:block md:flex">
-                                                <div class="cat-box">
+                                            <div class="2xl:visible invisible lg:block md:flex lg:py-12  ">
+                                                <div class="cat-box relative">
                                                     <div class=" pt-6 md:text-base pb-4 text-[#EFE6DD] font-bold font-Orbitron">「 BUY 」</div>
-                                                    <div class="flex-1">
-                                                    <a role="button" class="bg-gray-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2" href="https://opensea.io/collection/RAIKYRIE" target="_blank" rel="noopener noreferrer">OpenSea</a>
-                                                    <a role="button" class="bg-gray-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2" href="https://www.element.market/collections/RAIKYRIE" target="_blank" rel="noopener noreferrer">Element</a>
+                                                    <div class="flex-1 ">
+                                                        <a role="button" class="bg-gray-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2 " href="https://opensea.io/collection/RAIKYRIE" target="_blank" rel="noopener noreferrer">OpenSea</a>
+                                                        <a role="button" class="bg-gray-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2" href="https://www.element.market/collections/RAIKYRIE" target="_blank" rel="noopener noreferrer">Element</a>
 
-                                                
+                                                    
 
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <div class="overflow-hidden pt-24">
-                                                <div class="visible md:invisible block w-full mx-auto "><img class="  w-[60vh] absolute max-w-full " src={ava_about}>
-                                                    </img></div>
-                                            
-                                            </div> 
                                         </div>
                                     </div>
-                                
+                                                            
+
+                                        {/* MOBILE */}
+                                       <div class="flex overflow-hidden block lg:hidden w-full min-h-screen items-center justify-center" >
+                                            <img class="  w-[55vh]  absolute max-w-full  " src={ava_about}>
+                                            </img>
+                                    
+                                    </div> 
 
                             </div>
                             
-                            {/* BLACK OVERLAY */}
-                            <div class="absolute top-0 h-full w-screen bg-black/40 -z-10"></div>
-
-                                
-                    
-
-
 
 
                     </div>
@@ -779,7 +805,7 @@ class NavBar extends React.Component {
                     {/* footer */}
 
                 
-                        <div class=" footer-div fixed bottom-0 min-w-full h-auto footer  relative bg-black -mt-14 "   >
+                        <div class=" footer-div  bottom-0 top-0 min-w-full h-auto footer  relative bg-black  "   >
                             {/* add -z-50  later */}
                            
                                     <div class="absolute fixed right-[4%] bottom-[92%] shadow-indigo-300/40 shadow-lg bg-black/70 p-2 border hover:bg-neutral-700 ">
@@ -791,34 +817,28 @@ class NavBar extends React.Component {
                                         </Link>
                                     </div>
 
-                                    <div class="flex flex-col lg:flex-row min-w-full  md:p-10  min-w-full justify-between items-center h-auto -top-4  md:pt-15">
+                                    <div class="flex flex-col xl:flex-row min-w-full  md:p-10  min-w-full justify-between items-center h-auto -top-4  md:pt-15">
                                         
 
               
                                         <section class="legal-logo  ">
-                                            <div class="section-block-1 w-[120px] sm:max-w-[120px] ">
+                                            <div class="section-block-1 w-[120px]  ">
                                                 <img src={TrojanShinnevolform}></img>
                                             </div>
                                         </section>
                                     
                                         
                                         
-                                        <section class="w-full md:w-min flex flex-col items-center justify-center ">
+                                        <section class="w-full flex flex-col ">
                                             
-                                            <div class="flex section-block-2 -ml-[0.8px] tracking-wide text-[16px] md:text-[18px] justify-center mt-20 " > 
+                                            <div class="flex md:section-block-2 tracking-wide text-[16px] md:text-[18px] justify-center place-content-center mt-20 " > 
 
                                             Copyright © Silver Link Inc. All rights reserved.
                                             
                                             </div>
                                 
-                                        
-                                            
 
-                                            {/* <p class="section-block-2 text-base tracking-wide">
-                                            Site Build By
-                                            <a href="https://codethirtytwo.com"> CODE32 </a>
-                                            </p>
-                                            */}
+
                                             <p class=" flex  section-block-2 tracking-wide w-full  justify-center "> 
                                             
                                             <a class="text-sm md:text-xl " href="https://goerli.etherscan.io/address/0x53A404aF9d0cBfbd83a2A27386C1bEB1C7000d5B#code"> <p class="text-center">0x53A404aF9d0cBfbd83a2A27386C1bEB1C7000d5Ba</p>   </a>
@@ -844,89 +864,14 @@ class NavBar extends React.Component {
 
 
                                     </div>
-
-
-                                        
+         
                                     
 
                         </div>
 
 
-                        
-                    
 
-
-                {/*MAIN DIV END  */}
                 </main>  
-
-
-
-
-
-
-                {/* DIVISION 2 */}
-
-            {/*                         
-                <div class="cl-type">
-                    <div class="cl-wrapper z-1 opacity-1">
-                        <main class="lg:h-screen about">
-                            <div class="container mx-auto h-full"> 
-                                <div class="flex-col lg:flex-row flex lg:h-full">
-                                    
-                                    <section class="block lg:w-2/5">
-                                        <h1 class="pt-6 md:pt-14 font-[Azonix] ">
-                                            About
-                                            <span class="text-[#219ebc]">
-                                                Us
-                                            </span>
-                                        </h1>
-
-                                        <div class="image-wrapper image-wrapper-constrained image">
-                                            <div class="max-w-[1500px] block" >
-                                                <img role="presentation" aria-hidden="true" class="max-w-auto h-auto block static cover z-1 " src={finn}></img>
-                                            </div>
-                                        </div>
-                                
-                                    </section>
-
-
-
-                            
-
-
-
-                                </div>
-                            </div>
-                        </main>
-                    </div>
-                </div>        */}
-
-
-
-
-
-
-
-
-                
-
-
-
-                
-
-
-
-
-
-
-
-
-
-
-                {/* MINT */}
-
-                
-
 
 
 

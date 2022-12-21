@@ -24,11 +24,7 @@ const Menu = () => {
                 <div class="flex justify-between sm:justify-around left-1.5 items-center p-2 md:p-8 transition-all w-full fixed  "> 
 
                     {/* FIRST NAV ITEM */}
-                    <div class="invisible">
-                        <Link to="/menu" class="header__logo items-start float-left "  >
-                            <img class="w-24 lg:w-32 " src={logo}></img>
-                        </Link>
-                    </div>
+
                     
                     <div class="flex right-0 top-5  w-[50vw] bg-black bg-opacity-75 justify-around items-center   mx-auto invisible sm:visible " >
                         
@@ -122,10 +118,12 @@ const Menu = () => {
         
 
             {/* 1ST DIV */}
+
+            {/* MD SCREEN */}
             <main class="flex-1 ">
                 
                 {/* STAGE-1 - DIV - 1 */}
-                <div class=" visible min-h-screen justify-center ">
+                <div class=" md:block hidden min-h-screen justify-center ">
                     <div class="absolute w-full h-screen bg-[#00f4cf] "></div> 
                     <Link to ='/shinnverse'>
                     
@@ -136,21 +134,47 @@ const Menu = () => {
                                 <div class="flex parth">
                                     <Link to="/shinnverse">
 
-                                        <h2 data-text="R A I K Y R I E" class="font-Azonix text-white md:text-9xl text-5xl mb-12 p-2 cursor-pointer" >R A I K Y R I E </h2>
+                                        <h2 data-text="R A I K Y R I E" class="font-Azonix text-white  2xl:text-8xl  xl:text-7xl lg:text-6xl text-4xl mb-12 p-2 cursor-pointer" >R A I K Y R I E </h2>
                                     </Link>
                                 </div>
 
                                 <div class=" cursor-pointer md:text-xl text-black animate-pulse">
                                     Click Anywhere To Continue
                                 </div>
+    
+                        </div>
+                    </Link>             
+
+                </div>
+
+                {/* MOBILE  */}
+                
+                <div class="  md:hidden visible  min-h-screen justify-center ">
+                    <div class="absolute w-full h-screen bg-[#00f4cf] "></div> 
+                        <Link to ='/shinnverse'>
                             
                         
-                            
+                        
+                                <div class="relative text-center text-white  place-content-center flex flex-col items-center justify-center h-screen ">
 
-                        </div>
-                    </Link>
-                    
+                                        <div class="flex px-40">
+                                            <Link to="/shinnverse">
 
+                                                <h2  class="font-Azonix text-[#d03800] text-5xl hover:text-white  mb-2 p-2 cursor-pointer" >R A I K Y R I E </h2>
+                                            </Link>
+                                        </div>
+
+                                        <div class=" cursor-pointer text-lg text-black animate-pulse mt-4 ">
+                                            Click Anywhere To Continue
+                                        </div>
+            
+                                </div>
+
+                               
+
+                           
+                                                            
+                        </Link>             
 
                 </div>
 
