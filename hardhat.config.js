@@ -9,8 +9,6 @@ require("dotenv").config();
 
 
 
-
-
 // Replace this private key with your Goerli account private key
 // To export your private key from Metamask, open Metamask and
 // go to Account Details > Export Private Key

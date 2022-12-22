@@ -105,7 +105,7 @@
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed ;
-      background-position: center center; 
+      background-position: 30% 30%; 
       object-fit: cover;
     }
     }

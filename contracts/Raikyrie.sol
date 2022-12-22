@@ -1351,11 +1351,11 @@ contract ERC721A is Context, ERC165, IERC721, IERC721Metadata, IERC721Enumerable
 
 contract Raikyrie is ERC721A, Ownable, ReentrancyGuard {
     
-    uint   public COST             = 0.0033 ether;
+    uint   public COST             = 0.0045 ether;
     uint   public MAX_FREE_PER_WALLET = 1; 
     uint   public MAX_FREE         = 555;
     uint   public MAX_RAIKYRIES     = 3333;
-    uint   public maxPerTx          = 10;
+    uint   public maxPerTx          = 5;
     bool   public mintEnabled;
     bool   public revealed = false;
 

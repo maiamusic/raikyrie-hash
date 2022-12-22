@@ -7,11 +7,14 @@ import '../App.css' ;
 import './MintPage.css';
 
 import ms1 from '../assets/samples/2140_cropped.png';
+import ms2 from '../assets/samples/172_cropped.png';
 import {Link} from 'react-router-dom';
 import logo from '../assets/icons/logo.png';
 import { setAlert, setGlobalState, useGlobalState } from '../store';
 import displayAccount from './displayAccount';
 import { render } from '@testing-library/react';
+import {proxy, useSnapshot } from "valtio";
+import { useEffect } from 'react';
 
 
 
@@ -26,6 +29,10 @@ const MintLoc = ({accounts, setAccounts}) => {
     const [nfts] = useGlobalState("nfts");
     const [maxSupply] = useGlobalState('maxSupply');
 
+
+    const state = proxy ({
+        times: 0 ,
+    });
     
 
     const isConnected = Boolean(accounts[0]);
@@ -53,7 +60,7 @@ const MintLoc = ({accounts, setAccounts}) => {
             );
             try{
                 const response = await contract.mint(BigNumber.from(mintAmount),{
-                    value: ethers.utils.parseEther((0.0033 * mintAmount).toString()),
+                    value: ethers.utils.parseEther((0.0045 * mintAmount).toString()),
                 });
                
 
@@ -82,6 +89,21 @@ const MintLoc = ({accounts, setAccounts}) => {
     };
 
 
+    // // counter
+    // function Times(){
+    //     const snap = useSnapshot(state);
+
+
+    //     useEffect(() =>{
+    //         const interval = setInterval(() => {
+    //             state.times += 1;
+    //         }, 1000);
+    //         return() =>
+    //     }, [])
+    //     return <div class="Times">TIMES</div>
+    // }
+
+
 
 
 
@@ -100,9 +122,14 @@ const MintLoc = ({accounts, setAccounts}) => {
     
         
         calculateTotal(((mintAmount+1) * 0.0045).toFixed(4));
-        // if (mintAmount+1 == 10)  {
-        //     calculateTotal(0.033);
-        // };
+
+        // if (mintAmount+1 == 2)  {
+        //     calculateTotal(0.009);
+        //  };
+
+ 
+
+
 
         // calculateTotal(Math.round((parseFloat((mintAmount+1*0.0033).toFixed(4)))));
     };
@@ -192,22 +219,22 @@ const MintLoc = ({accounts, setAccounts}) => {
                 {/* background*/}
                 <main class="flex-1  ">
                  
-
+               
                     
                     <div class=" visible min-h-screen justify-center bg-cover bg-center bg-no-repeat relative w-full ">
                         
                             {/* LARGE - BG */}
                             <div class="battleAva_background ">
                                 
-                            
+                                 
 
                                 <div class="place-content-center items-center justify-center min-h-screen flex  ">
 
 
-                                    <div class="z-40 mt-14 md:mt-36 lg:mt-4 flex flex-col  lg:flex-row bg-white border-8 border-white rounded  w-11/12 lg:w-3/4 2xl:w-1/2">
+                                    <div class="z-40 mt-14 md:mt-36 lg:mt-[8rem] flex flex-col  lg:flex-row bg-white border-8 border-white rounded  w-11/12 lg:w-3/4 2xl:w-1/2">
 
                                         <div class="text-center p-2 md:p-8 font-Azonix lg:w-1/2 w-full ">
-                                            <img class="rounded-full mx-auto -mt-12 mb-8 border-8 border-white  " src={ms1} width="100" height="100">
+                                            <img class="rounded-full mx-auto -mt-12 mb-8 border-8 border-white  " src={ms2} width="100" height="100">
                                             </img>
 
                                             <h1 class="text-xl lg:text-3xl text-black mb-2">Raikyrie</h1>
@@ -257,7 +284,7 @@ const MintLoc = ({accounts, setAccounts}) => {
 
 
                                                                     {/* minted */}
-                                                                    <div className="flex py-4 mt-8 tracking-widest text-3xl mx-auto font-bold justify-center">{nfts}/{maxSupply}</div>
+                                                                    {/* <div className="flex py-4 mt-8 tracking-widest text-3xl mx-auto font-bold justify-center">{nfts}/{maxSupply}</div> */}
                                                                     
 
 
@@ -358,6 +385,7 @@ const MintLoc = ({accounts, setAccounts}) => {
                                 </div> 
 
                             </div>
+
                             
 
                     

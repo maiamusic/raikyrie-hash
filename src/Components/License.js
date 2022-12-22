@@ -10,9 +10,6 @@ import '../App.css';
 
 
 
-
-
-
 const License = () => {
   
 
