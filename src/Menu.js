@@ -21,15 +21,34 @@ const Menu = () => {
             
             <div class=" flex z-50 absolute justify-end top-0 right-0 bg-transparent min-w-full ">
                     
-                <div class="flex justify-between sm:justify-around left-1.5 items-center p-2 md:p-8 transition-all w-full fixed  "> 
+                <div class="flex justify-between p-3.5 md:justify-around md:left-1.5 items-center md:p-8  w-full fixed  "> 
 
-                    {/* FIRST NAV ITEM */}
+                    {/* MOBILE */}
+                    <div class="invisible">
+                    <Link to ="/" class="header__logo " >
+                        <div class="w-20 lg:w-32 ">
+                            <img class="" src={logo}></img>
+                        </div>
+                    </Link> 
+                    </div>
+                    <div class="md:invisible visible md:hidden float-right">
 
-                    
-                    <div class="flex right-0 top-5  w-[50vw] bg-black bg-opacity-75 justify-around items-center   mx-auto invisible sm:visible " >
+                        <Link to ='/mint' class="text-white ">
+                            <button class="navMint   hover:text-defaultdark hover:bg-neutral-300
+                        ">
+                                MINT
+                            </button>
+                        </Link>
+
+                    </div>  
+
+
+
+                    {/* LINK */}
+                    <div class="flex right-0 top-5  w-[50vw] bg-black bg-opacity-75 justify-around items-center   mx-auto hidden md:flex " >
                         
                             <Link to ='/shinnverse'  class="text-white">
-                                <button class="font-body p-[5px] disabled hover:text-neutral-900 hover:bg-neutral-300  w-28   "> 
+                                <button class="font-body p-[5px] disabled hover:text-neutral-900 hover:bg-neutral-300 bg-teal-400 w-28   "> 
                                 SHINNVERSE
                                 </button>
 
@@ -42,19 +61,7 @@ const Menu = () => {
                                 </button>
                             </Link>
 
-            {/* 
-                            <Link to ='/mission-center' class="text-white">
-                                <button class="font-body p-[5px] disabled hover:text-defaultdark hover:bg-neutral-300 ">
-                                <span class="capitalize"> MISSION CENTER</span>
-                                </button> 
-                            </Link>
-            */}
 
-                            {/* <Link to ='/about-us' class="text-white">
-                                <button class="font-body p-[5px] disabled  hover:text-defaultdark hover:bg-neutral-300 ">
-                                ABOUT
-                                </button>
-                            </Link > */}
 
                             <Link to = '/the-pilgrimage' class="text-white cursor-not-allowed temp-disabled-link">
                                 <button class="font-body p-[5px] disabled hover:text-defaultdark hover:bg-neutral-300 temp-disabled-link  " >
@@ -67,18 +74,13 @@ const Menu = () => {
                                 </button>
                             </Link>
                             
-                    
-                    
-
-
-
 
 
 
                     </div>
 
 
-                    <div class="flex hidden sm:flex  text-white float-right  place-items-center justify-end ">
+                    <div class="flex hidden sm:flex  text-white float-right  items-center justify-end ">
                         <a href="https://twitter.com/raikyrieNFT" class="inline-block transition-all duration-350 hover:opacity-60 " rel="noopener noreferrer" target="_blank">
                             <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-8 sm:w-8 mr-5" fill="currentcolor"><title>Twitter</title><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path></svg>
                         </a>
@@ -96,20 +98,7 @@ const Menu = () => {
 
                     </div>
 
-                    {/* <div class="md:invisible visible md:hidden">
 
-                        <Link to ='/mint' class="text-white m-0.5 ">
-                            <button class="navMint font-body p-[2px] hover:text-defaultdark hover:bg-neutral-300
-                        ">
-                                MINT
-                            </button>
-                        </Link>
-
-
-                    </div>
-                     */}
-            
-            
 
                 </div>
                 

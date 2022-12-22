@@ -13,8 +13,6 @@ import '../App.css';
 
 
 
-
-
 const License = () => {
   
 
@@ -29,7 +27,7 @@ const License = () => {
 
     <div class=" flex z-50 absolute justify-end top-0 right-0 bg-transparent min-w-full " >
             
-        <div class="flex justify-around left-1.5 items-center p-4 md:p-8 transition-all w-full fixed  "> 
+        <div class="flex justify-between p-3.5 md:justify-around md:left-1.5 items-center md:p-8  w-full fixed  "> 
 
             {/* FIRST NAV ITEM */}
             <a class="header__logo items-start float-left " base href="/">

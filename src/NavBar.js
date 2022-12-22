@@ -138,7 +138,7 @@ class NavBar extends React.Component {
                 <main class="flex-1 ">
                     {/* STAGE-1 - DIV - 1 */}
                     <div class=" visible min-h-screen justify-center bg-cover bg-center bg-no-repeat  ">
-                        <div class="top-[-5px] absolute w-full bg-bottom  ">
+                        <div class="top-[-15px] xl:top-[-5px] absolute w-full bg-bottom  ">
                             <video class="video-background w-full h-screen absolute object-cover overflow-hidden " autoplay="autoplay"  loop playsinline="" muted="" type="video/mp4">
                                  <source src={background} type="video/mp4"/>  
                             </video>
@@ -153,12 +153,12 @@ class NavBar extends React.Component {
                     
                         {/* TITLE FRONTPAGE */}
 
-                        <div class="relative text-center text-white  md:p-40 place-content-center flex flex-col items-center justify-center h-screen  ">
+                        <div class="relative text-center text-white  md:p-40 place-content-center flex flex-col items-center justify-center h-screen text-center ">
 
                             
                             <Link to="featured" spy={true} smooth={true} offset={10} duration={500}>
-                                <h1 class="hero glitch layers lg:text-[8rem] text-[4rem] mb-6 hover:text-[#1fbba6] transition-all duration-350 cursor-pointer  " data-text="銃使">
-                                    <span class="xl:text-[11rem] md:text-[9rem] text-[6rem] ">銃使</span> 
+                                <h1 class=" hero glitch layers lg:text-[8rem] text-[4rem] mb-6 ml-4 hover:text-[#1fbba6] transition-all duration-350 cursor-pointer text-center place-self-center " data-text="銃使">
+                                    <span class="xl:text-[11rem] md:text-[9rem] text-[5rem]  ">銃使</span> 
                                 </h1>
                             </Link>
 
@@ -166,7 +166,7 @@ class NavBar extends React.Component {
                             
                             <br/>
                         
-                            <div class="flex md:w-auto w-screen  ">
+                            <div class="flex w-full mx-auto  justify-center ">
                                 <h2 class="font-Azonix text-white lg:text-2xl md:text-base text-sm mb-6 p-4 md:p-2 cursor-default   " >Our Land, Shinorechi, the City Of Ruins</h2>
 
                                     <div class="mt-5 md:visible invisible md:block hidden">

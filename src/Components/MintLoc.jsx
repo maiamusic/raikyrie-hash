@@ -1,4 +1,4 @@
-import {useState} from 'react' ; 
+import {useState} from 'react' ;  
 
 // package connect to blockchain like web3js
 import { ethers, BigNumber} from 'ethers';
@@ -10,6 +10,9 @@ import ms1 from '../assets/samples/2140_cropped.png';
 import {Link} from 'react-router-dom';
 import logo from '../assets/icons/logo.png';
 import { setAlert, setGlobalState, useGlobalState } from '../store';
+import displayAccount from './displayAccount';
+import { render } from '@testing-library/react';
+
 
 
 // contract
@@ -54,10 +57,11 @@ const MintLoc = ({accounts, setAccounts}) => {
                 });
                
 
-                const nextIndex = Number(nfts+1);
+                let nextIndex = Number(nfts+1);
                 setGlobalState('nfts', nextIndex);
-                console.log(Number(nfts+1));
+                
                 console.log('response: ' , response);
+              
                 
             }catch (err){
                 
@@ -65,7 +69,23 @@ const MintLoc = ({accounts, setAccounts}) => {
             }
         }
 
+
+
     }
+    function print(){
+        console.log('Number(nfts+1)',Number(nfts+1));
+        console.log('nextIndex', nfts);
+        
+    };
+
+    function accountFilter () {
+        let temp= JSON.stringify(accounts);
+        let result = temp.substring(2,9);
+        return temp;
+        
+    };
+
+
 
 
 
@@ -73,33 +93,34 @@ const MintLoc = ({accounts, setAccounts}) => {
         if (mintAmount<=1) return;
         setMintAmount(mintAmount-1);
      
-        calculateTotal(((mintAmount-1) * 0.0033).toFixed(4));
+        calculateTotal(((mintAmount-1) * 0.0045).toFixed(4));
        
         };
 
 
     const handleIncrement = () => {
-        if (mintAmount >= 10) return;
+        if (mintAmount >= 5) return;
         setMintAmount(mintAmount+1);
     
         
-        calculateTotal(((mintAmount+1) * 0.0033).toFixed(4));
-        if (mintAmount+1 == 10)  {
-            calculateTotal(0.033);
-        };
+        calculateTotal(((mintAmount+1) * 0.0045).toFixed(4));
+        // if (mintAmount+1 == 10)  {
+        //     calculateTotal(0.033);
+        // };
 
         // calculateTotal(Math.round((parseFloat((mintAmount+1*0.0033).toFixed(4)))));
     };
 
 
-  
+
+     
     return( 
         <div class="relative min-h-screen flex selection:bg-[#ff5a1d] ">
-
+              
             
                 {/* nav */}      
             
-                <div class=" flex z-50 absolute top-0 right-0 left-0  bg-transparent min-w-full z-50 ">
+                <div class=" flex z-50 absolute top-0 right-0 left-0  bg-transparent min-w-full z-40 ">
                         
                     <div class="flex justify-between p-3.5 md:justify-around md:left-1.5 items-center md:p-8  w-full fixed  "> 
 
@@ -110,12 +131,10 @@ const MintLoc = ({accounts, setAccounts}) => {
                             </div>
                         </Link> 
 
-      
-
-                  
+   
                     
                         {/* LINK */}
-                        <div class="flex right-0 top-5  w-[50vw] bg-black bg-opacity-75 justify-around items-center   mx-auto hidden md:flex " >
+                        <div class="flex right-0 top-5  w-[50vw] bg-black bg-opacity-75 justify-around items-center  mx-auto hidden md:flex " >
                             
                                 <Link to ='/shinnverse'  class="text-white">
                                     <button class="font-body p-[5px] disabled hover:text-neutral-900 hover:bg-neutral-300 w-28   "> 
@@ -131,7 +150,6 @@ const MintLoc = ({accounts, setAccounts}) => {
                                     </button>
                                 </Link>
 
-        
 
                                 <Link to = '/the-pilgrimage' class="text-white cursor-not-allowed temp-disabled-link">
                                     <button class="font-body p-[5px] disabled hover:text-defaultdark hover:bg-neutral-300 temp-disabled-link  " >
@@ -143,11 +161,15 @@ const MintLoc = ({accounts, setAccounts}) => {
                                         TERMS & CONDITIONS
                                     </button>
                                 </Link>
-                                
-                        
+
                 
 
                         </div>
+
+                        <div>
+                            <button onClick={print}>g</button>
+                        </div>
+
 
 
                         <div class="flex hidden sm:flex  text-white float-right  items-center justify-end ">
@@ -166,6 +188,7 @@ const MintLoc = ({accounts, setAccounts}) => {
                             
 
                         </div>
+
                     </div>
                 </div>
                 
@@ -208,9 +231,6 @@ const MintLoc = ({accounts, setAccounts}) => {
                                             <p class=" -mb-1 font-Orbitron mint-info text-neutral-500 "> 別途ガス代がかかります。</p>
                                             <p class=" -mb-4 font-Orbitron mint-info text-neutral-700 text-sm">Ethereum</p>
                                             <p class=" mb-4 font-Orbitron mint-info text-neutral-500"> Network のウォレットを接続してください。</p>
-
-
-
                                             <p class="  lg:mt-8 font-Orbitron mint-info text-neutral-500"> Please connect to an Ethereum wallet</p>
 
 
@@ -220,99 +240,99 @@ const MintLoc = ({accounts, setAccounts}) => {
                                         </div>
                                         
 
-                                        <div class="flex flex-col justify-center items-center text-center  rounded font-Azonix w-full lg:w-1/2 lg:pt-0 pt-4 bg-mint-light ">
-                                            
-
-                                            <div>
-                                                {isConnected ? (
+                                    
+                                            <div class="flex flex-col justify-center items-center text-center  rounded font-Azonix w-full lg:w-1/2 lg:pt-0 pt-4 bg-mint-light ">
                                                 
-
                                                 <div>
-                                                    
-                                                    
-                                                    
-                                                        <div class="mt-4">
-                                                            <a href="https://goerli.etherscan.io/address/0x6595b7590a59B498104F33923f8A12d033917b4F">0x6595b7590a5...</a>
-                                                        </div>
-
-
-                                                        {/* minted */}
-                                                        <div className="flex py-4 mt-8 tracking-widest text-3xl mx-auto font-bold justify-center">{nfts.length}/{maxSupply}</div>
+                                                    <div>
                                                         
+                                                        {isConnected ? (  
+                                                    
 
+                                                        <div>
 
-                                                        <div class="mint-info-row flex flex-row items-center font-semibold justify-center mt-4 lg:mt-9 text-sm tracking-wider">
                                                             
-                                                            <div class="  font-Orbitron drop-shadow-2xl text-black ">
-                                                                PRICE 
-                                                            </div>
-                                                            <div class="font-Orbitron ml-2 text-black  "> Ξ 0.0033</div>
-                                                        
-                                                        </div>
-
-                                                        
-
-                                                        {/* input */}
-                                                        <div class="mint-btn-row flex flex-row items-center mt-4 justify-center  ">
-                                                            <div class="rounded-[13px] relative flex items-center  bg-[#597689] text-xl justify-center mx-auto h-10 shadow-cyan-900/40 border-2 shadow-lg ">
-                                                                <button class=" cursor-pointer p-4 " onClick = {handleDecrement}>-</button>
-                                                            {/* bg-text-cyan-700 */}
-                                                                <div>
-                                                                    <input  readonly aria-readonly="true" id="mintInput" class= " w-8 md:w-16 aria-readonly bg-transparent pl-1.5 text-center text-white " type= "number" value = {mintAmount} />
-                                                                </div>
-
                                                                 
-                                                                <button class=" cursor-pointer p-4 " onClick = {handleIncrement}>+</button>   
-                                                            </div> 
-                                                        </div>
+                                                            {/* // CONNECTED */}
+                                                            <div>
+
+                                                                    {/* address */}
+                                                                    <div class="mt-4 tracking-tighter font-sans text-sm">
+                                                                    Connected : {accounts}
+                                                                    </div>
+
+
+                                                                    {/* minted */}
+                                                                    <div className="flex py-4 mt-8 tracking-widest text-3xl mx-auto font-bold justify-center">{nfts}/{maxSupply}</div>
+                                                                    
+
+
+                                                                    <div class="mint-info-row flex flex-row items-center font-semibold justify-center mt-4 lg:mt-9 text-sm tracking-wider">
+                                                                        
+                                                                        <div class="  font-Orbitron drop-shadow-2xl text-black ">
+                                                                            PRICE 
+                                                                        </div>
+                                                                        <div class="font-Orbitron ml-2 text-black  "> Ξ 0.0045</div>
+                                                                    
+                                                                    </div>
+
+                                                                    
+
+                                                                    {/* input */}
+                                                                    <div class="mint-btn-row flex flex-row items-center mt-4 justify-center  ">
+                                                                        <div class="rounded-[13px] relative flex items-center  bg-[#597689] text-xl justify-center mx-auto h-10 shadow-cyan-900/40 border-2 shadow-lg ">
+                                                                            <button class=" cursor-pointer p-4 " onClick = {handleDecrement}>-</button>
+                                                                        {/* bg-text-cyan-700 */}
+                                                                            <div>
+                                                                                <input  readonly aria-readonly="true" id="mintInput" class= " w-8 md:w-16 aria-readonly bg-transparent pl-1.5 text-center text-white " type= "number" value = {mintAmount} />
+                                                                            </div>
+
+                                                                            
+                                                                            <button class=" cursor-pointer p-4 " onClick = {handleIncrement}>+</button>   
+                                                                        </div> 
+                                                                    </div>
+
+
+
+                                                                    {/* mint for */}
+                                                                    <div class="mint-info-row flex flex-row items-center justify-center mt-2 lg:mt-4 ">
+                                                                        
+                                                                    
+                                                                        <div class="font-[Dosis] text-lg ml-2 text-black tracking-wide  ">  MINT {mintAmount} RAIKYRIE FOR Ξ {valueTotal} </div> 
+
+                                                                    
+                                                                    </div>
 
 
 
 
-
-                                                        
-                                                        <div class="mint-info-row flex flex-row items-center justify-center mt-2 lg:mt-4 ">
-                                                            
-                                                        
-                                                            <div class="font-[Dosis] text-lg ml-2 text-black tracking-wide  ">  MINT {mintAmount} RAIKYRIE FOR Ξ {valueTotal} </div> 
-
-                                                        
-                                                        </div>
-
-
-                                                 
-
-
-
-                                                    {/* mintbutton */}
-                                                    <div class=" flex items-center mt-10 mb-16 justify-center  text-center relative w-full  ">
-                                                        <button  onClick={handleMint} class="flex font-bold font-Orbitron border-4 hover:border-[#597689] shadow-neutral-100/40 shadow-lg 
-                                                        rounded-[32px] cursor-pointer max-h-full h-full w-full w-max-full px-8 lg:px-12 py-3.5 bg-white text-sm md:text-base xl:text-lg tracking-wider text-black mint-text 
-                                                        hover:bg-neutral-100 "> 
-                                                            MINT YOUR RAIKYRIE
-                                                        </button>
-                                                    </div>
-
-
-                                                
-                                                    
-                                                    {/* <div class="relative top-20 ">
-                                                        <p class=" text-xl tracking-wide text-teal-700 font-bold " > {accounts} </p>
-                                                    </div> */}
-
-
-                                                </div>
+                                                                    {/* mintbutton */}
+                                                                    <div class="flex items-center mt-10 mb-16 justify-center  text-center relative w-full  ">
+                                                                        <button  onClick={handleMint} class="flex font-bold font-Orbitron border-4 hover:border-[#597689] shadow-neutral-100/40 shadow-lg 
+                                                                        rounded-[32px] cursor-pointer max-h-full h-full w-full w-max-full px-8 lg:px-12 py-3.5 bg-white text-sm md:text-base xl:text-lg tracking-wider text-black mint-text 
+                                                                        hover:bg-neutral-100 "> 
+                                                                            MINT YOUR RAIKYRIE
+                                                                        </button>
+                                                                    </div>
 
 
 
                                                                     
-                                                    
-                                                    //mt font size letterspacing fontfamily textshadow 0 3px 00000 color 
-                                                
-                                                ) : (   
+                                                            
+                                                                
+                                                                {/* <div class="relative top-20 ">
+                                                                    <p class=" text-xl tracking-wide text-teal-700 font-bold " > {accounts} </p>
+                                                                </div> */}
 
 
-                                                        <div class="flex-1 flex-col justify-center items-center mt-4  ">
+                                                            </div>
+
+                                                        </div>      
+                                                        
+                                                        ) : (   
+                                                            
+                                                        // NOT CONNECTED
+                                                        <div class=" flex-1 flex-col justify-center items-center mt-4  ">
                                                             
                                                             <div class="mb-8">
                                                                 <button class="wallet-btn bg-black box box-border" onClick={connectAccount}> 
@@ -325,17 +345,17 @@ const MintLoc = ({accounts, setAccounts}) => {
                                                 
                                                             <p class=" text-sm lg:text-xl mint-info-2 tracking-wide font-Orbitron text-teal-700 drop-shadow-sm md:drop-shadow-lg font-md">You must be connected to mint. </p>
                                                         </div>
+                                                            
+                                                        )}
 
-                                                        
-                                                    
-                                                )}
+
+                                                    </div>
+                                                </div>
+
+
+
 
                                             </div>
-
-
-
-
-                                        </div>
 
 
 
@@ -351,9 +371,6 @@ const MintLoc = ({accounts, setAccounts}) => {
                             <div class="lg:block hidden mintTitle  "></div> 
 
                             
-
-                          
-
 
                             {/* MOVING-CONVEYOR */}
                             <div class="running bottom-0 absolute opacity-40 ">
@@ -421,9 +438,7 @@ const MintLoc = ({accounts, setAccounts}) => {
 
                                         </div> */}
 
-                                    </div>
-
-            
+                                    </div>   
                                 </div>
 
 
@@ -436,33 +451,6 @@ const MintLoc = ({accounts, setAccounts}) => {
                             <div class="absolute top-0 h-screen w-full bg-black/40 z-10 "></div> 
                     </div>
 
-                    
-                    {/* mid*/}
-
-                
-
-                 
-
-                    
-
-
-                                           
-
-
-                   
-
-                
-
-
-
-
-
-
-
-       
-   
-
-                   
 
 
                 </main>  
@@ -473,6 +461,8 @@ const MintLoc = ({accounts, setAccounts}) => {
 
     );
 
+   
 };
+
 
 export default MintLoc;

@@ -2,7 +2,7 @@ import { createGlobalState } from 'react-hooks-global-state'
 
 const { setGlobalState, useGlobalState, getGlobalState } = createGlobalState({
   maxSupply: 3333,
-  nfts: [],
+  nfts: 0,
 })
 
 // const setAlert = (msg, color = 'green') => {
