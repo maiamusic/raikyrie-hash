@@ -72,11 +72,7 @@ const MintLoc = ({accounts, setAccounts}) => {
 
 
     }
-    function print(){
-        console.log('Number(nfts+1)',Number(nfts+1));
-        console.log('nextIndex', nfts);
-        
-    };
+
 
     function accountFilter () {
         let temp= JSON.stringify(accounts);
@@ -166,9 +162,7 @@ const MintLoc = ({accounts, setAccounts}) => {
 
                         </div>
 
-                        <div>
-                            <button onClick={print}>g</button>
-                        </div>
+                    
 
 
 
