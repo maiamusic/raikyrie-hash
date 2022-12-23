@@ -17,7 +17,7 @@ import displayAccount from './displayAccount';
 
 
 // contract
-const RAIKYRIEAddress = "0x1286Bc5A8452cB9AF1e56D46Ddd462De0375d897";
+const RAIKYRIEAddress = "0xEd6c365f74DaF5d8A1334A72309034eF62fCB845";
 
 
 // export default function MintLoc()  
@@ -226,9 +226,9 @@ export default function MintLoc()  {
                         </div>
 
 
-                        <button onClick={handletotalSupply}>
+                        {/* <button onClick={handletotalSupply}>
                             CLICK
-                        </button>
+                        </button> */}
                     
 
 
