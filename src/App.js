@@ -18,8 +18,9 @@ import MintLoc from './Components/MintLoc';
 
 
 function App() {
-  const [accounts, setAccounts] = useState([]);
-  const [nfts] = useGlobalState('nfts');
+  
+  // const [accounts, setAccounts] = useState([]);
+  // const [nfts] = useGlobalState('nfts');
   
   return (
     
@@ -62,7 +63,7 @@ function App() {
             {/* <Route path="/" element={<Navigate to="/shinnverse" />}/> */}
               
               
-              <Route path="/mint" element={ <MintLoc accounts = {accounts} setAccounts = {setAccounts}/>} />
+              <Route path="/mint" element={ <MintLoc  />} />
             
               
               <Route path="license" element={ <License/>} />

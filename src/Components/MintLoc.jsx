@@ -1,4 +1,4 @@
-import {useState} from 'react' ;  
+import {useState,  useEffect} from 'react' ;  
 
 // package connect to blockchain like web3js
 import { ethers, BigNumber} from 'ethers';
@@ -12,9 +12,7 @@ import {Link} from 'react-router-dom';
 import logo from '../assets/icons/logo.png';
 import { setAlert, setGlobalState, useGlobalState } from '../store';
 import displayAccount from './displayAccount';
-import { render } from '@testing-library/react';
-import {proxy, useSnapshot } from "valtio";
-import { useEffect } from 'react';
+
 
 
 
@@ -22,21 +20,30 @@ import { useEffect } from 'react';
 const RAIKYRIEAddress = "0x1286Bc5A8452cB9AF1e56D46Ddd462De0375d897";
 
 
-const MintLoc = ({accounts, setAccounts}) => {
+// export default function MintLoc()  
+// const MintLoc = ({accounts, setAccounts}) =>
+
+
+export default function MintLoc()  {
+    const [accounts, setAccounts] = useState([]);
+    const [contractListened, setContractListened] = useState();
     const [mintAmount, setMintAmount] = useState(1);
     const [valueTotal, calculateTotal] = useState(0.0033);
 
     const [nfts] = useGlobalState("nfts");
-    const [maxSupply] = useGlobalState('maxSupply');
 
-
-    const state = proxy ({
-        times: 0 ,
+    const [supplyMinted, setsupplyMinted] = useState({
+        totalSupply: "0", 
     });
+
+
+  
+
     
 
     const isConnected = Boolean(accounts[0]);
   
+
 
     async function connectAccount() {
         if (window.ethereum){
@@ -45,8 +52,11 @@ const MintLoc = ({accounts, setAccounts}) => {
             });
             setAccounts(accounts);
         }
-    }
+    };
+   
  
+
+
 
     async function handleMint(){
         if (window.ethereum){
@@ -64,10 +74,11 @@ const MintLoc = ({accounts, setAccounts}) => {
                 });
                
 
-                let nextIndex = Number(nfts+1);
-                setGlobalState('nfts', nextIndex);
+                // let nextIndex = Number(nfts+1);
+                // setGlobalState('nfts', nextIndex);
                 
                 console.log('response: ' , response);
+                console.log('supplyMinted --- : ',supplyMinted);
               
                 
             }catch (err){
@@ -76,32 +87,62 @@ const MintLoc = ({accounts, setAccounts}) => {
             }
         }
 
-
-
     }
 
 
+
+
+
+    useEffect(()=>{
+        
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const contract = new ethers.Contract( RAIKYRIEAddress, RAIKYRIE.abi, provider);
+       
+
+        contract.on("Transfer", (from, to, tokenId, event) => {
+            console.log({from, to , tokenId, event });
+
+
+            const totalSupply =  contract.totalSupply();
+            setsupplyMinted({
+                totalSupply
+            });
+
+            console.log("supplyMinted --- : " ,  supplyMinted);
+            setContractListened(contract);
+
+
+            return()=>{
+                contractListened.removeAllListeners();
+            };
+        });
+
+    }, [supplyMinted])
+
+
+
+
+    // call supplyCount
+    const handletotalSupply = async (e) => {     
+        e.preventDefault();  
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const contract = new ethers.Contract(RAIKYRIEAddress, RAIKYRIE.abi, provider );
+        const totalSupply = await contract.totalSupply();
+
+        setsupplyMinted({
+            totalSupply
+        });
+    
+       
+    };
+
+    
     function accountFilter () {
         let temp= JSON.stringify(accounts);
         let result = temp.substring(2,9);
         return temp;
         
     };
-
-
-    // // counter
-    // function Times(){
-    //     const snap = useSnapshot(state);
-
-
-    //     useEffect(() =>{
-    //         const interval = setInterval(() => {
-    //             state.times += 1;
-    //         }, 1000);
-    //         return() =>
-    //     }, [])
-    //     return <div class="Times">TIMES</div>
-    // }
 
 
 
@@ -126,11 +167,6 @@ const MintLoc = ({accounts, setAccounts}) => {
         // if (mintAmount+1 == 2)  {
         //     calculateTotal(0.009);
         //  };
-
- 
-
-
-
         // calculateTotal(Math.round((parseFloat((mintAmount+1*0.0033).toFixed(4)))));
     };
 
@@ -189,6 +225,10 @@ const MintLoc = ({accounts, setAccounts}) => {
 
                         </div>
 
+
+                        <button onClick={handletotalSupply}>
+                            CLICK
+                        </button>
                     
 
 
@@ -284,7 +324,7 @@ const MintLoc = ({accounts, setAccounts}) => {
 
 
                                                                     {/* minted */}
-                                                                    {/* <div className="flex py-4 mt-8 tracking-widest text-3xl mx-auto font-bold justify-center">{nfts}/{maxSupply}</div> */}
+                                                                    <div className="flex py-4 mt-8 tracking-widest text-3xl mx-auto font-bold justify-center">{String(supplyMinted.totalSupply)}/3333</div> 
                                                                     
 
 
@@ -487,4 +527,3 @@ const MintLoc = ({accounts, setAccounts}) => {
 };
 
 
-export default MintLoc;
