@@ -105,6 +105,8 @@ class NavBar extends React.Component {
 
                         </div>
 
+                        
+
 
                         <div class="flex hidden sm:flex  text-white float-right  items-center justify-end ">
                             <a href="https://twitter.com/raikyrieNFT" class="inline-block transition-all duration-350 hover:opacity-60 " rel="noopener noreferrer" target="_blank">
@@ -544,7 +546,7 @@ class NavBar extends React.Component {
                                                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
                                                             </svg>
 
-                                                            <div class=" text-base md:text-xl tracking-wider  overflow-hidden bg-transparent max-h-0 peer-checked:max-h-screen px-[10px] md:px-[30px] ml-[calc(0.01rem_+_30px)] sm:ml-[calc(1.25rem_+_50px)]  md:mb-[10px] border-l-4 border-l-white border-double"><p> Price is 0.01 ETH, Maximum limit of 10 Raikyries per person. </p></div>
+                                                            <div class=" text-base md:text-xl tracking-wider  overflow-hidden bg-transparent max-h-0 peer-checked:max-h-screen px-[10px] md:px-[30px] ml-[calc(0.01rem_+_30px)] sm:ml-[calc(1.25rem_+_50px)]  md:mb-[10px] border-l-4 border-l-white border-double"><p> Price is 0.0045 ETH, Maximum limit of 5 Raikyries per person. </p></div>
                                                             
                                                         </label>
                                                         </div>
@@ -612,9 +614,9 @@ class NavBar extends React.Component {
 
                                                             <div class="text-base md:text-xl tracking-wider  overflow-hidden bg-transparent max-h-0 peer-checked:max-h-screen px-[10px] md:px-[30px] ml-[calc(0.01rem_+_30px)] sm:ml-[calc(1.25rem_+_50px)]  md:mb-[10px] border-l-4 border-l-white border-double"><p>
 
-                                                            Raikyries will be revealed immediately once fully mint out. 
+                                                            Raikyries will reveal immediately after fully minting out.
 
-                                                        
+                                                           
                                                             
             {/*                                                 
                                                         
@@ -653,16 +655,16 @@ class NavBar extends React.Component {
 
                                                             <div class="text-base md:text-xl tracking-wider  overflow-hidden bg-transparent max-h-0 peer-checked:max-h-screen px-[10px] md:px-[30px] ml-[calc(0.01rem_+_30px)] sm:ml-[calc(1.25rem_+_50px)]  md:mb-[10px] border-l-4 border-l-white border-double"><p>
 
-                                                            The ACA was launched with two primary goals in mind: 
+                                                            The ACA was launched with two primary goals in mind : 
                                                             
                                                             <p>
-                                                            1. To encourage people across the world to come together as one through NFTs.
+                                                            1. We wanted to create an NFT collection that are beginner friendly for users to join. And we hope we can be that starting point to encourage people across the world to join us on our journey.
                                                             </p>
                                                             
                                                             <p>
                                                             2. To have people enjoy
-                                                            watching their angels companion slowly evolve overtime while we take the holders on a ride through the up and downs of its lore,
-                                                            incorporated within the our specially curated mini series.
+                                                            watching their angels companion slowly evolve overtime while we take the Raikyrie's holders on a ride through the course of its lore, 
+                                                            and anything that is incorporated within the Shinnverse.
                                                             </p>
                                                         
                                                             
@@ -700,8 +702,8 @@ class NavBar extends React.Component {
                                                             </svg>
 
                                                             <div class="text-base md:text-xl tracking-wider overflow-hidden bg-transparent max-h-0 peer-checked:max-h-screen px-[10px] md:px-[30px] ml-[calc(0.01rem_+_30px)] sm:ml-[calc(1.25rem_+_50px)]  md:mb-[10px] border-l-4 border-l-white border-double"><p>
-                                                             We decided to launch this way to create an enviroment where everyone is able to mint their ideal version of Raikyries however as they choose. As we have quietly observed for the past 6 months
-                                                             of some of the drawbacks that came under a presale system. We think this would be the best possible approach while keeping the public's best interest in mind.
+                                                             No. We've decided to take this route to create an organic enviroment where everyone is able to mint their Raikyries however as they choose. As we have quietly observed for the past 6 months
+                                                             of some of the drawbacks that came under a presale system. We think this is the best approach to keeping the public's best interest in mind.
     
                                                             
                                         
@@ -775,8 +777,8 @@ class NavBar extends React.Component {
                                                 <div class="cat-box relative">
                                                     <div class=" pt-6 md:text-base pb-4 text-[#EFE6DD] font-bold font-Orbitron">「 BUY 」</div>
                                                     <div class="flex-1 ">
-                                                        <a role="button" class="bg-gray-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2 " href="https://opensea.io/collection/RAIKYRIE" target="_blank" rel="noopener noreferrer">OpenSea</a>
-                                                        <a role="button" class="bg-gray-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2" href="https://www.element.market/collections/RAIKYRIE" target="_blank" rel="noopener noreferrer">Element</a>
+                                                        <a role="button" class="bg-gray-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2 " href="https://opensea.io/collection/raikyrie" target="_blank" rel="noopener noreferrer">OpenSea</a>
+                                                        {/* <a role="button" class="bg-gray-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2" href="https://www.element.market/collections/RAIKYRIE" target="_blank" rel="noopener noreferrer">Element</a> */}
 
                                                     
 
@@ -841,7 +843,7 @@ class NavBar extends React.Component {
 
                                             <p class=" flex  section-block-2 tracking-wide w-full  justify-center "> 
                                             
-                                            <a class="text-sm md:text-xl " href="https://goerli.etherscan.io/address/0x53A404aF9d0cBfbd83a2A27386C1bEB1C7000d5B#code"> <p class="text-center">0x53A404aF9d0cBfbd83a2A27386C1bEB1C7000d5Ba</p>   </a>
+                                            <a class="text-sm md:text-xl " href="https://etherscan.io/address/0xE0e603bd6522343ADc62FEe7C0904e903f71A2Ca#code"> <p class="text-center">0xE0e603bd6522343ADc62FEe7C0904e903f71A2Ca</p>   </a>
                                             </p> 
                                             
                                         </section>

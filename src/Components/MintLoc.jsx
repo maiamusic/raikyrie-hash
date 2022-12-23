@@ -12,12 +12,14 @@ import {Link} from 'react-router-dom';
 import logo from '../assets/icons/logo.png';
 import { setAlert, setGlobalState, useGlobalState } from '../store';
 import displayAccount from './displayAccount';
+import { hasSelectionSupport } from '@testing-library/user-event/dist/utils';
 
 
-
+// OFFICIAL ETHERSCAN
+//0xE0e603bd6522343ADc62FEe7C0904e903f71A2Ca
 
 // contract
-const RAIKYRIEAddress = "0xEd6c365f74DaF5d8A1334A72309034eF62fCB845";
+const RAIKYRIEAddress = "0xE0e603bd6522343ADc62FEe7C0904e903f71A2Ca";
 
 
 // export default function MintLoc()  
@@ -28,16 +30,32 @@ export default function MintLoc()  {
     const [accounts, setAccounts] = useState([]);
     const [contractListened, setContractListened] = useState();
     const [mintAmount, setMintAmount] = useState(1);
-    const [valueTotal, calculateTotal] = useState(0.0033);
+    const [valueTotal, calculateTotal] = useState(0.0045);
 
     const [nfts] = useGlobalState("nfts");
+    
 
-    const [supplyMinted, setsupplyMinted] = useState({
-        totalSupply: "0", 
-    });
+    // const [supplyMinted, setsupplyMinted] = useState({
+    //     totalSupply: "-", 
+    // });
 
 
-  
+
+    // useEffect(()=>{
+    //     const data = window.localStorage.getItem('Items_count');
+    //     setsupplyMinted
+    // },[])
+
+    // useEffect(() => {
+    //     console.log('show supplyCount = ' , supplyMinted);
+
+    //     window.localStorage.setItem('Items_count' , JSON.stringify(supplyMinted));
+
+    // }, [supplyMinted] )
+
+
+
+
 
     
 
@@ -78,7 +96,7 @@ export default function MintLoc()  {
                 // setGlobalState('nfts', nextIndex);
                 
                 console.log('response: ' , response);
-                console.log('supplyMinted --- : ',supplyMinted);
+                
               
                 
             }catch (err){
@@ -93,57 +111,97 @@ export default function MintLoc()  {
 
 
 
-    useEffect(()=>{
+    //  useEffect(()=>{
         
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
-        const contract = new ethers.Contract( RAIKYRIEAddress, RAIKYRIE.abi, provider);
+    //      const provider = new ethers.providers.Web3Provider(window.ethereum);
+    //      const contract = new ethers.Contract( RAIKYRIEAddress, RAIKYRIE.abi, provider);
        
 
-        contract.on("Transfer", (from, to, tokenId, event) => {
-            console.log({from, to , tokenId, event });
+    //      contract.on("Transfer", (from, to, tokenId, event) => {
+    //          console.log({from, to , tokenId, event });
 
 
-            const totalSupply =  contract.totalSupply();
-            setsupplyMinted({
-                totalSupply
-            });
+    //          const totalSupply = contract.totalSupply();
+    //          setsupplyMinted(totalSupply);
+             
 
-            console.log("supplyMinted --- : " ,  supplyMinted);
-            setContractListened(contract);
+        
+    //      });
+        
+    //      console.log("supplyMinted --- : " ,  supplyMinted);
 
 
-            return()=>{
-                contractListened.removeAllListeners();
-            };
-        });
+    //  }, [supplyMinted])
+    
 
-    }, [supplyMinted])
 
 
 
 
     // call supplyCount
-    const handletotalSupply = async (e) => {     
-        e.preventDefault();  
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
-        const contract = new ethers.Contract(RAIKYRIEAddress, RAIKYRIE.abi, provider );
-        const totalSupply = await contract.totalSupply();
 
-        setsupplyMinted({
-            totalSupply
-        });
+
+    // const handletotalSupply = async (e) => {     
+    //     e.preventDefault();  
+    //     const provider = new ethers.providers.Web3Provider(window.ethereum);
+    //     const contract = new ethers.Contract(RAIKYRIEAddress, RAIKYRIE.abi, provider );
+    //     const totalSupply = await contract.totalSupply();
+    
+
+    
+    //     setsupplyMinted({
+    //         totalSupply
+    //     });
+
+    //     console.log("totalSupply: ", totalSupply )
     
        
-    };
+    // };
+
+
+   
+
+
+    // useEffect(() => {
+    // const interval = setInterval(() => {
+    //     console.log('timersupplyCount');
+    // }, MINUTE_MS);
+
+    // return () => clearInterval(interval); // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
+    // }, [])
+
 
     
-    function accountFilter () {
-        let temp= JSON.stringify(accounts);
-        let result = temp.substring(2,9);
-        return temp;
-        
-    };
 
+    // useEffect(() => {
+    //     const fetchData = async() => {
+
+    //     const provider = new ethers.providers.Web3Provider(window.ethereum);
+    //     const contract = new ethers.Contract(RAIKYRIEAddress, RAIKYRIE.abi, provider );
+    //     const totalSupply = await contract.totalSupply();
+    //     const json  = await totalSupply.json();
+
+    //         setsupplyMinted(json);
+    //         console.log("json: "  , json);
+    //     };
+
+    //     fetchData()
+     
+    //     .catch(console.error);;
+    // },[])
+
+
+
+
+
+
+
+    // function printSupply () {     
+    //     console.log("supplyMinted --- : " ,  supplyMinted); 
+    //     console.log("supplyMinted.totalSupply : ", supplyMinted.totalSupply)
+
+    // };
+    
 
 
 
@@ -225,10 +283,13 @@ export default function MintLoc()  {
 
                         </div>
 
+        
+                        {/* <button class="bg-black" onClick={printSupply}>printSupply </button>
 
-                        {/* <button onClick={handletotalSupply}>
-                            CLICK
-                        </button> */}
+                        <button class="bg-white" onClick={handletotalSupply}> handletotalSupply</button>
+
+
+                       */}
                     
 
 
@@ -265,6 +326,9 @@ export default function MintLoc()  {
                         
                             {/* LARGE - BG */}
                             <div class="battleAva_background ">
+
+
+
                                 
                                  
 
@@ -324,7 +388,7 @@ export default function MintLoc()  {
 
 
                                                                     {/* minted */}
-                                                                    <div className="flex py-4 mt-8 tracking-widest text-3xl mx-auto font-bold justify-center">{String(supplyMinted.totalSupply)}/3333</div> 
+                                                                     {/* <div className="flex py-4 mt-8 tracking-widest text-3xl mx-auto font-bold justify-center">{String(supplyMinted.totalSupply)}/3333</div>  */}
                                                                     
 
 
@@ -368,9 +432,10 @@ export default function MintLoc()  {
 
 
                                                                     {/* mintbutton */}
-                                                                    <div class="flex items-center mt-10 mb-16 justify-center  text-center relative w-full  ">
-                                                                        <button  onClick={handleMint} class="flex font-bold font-Orbitron border-4 hover:border-[#597689] shadow-neutral-100/40 shadow-lg 
-                                                                        rounded-[32px] cursor-pointer max-h-full h-full w-full w-max-full px-8 lg:px-12 py-3.5 bg-white text-sm md:text-base xl:text-lg tracking-wider text-black mint-text 
+                                                                    <div class="flex items-center mt-10 mb-16 justify-center relative w-full  "> 
+                                                                        <button  onClick={handleMint} class=" flex font-bold font-Orbitron text-center border-4 hover:border-[#597689] 
+                                                                        shadow-neutral-100/40 shadow-lg items-center justify-center rounded-[32px] cursor-pointer max-h-full h-full w-full 
+                                                                        w-max-full  py-3.5 bg-white text-sm md:text-base xl:text-lg tracking-wider text-black mint-text 
                                                                         hover:bg-neutral-100 "> 
                                                                             MINT YOUR RAIKYRIE
                                                                         </button>
