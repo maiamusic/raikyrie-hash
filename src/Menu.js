@@ -1,9 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import logo from './assets/icons/logo.png';
-import background from './assets/background/ACABGAIRCRAFT.mp4';
-import arrowb from './assets/icons/arrow_bottom2.png';
-import evolKraken from "./assets/background/Trojan.png";
+
 
 import './App.css';
 import './expansiveScreen.css';
@@ -48,7 +46,7 @@ const Menu = () => {
                     <div class="flex right-0 top-5  w-[50vw] bg-black bg-opacity-75 justify-around items-center   mx-auto hidden md:flex " >
                         
                             <Link to ='/shinnverse'  class="text-white">
-                                <button class="font-body p-[5px] disabled hover:text-neutral-900 hover:bg-neutral-300 bg-teal-400 w-28   "> 
+                                <button class="font-body p-[5px] disabled hover:text-neutral-900 hover:bg-neutral-300  w-28   "> 
                                 SHINNVERSE
                                 </button>
 

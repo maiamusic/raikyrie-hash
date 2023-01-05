@@ -280,7 +280,7 @@ class NavBar extends React.Component {
                                                     </div>
                                                     
                                                     <div class="font-medium text-md">
-                                                    Dec 2022, 3,333 CC0 NFT 
+                                                    Jan 2023, 3,333 CC0 NFT 
                                                     </div>
                                                 </div>
                                                                                                         
@@ -313,7 +313,7 @@ class NavBar extends React.Component {
                                                 <div class="flex">
                                                     <div class="leftBoxRaikyrie m-1 pl-1 pr-4 pt-0.5 pb-0.5" > 
 
-                                                        <img class="ms2 object-contain max-w-full max-h-full rounded-md" src={ms2B}></img>
+                                                        <img class="ms1 object-contain max-w-full max-h-full rounded-md" src={none}></img>
 
                                                     </div>
 
@@ -329,7 +329,7 @@ class NavBar extends React.Component {
                                                         
                                                         
                                                         <div class="text-md font-medium  ">
-                                                        2023 Feb
+                                                        March 2023
                                                         </div>
                                                     </div>
                                                                                                             
@@ -363,11 +363,11 @@ class NavBar extends React.Component {
 
                                                 <div class="flex flex-col justify-center text-black font-EuroStyle text-base xl:text-lg "> 
                                                     <div class="tracking-widest font-bold ">
-                                                    DEERS 
+                                                    FALLONS 
                                                     </div>
                                                     
                                                     <div class="text-md font-medium">
-                                                    2023
+                                                    2023 - 2024
                                                     </div>
                                                 </div>
                                                                                                             
@@ -405,7 +405,7 @@ class NavBar extends React.Component {
                                                     </div>
                                                     
                                                     <div class="text-md font-medium text-md">
-                                                    2023-2024
+                                                    2024
                                                     </div>
                                                 </div>
                                                                                                             
@@ -444,7 +444,7 @@ class NavBar extends React.Component {
                                                     </div>
                                                     
                                                     <div class="text-md font-medium text-md">
-                                                    2024
+                                                    2024 - 2025
                                                     </div>
                                                 </div>
                                                                                                             
@@ -462,6 +462,10 @@ class NavBar extends React.Component {
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
+
+                                        <div class="mt-2">
+                                        *Timeline subject to change, depending on market circumstances.
                                         </div>
 
 
@@ -758,33 +762,30 @@ class NavBar extends React.Component {
                                                 {/* <div class="pb-6">Raikyrie is a collection of 3,333 bioengineered androids set in the apocalyptic world on the Ethereum blockchain, as they navigate through the land across timelines that has changed forever. 
                                                             The Shinnverse consist of two different timelines that sets 7 years apart. The angel avatars are trait-rich with distinctive features, each attributable to the world & times in which they represent.</div> */}
 
-                                                <div class="pb-4 ">For decades, Raikyries and Humans to have peacefully coexist as both seeks to understand and learn from each other.
+
+                                                <div class="pb-4 ">
+                                                Taken place in a dystopian society where a virus known as the TROJAN SHINNS has taken over the cities, forcing humans to seek outside of their shelther to survive, the lack of preparation
+                                                cause the human race to the brink of extinction.
+                                                </div>
+
+                                                <div class="pb-4 ">For decades, Raikyries and Humans have peacefully coexist while respecting each other differences. 
+                                                As an intelligent being with facial features closely resemble a human, they can morph into 4 different forms which grants them superhuman abilities in times of need, making them a formidable candidate against enemies.
+            
                                                 </div>
 
                                                 <div class="pb-6">
-                                                    Some Raikyries venture into dangerous territories beyond the city, with a goal in mind, to eliminate potential threats to the human race. 
+                                                    Some Raikyries venture into dangerous territories beyond the city, with a goal in mind, to eradicate potential threats to the human race. 
                                                     
 
                                                     <br class="lg-block"></br>
-                                                    
-                                                    <span class="tracking-wide font-bold">TROJAN SHINNS</span> lurks in the darkness, hidden from plain sight. They transform into its microscopic form in times of need, as they get ready to unleash the deadly contagion. 
+                                                   
+                                                    <span class="tracking-wide font-bold"> TROJAN SHINNS</span> lurks in the darkness, hidden from plain sight. They transform into its microscopic form as they prepare to unleash its deadly contagion, passing through systems and machines at ease.
                                                 </div>
 
                                             </div>
 
 
-                                            <div class="2xl:visible invisible lg:block md:flex lg:py-12  ">
-                                                <div class="cat-box relative">
-                                                    <div class=" pt-6 md:text-base pb-4 text-[#EFE6DD] font-bold font-Orbitron">「 BUY 」</div>
-                                                    <div class="flex-1 ">
-                                                        <a role="button" class="bg-gray-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2 " href="https://opensea.io/collection/raikyrie" target="_blank" rel="noopener noreferrer">OpenSea</a>
-                                                        {/* <a role="button" class="bg-gray-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2" href="https://www.element.market/collections/RAIKYRIE" target="_blank" rel="noopener noreferrer">Element</a> */}
-
-                                                    
-
-                                                    </div>
-                                                </div>
-                                            </div>
+                             
 
                                         </div>
                                     </div>

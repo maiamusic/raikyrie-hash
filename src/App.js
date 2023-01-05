@@ -1,19 +1,15 @@
 import {useState, useEffect} from 'react';
 import { useGlobalState } from './store';
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate, HashRouter} from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 
 
 
 
 import Menu from './Menu';
-import MainMint from './Components/MainMint';
-import MintPage from './Components/MintPage';
 import NavBar from './NavBar';
 import License from './Components/License';
 import MintLoc from './Components/MintLoc';
-
-
 
 
 
@@ -21,17 +17,17 @@ function App() {
   
   // const [accounts, setAccounts] = useState([]);
   // const [nfts] = useGlobalState('nfts');
-  
+
   return (
     
-  
+    
     <div className="overlay">
       <div className="App  "> 
-
-
       
+
+       
         <BrowserRouter>
-          
+
 
           {/* <Routes> 
                 <Route path="mint" element={<MintPage/>} >
@@ -50,7 +46,7 @@ function App() {
               <Route  path="/" element={() => (<Navigate to='/menu'/>)} />  
  */}
 
-
+              
 
               {/* NAVBAR  */}
 
@@ -63,8 +59,7 @@ function App() {
             {/* <Route path="/" element={<Navigate to="/shinnverse" />}/> */}
               
               
-              <Route path="/mint" element={ <MintLoc  />} />
-            
+               <Route path="/mint" element={ <MintLoc/>} /> 
               
               <Route path="license" element={ <License/>} />
 
@@ -80,21 +75,20 @@ function App() {
         
           </Routes>
         </BrowserRouter>
-   
-
-      
-        
+     
       
       </div>
     </div>
 
-   
 
-    
   );
+
+
 }
 
 export default App;
+
+
 
 
 
