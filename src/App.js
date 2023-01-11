@@ -2,6 +2,8 @@ import {useState, useEffect} from 'react';
 import { useGlobalState } from './store';
 import React from 'react';
 import { BrowserRouter, Routes, Route} from "react-router-dom";
+import {Howl, Howler} from 'howler';
+
 
 
 
@@ -10,13 +12,20 @@ import Menu from './Menu';
 import NavBar from './NavBar';
 import License from './Components/License';
 import MintLoc from './Components/MintLoc';
+import NotFound from './ErrorPage';
+import { render } from '@testing-library/react';
+
 
 
 
 function App() {
   
   // const [accounts, setAccounts] = useState([]);
+  const [active, setActive] = useState(false);
   // const [nfts] = useGlobalState('nfts');
+
+
+
 
   return (
     
@@ -41,12 +50,14 @@ function App() {
             
               {/* MENU */}
 
+              <Route path='*' element={<NotFound />}/>
+
               <Route path="/" element={ <Menu/> } />
               {/* <Route  path="/menu" element={<Menu />}/>
               <Route  path="/" element={() => (<Navigate to='/menu'/>)} />  
  */}
 
-              
+
 
               {/* NAVBAR  */}
 
@@ -58,13 +69,13 @@ function App() {
 
             {/* <Route path="/" element={<Navigate to="/shinnverse" />}/> */}
               
+              {active ?  <Route path="/mint" element={ <MintLoc/>} />  :  null }
               
-               <Route path="/mint" element={ <MintLoc/>} /> 
               
               <Route path="license" element={ <License/>} />
 
             
-              
+            
             
               
               {/* <Route path="mint">

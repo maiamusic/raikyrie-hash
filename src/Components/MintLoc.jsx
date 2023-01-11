@@ -32,7 +32,15 @@ export default function MintLoc()  {
     const [mintAmount, setMintAmount] = useState(1);
     const [valueTotal, calculateTotal] = useState(0.0045);
 
-    const [nfts] = useGlobalState("nfts");
+
+  
+    // const [supply, incrementSupply] = useCount();
+
+    const [contractInfo, setContractInfo] = useState({
+        totalSupply: "-",
+    });
+
+
     
 
     // const [supplyMinted, setsupplyMinted] = useState({
@@ -109,66 +117,55 @@ export default function MintLoc()  {
 
 
 
-
-
-    //  useEffect(()=>{
+        // useEffect(()=>{
         
-    //      const provider = new ethers.providers.Web3Provider(window.ethereum);
-    //      const contract = new ethers.Contract( RAIKYRIEAddress, RAIKYRIE.abi, provider);
+        //           const provider = new ethers.providers.Web3Provider(window.ethereum);
+        //           const contract = new ethers.Contract( RAIKYRIEAddress, RAIKYRIE.abi, provider);
        
 
-    //      contract.on("Transfer", (from, to, tokenId, event) => {
-    //          console.log({from, to , tokenId, event });
+        //           contract.on("Transfer", (from, to, tokenId, event) => {
+        //               console.log({from, to , tokenId, event });
 
 
-    //          const totalSupply = contract.totalSupply();
-    //          setsupplyMinted(totalSupply);
+        //               const totalSupply = contract.totalSupply();
+        //               setsupplyMinted(totalSupply);
              
-
+        //   });
         
-    //      });
-        
-    //      console.log("supplyMinted --- : " ,  supplyMinted);
+
+        //   }, [])
+    
+
+        const handleSupplyCount = async() => {
 
 
-    //  }, [supplyMinted])
+            const provider = new ethers.providers.Web3Provider(window.ethereum);
+            const contract = new ethers.Contract( RAIKYRIEAddress, RAIKYRIE.abi, provider);
+            // const [supply, setSupply] = useState(3333);
     
 
 
+            const totalSupply = await contract.totalSupply();
+            
+
+
+            setContractInfo({
+                totalSupply,
+            });
+
+            // function incrementSupply(){
+            //     setSupply(supply=> totalSupply)
+            // }
+
+
+            
+
+            // return [supply, setSupply];
+        }
 
 
 
-    // call supplyCount
 
-
-    // const handletotalSupply = async (e) => {     
-    //     e.preventDefault();  
-    //     const provider = new ethers.providers.Web3Provider(window.ethereum);
-    //     const contract = new ethers.Contract(RAIKYRIEAddress, RAIKYRIE.abi, provider );
-    //     const totalSupply = await contract.totalSupply();
-    
-
-    
-    //     setsupplyMinted({
-    //         totalSupply
-    //     });
-
-    //     console.log("totalSupply: ", totalSupply )
-    
-       
-    // };
-
-
-   
-
-
-    // useEffect(() => {
-    // const interval = setInterval(() => {
-    //     console.log('timersupplyCount');
-    // }, MINUTE_MS);
-
-    // return () => clearInterval(interval); // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
-    // }, [])
 
 
     
@@ -190,18 +187,6 @@ export default function MintLoc()  {
     //     .catch(console.error);;
     // },[])
 
-
-
-
-
-
-
-    // function printSupply () {     
-    //     console.log("supplyMinted --- : " ,  supplyMinted); 
-    //     console.log("supplyMinted.totalSupply : ", supplyMinted.totalSupply)
-
-    // };
-    
 
 
 
@@ -242,7 +227,7 @@ export default function MintLoc()  {
                     <div class="flex justify-between p-3.5 md:justify-around md:left-1.5 items-center md:p-8  w-full fixed  "> 
 
                         {/* MOBILE */}
-                       <Link to ="/" class="header__logo " >
+                       <Link to ="/" class="header__logo"  >
                             <div class="w-20 lg:w-32">
                                 <img class=" " src={logo}></img>
                             </div>
@@ -272,6 +257,7 @@ export default function MintLoc()  {
                                     <button class="font-body p-[5px] disabled hover:text-defaultdark hover:bg-neutral-300 temp-disabled-link  " >
                                     THE PILGRIMAGE
                                     </button> 
+                                    <sup class="-top-2 tracking-wide ">SOON</sup>
                                 </Link>
                                 <Link to ='/license' class="text-white">
                                     <button class="font-body p-[5px] disabled hover:text-defaultdark hover:bg-neutral-300 ">
@@ -386,9 +372,13 @@ export default function MintLoc()  {
                                                                     Connected : {accounts}
                                                                     </div>
 
+                                                                    <button class="bg-black" onClick={handleSupplyCount()}>
+                                                                            </button>
+
 
                                                                     {/* minted */}
-                                                                     {/* <div className="flex py-4 mt-8 tracking-widest text-3xl mx-auto font-bold justify-center">{String(supplyMinted.totalSupply)}/3333</div>  */}
+                                                                      <div className="flex py-4 mt-8 tracking-widest text-3xl mx-auto font-bold justify-center">{String(contractInfo.totalSupply)}/3333</div>  
+
                                                                     
 
 
@@ -505,32 +495,32 @@ export default function MintLoc()  {
                                     <div class="looper__innerList " data-animate="true ">
                                     
                                         <div class="tracking-wide text-7xl w-max will-change-transform  flex direction-reverse duration-3s animate-slideAnim" >
-                                            <h3> ステージ 1 >>> </h3>
+                                            <h3> フェーズ１ >>> </h3>
                                         </div>
                                         <div class="tracking-wide text-7xl w-max will-change-transform flex direction-reverse duration-3s animate-slideAnim" >
-                                            <h3> ステージ 1 >>> </h3>
+                                            <h3> フェーズ１ >>> </h3>
                                         </div>
 
 
 
                                         <div class="tracking-wide text-7xl w-max will-change-transform flex direction-reverse duration-3s animate-slideAnim" >
-                                            <h3> ステージ 1 >>> </h3>
+                                            <h3> フェーズ１ >>> </h3>
                                         </div>
                                         
                                         <div class="tracking-wide text-7xl w-max will-change-transform flex direction-reverse duration-3s animate-slideAnim" >
-                                            <h3> ステージ 1 >>> </h3>
+                                            <h3> フェーズ１ >>> </h3>
                                         </div>
 
                                         <div class="tracking-wide text-7xl w-max will-change-transform flex direction-reverse duration-3s animate-slideAnim" >
-                                            <h3> ステージ 1 >>> </h3>
+                                            <h3> フェーズ１ >>> </h3>
                                         </div>
 
                                         <div class="tracking-wide text-7xl w-max will-change-transform flex direction-reverse duration-3s animate-slideAnim " >
-                                            <h3> ステージ 1 >>> </h3>
+                                            <h3> フェーズ１ >>> </h3>
                                         </div>
 
                                         <div class="tracking-wide text-7xl w-max will-change-transform flex direction-reverse duration-3s animate-slideAnim invisible " >
-                                            <h3> ステージ 1 >>> </h3>
+                                            <h3> フェーズ１ >>> </h3>
                                         </div>
 
                                 

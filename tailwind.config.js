@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
+const { redirect } = require('react-router-dom');
+
 
 
 module.exports = {
@@ -89,12 +91,29 @@ module.exports = {
             transform: 'translateX(-100%)'},
 
           },
+
+        fadeIn:{
+          '0%': { 
+
+            opacity: '0',
+          },
+          '100%': { 
+ 
+            opacity: '1',
+
+           },
+          
         },
+      
+        },
+
         
       
       animation:{
         'blinker' :'blink 3s infinite ',
         'slideAnim' : 'slide linear infinite',
+        'fadeinLoader' : 'fadeIn ease-in-out 1' ,
+
       },
 
       animationDelay:{

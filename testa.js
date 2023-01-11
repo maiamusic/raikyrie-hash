@@ -34,6 +34,7 @@
                         <button class="font-body p-[5px] disabled  hover:text-defaultdark hover:bg-neutral-300  temp-disabled-link  ">
                         THE PILGRIMAGE
                         </button> 
+                        <sup class="-top-2 tracking-wide ">SOON</sup>
                     </Link>
                     <Link to ='/license' class="text-white">
                         <button class="font-body p-[5px] disabled  hover:text-defaultdark hover:bg-neutral-300 ">
@@ -109,7 +110,7 @@
                     <div class="looper__innerList " data-animate="true ">
                     
                         <div class="tracking-wide text-7xl w-max will-change-transform  flex direction-reverse duration-3s animate-slideAnim" >
-                            <h3> ステージ 1 >>> </h3>
+                            <h3> ステージ 1 >>> </h3> 
                         </div>
                         <div class="tracking-wide text-7xl w-max will-change-transform flex direction-reverse duration-3s animate-slideAnim" >
                             <h3> ステージ 1 >>> </h3>

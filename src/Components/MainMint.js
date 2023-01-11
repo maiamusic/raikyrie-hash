@@ -13,8 +13,10 @@ const RAIKYRIEAddress = "0x1286Bc5A8452cB9AF1e56D46Ddd462De0375d897";
 const MainMint = ({accounts, setAccounts}) => {
     const [mintAmount, setMintAmount] = useState(1);
     const [valueTotal, calculateTotal] = useState(0.0033);
+    const [supply, incrementSupply] = useCount();
 
     const isConnected = Boolean(accounts[0]);
+    
   
 
     async function connectAccount() {
@@ -25,7 +27,17 @@ const MainMint = ({accounts, setAccounts}) => {
             setAccounts(accounts);
         }
     }
- 
+    
+
+    function useCount(){
+        const [supply, setSupply] = useState(3333);
+
+        function incrementSupply(){
+            setSupply(supply=> supply+1)
+        }
+
+        return [supply, setSupply];
+    }
 
     async function handleMint(){
         if (window.ethereum){
@@ -137,9 +149,9 @@ const MainMint = ({accounts, setAccounts}) => {
 
                         <div>
                             
+                            {/* onClick=(event detect for supply) */}
+                             <div class="font-Orbitron text-2xl text-black">{incrementSupply()}/3333</div>
                             
-                            {/* <div class="font-Orbitron text-2xl text-black">3333/3333</div>
-                             */}
                             <div class="mt-4">
                                 <a href="https://goerli.etherscan.io/address/0x6595b7590a59B498104F33923f8A12d033917b4F">0x6595b7590a5...</a>
                             </div>

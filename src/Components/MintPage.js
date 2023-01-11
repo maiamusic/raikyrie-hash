@@ -17,11 +17,7 @@ import ms1 from '../assets/samples/2140_cropped.png';
 
 
 
-
-
 const MintPage = () => {
-
-
 
 
   
@@ -67,6 +63,7 @@ const MintPage = () => {
                                 <button class="font-body p-[5px] disabled  hover:text-defaultdark hover:bg-neutral-300  temp-disabled-link  ">
                                 THE PILGRIMAGE
                                 </button> 
+                                <sup class="-top-2 tracking-wide ">SOON</sup>
                             </Link>
                             <Link to ='/license' class="text-white">
                                 <button class="font-body p-[5px] disabled  hover:text-defaultdark hover:bg-neutral-300 ">
@@ -102,7 +99,6 @@ const MintPage = () => {
             </div>
 
 
-                
 
 
             {/* above md */}
@@ -130,7 +126,6 @@ const MintPage = () => {
                                     <h3> ステージ 1 >>> </h3>
                                 </div>
 
-            
 
                                 <div class="tracking-wide text-7xl w-max will-change-transform flex direction-reverse duration-3s animate-slideAnim" >
                                     <h3> ステージ 1 >>> </h3>

@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import {Link, WithRouter} from 'react-router-dom';
 import {Link as LinkDom} from 'react-router-dom';
+
 
 
 import {Link, animateScroll as scroll} from 'react-scroll'
 import logo from './assets/icons/logo.png';
 import background from './assets/background/ACAbackground_update.mp4';
 import ava_about from './assets/background/ganko.png';
-import phase from './assets/icons/phase.svg';
 import ms1 from './assets/samples/2140_cropped.png';
 import ms2B from './assets/samples/3271_cropped.png';
 import none from './assets/icons/icon_none.png'
@@ -25,17 +25,20 @@ import TrojanShinnevolform from "./assets/background/Trojan.png";
 
 // const NavBar = () => {
 class NavBar extends React.Component {
-
+        
 
     constructor(props) {
         super(props);
         this.scrollToTop = this.scrollToTop.bind(this);
+        this.state={active: false};
       }
 
 
     scrollToTop() {
         scroll.scrollToTop();
       }
+
+    
 
 
 
@@ -59,7 +62,7 @@ class NavBar extends React.Component {
                         </LinkDom> 
                         <div class="md:invisible visible md:hidden float-right">
 
-                            <LinkDom to ='/mint' class="text-white ">
+                            <LinkDom to ='/mint' class="text-white temp-disabled-link disabled cursor-not-allowed ">
                                 <button class="navMint   hover:text-defaultdark hover:bg-neutral-300
                             ">
                                     MINT
@@ -81,18 +84,24 @@ class NavBar extends React.Component {
                                 </LinkDom>
 
 
-                                <LinkDom to = '/mint' class="text-white">
-                                    <button class="font-body p-[5px] disabled hover:text-defaultdark hover:bg-neutral-300 w-20 ">
+                               
+                                <LinkDom to = '/mint' class="text-white temp-disabled-link disabled cursor-not-allowed " >
+                                    <button class="font-body p-[5px] hover:text-defaultdark hover:bg-neutral-300 w-20 " >
                                     MINT 
                                     </button>
                                 </LinkDom>
 
+                                    
+                   
+
         
 
                                 <LinkDom to = '/the-pilgrimage' class="text-white cursor-not-allowed temp-disabled-link">
-                                    <button class="font-body p-[5px] disabled hover:text-defaultdark hover:bg-neutral-300 temp-disabled-link  " >
+                                    <button class="font-body p-[5px] disabled hover:text-defaultdark hover:bg-neutral-300   " >
                                     THE PILGRIMAGE
                                     </button> 
+                                    <sup class="-top-2 tracking-wide ">SOON</sup>
+
                                 </LinkDom>
                                 <LinkDom to ='/license' class="text-white">
                                     <button class="font-body p-[5px] disabled hover:text-defaultdark hover:bg-neutral-300 ">
@@ -118,7 +127,7 @@ class NavBar extends React.Component {
                                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-8 sm:w-8 mr-5" fill="currentcolor"><title>Discord</title><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"></path></svg>
                             </a>
 
-                            <a href="https://opensea.io/collection/raikyrie" class="inline-block transition-all duration-350 hover:opacity-60" rel="noopener noreferrer" target="_blank">
+                            <a href="https://opensea.io/collection/raikyrie" class="inline-block transition-all duration-350 hover:opacity-60 opacity-30 temp-disabled-link " rel="noopener noreferrer" target="_blank">
                                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-8 sm:w-8" fill="currentcolor"><title>OpenSea</title><path d="M12 0C5.374 0 0 5.374 0 12s5.374 12 12 12 12-5.374 12-12S18.629 0 12 0ZM5.92 12.403l.051-.081 3.123-4.884a.107.107 0 0 1 .187.014c.52 1.169.972 2.623.76 3.528-.088.372-.335.876-.614 1.342a2.405 2.405 0 0 1-.117.199.106.106 0 0 1-.09.045H6.013a.106.106 0 0 1-.091-.163zm13.914 1.68a.109.109 0 0 1-.065.101c-.243.103-1.07.485-1.414.962-.878 1.222-1.548 2.97-3.048 2.97H9.053a4.019 4.019 0 0 1-4.013-4.028v-.072c0-.058.048-.106.108-.106h3.485c.07 0 .12.063.115.132-.026.226.017.459.125.67.206.42.636.682 1.099.682h1.726v-1.347H9.99a.11.11 0 0 1-.089-.173l.063-.09c.16-.231.391-.586.621-.992.156-.274.308-.566.43-.86.024-.052.043-.107.065-.16.033-.094.067-.182.091-.269a4.57 4.57 0 0 0 .065-.223c.057-.25.081-.514.081-.787 0-.108-.004-.221-.014-.327-.005-.117-.02-.235-.034-.352a3.415 3.415 0 0 0-.048-.312 6.494 6.494 0 0 0-.098-.468l-.014-.06c-.03-.108-.056-.21-.09-.317a11.824 11.824 0 0 0-.328-.972 5.212 5.212 0 0 0-.142-.355c-.072-.178-.146-.339-.213-.49a3.564 3.564 0 0 1-.094-.197 4.658 4.658 0 0 0-.103-.213c-.024-.053-.053-.104-.072-.152l-.211-.388c-.029-.053.019-.118.077-.101l1.32.357h.01l.173.05.192.054.07.019v-.783c0-.379.302-.686.679-.686a.66.66 0 0 1 .477.202.69.69 0 0 1 .2.484V6.65l.141.039c.01.005.022.01.031.017.034.024.084.062.147.11.05.038.103.086.165.137a10.351 10.351 0 0 1 .574.504c.214.199.454.432.684.691.065.074.127.146.192.226.062.079.132.156.19.232.079.104.16.212.235.324.033.053.074.108.105.161.096.142.178.288.257.435.034.067.067.141.096.213.089.197.159.396.202.598a.65.65 0 0 1 .029.132v.01c.014.057.019.12.024.184a2.057 2.057 0 0 1-.106.874c-.031.084-.06.17-.098.254-.075.17-.161.343-.264.502-.034.06-.075.122-.113.182-.043.063-.089.123-.127.18a3.89 3.89 0 0 1-.173.221c-.053.072-.106.144-.166.209-.081.098-.16.19-.245.278-.048.058-.1.118-.156.17-.052.06-.108.113-.156.161-.084.084-.15.147-.208.202l-.137.122a.102.102 0 0 1-.072.03h-1.051v1.346h1.322c.295 0 .576-.104.804-.298.077-.067.415-.36.816-.802a.094.094 0 0 1 .05-.03l3.65-1.057a.108.108 0 0 1 .138.103z"></path></svg>
                             </a>
                             
@@ -148,7 +157,7 @@ class NavBar extends React.Component {
                         </div> 
 
                         {/* BLACK OVERLAY */}
-                         <div class="absolute top-0 h-screen w-full bg-black/40 "></div> 
+                         <div class="absolute top-0 h-screen w-full bg-black/20 "></div> 
 
                         {/* BLACK GRADIENT */}
                         {/* <div class="bg-gradient-to-t from-black/10 to-black/10 h-screen bottom-0 left-0 right-0 z-50 fixed"></div>   */}
@@ -197,11 +206,6 @@ class NavBar extends React.Component {
                             
 
                     
-
-
-                    
-
-                        
 
 
 
@@ -494,315 +498,331 @@ class NavBar extends React.Component {
 
                     {/* 3RD DIV */}
 
-                
                     <div class=" flex div-about z-30 min-h-screen visible mx-auto  w-full top-0  bg-about2 bg-cover bg-center relative   ">
                                     
                             
-                            {/* BLACK GRADIENT */}
-                            <div class="bg-gradient-to-t from-defaultdark to-defaultdark/0 h-96 absolute -bottom-4 left-0 right-0 w-full fixed "></div>
-                        
-                            {/* BLACK OVERLAY */}
-                            <div class="absolute top-0 h-full w-screen bg-black/40 -z-10"></div>
-
-
-                            <div class="relative flex flex-col lg:flex-row min-h-screen w-full mx-auto lg:m-12 lg:ml-14 justify-center">
-
-                                {/* <div class="relative max-w-full">
-                            
-                                    <h1 class="pt-12 md:pt-20 font-Azonix md:text-[130px]  text-[#2dd4bf]  ">
-                                    About 
-                                    </h1>
-
-                                    <div class="flex ava-image-wrapper md:bottom-0 block ml-[10rem] absolute w-[55vh]    ">
-                                            <div class="max-w-[1030px] block ">
-                                                <img alt role="presentation" aria-hidden="true" src={ava_about} class="max-w-full block static -ml-8 h-auto"></img>
-                                            </div>
-                                    </div>
-                                </div> */}
-
-                                    <section class="flex lg:w-2/5  mr-10 md:ml-0 ">
-                                        
-
-                                        <div class=""> 
-                                            
-                                                <h1 class="pt-12 md:pt-15 md:text-[4em] text-[2em] text-[#2dd4bf] font-Azonix  "> About</h1>
-                                         
-
-                                                
-                                                <div class="flex flex-col w-full pt-8 z-50 min-h-screen">
-
-
-                                                    <h1 class=" pt-6 text-base pb-4 text-[#EFE6DD] font-bold font-Orbitron">「 FAQ 」</h1>
-                            
-                                                
-                                                    
-
-                                                    <div class="shadow-md flex mb-[20px]">
-
-                                                        <div class=" overflow-hidden border border-2 border-white-200  ">
-                                                        <label class="">
-                                                            <input class="absolute opacity-0 peer" type="checkbox"/>
-                                                           
-                                                            <h4 class="p-2 sm:p-5 text-white text-left text-sm md:text-base bg-transparent hover:bg-bridge/25 inline-block cursor-pointer w-auto uppercase focus:outline-none">
-                                                            What Is The Mint Price? </h4>
-                                                            
-                                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block float-right mt-5 mr-2 cursor-pointer peer-checked:rotate-90">
-                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                                                            </svg>
-
-                                                            <div class=" text-base md:text-xl tracking-wider  overflow-hidden bg-transparent max-h-0 peer-checked:max-h-screen px-[10px] md:px-[30px] ml-[calc(0.01rem_+_30px)] sm:ml-[calc(1.25rem_+_50px)]  md:mb-[10px] border-l-4 border-l-white border-double"><p> Price is 0.0045 ETH, Maximum limit of 5 Raikyries per person. </p></div>
-                                                            
-                                                        </label>
-                                                        </div>
-                                                        
+                                    {/* BLACK GRADIENT */}
+                                    <div class="bg-gradient-to-t from-defaultdark to-defaultdark/0 h-96 absolute -bottom-4 left-0 right-0 w-full fixed "></div>
+                                
+                                    {/* BLACK OVERLAY */}
+                                    <div class="absolute top-0 h-full w-screen bg-black/40 -z-10"></div>
+        
+        
+                                    <div class="relative flex flex-col lg:flex-row min-h-screen w-full mx-auto lg:m-12 lg:ml-14 justify-center">
+        
+                                        {/* <div class="relative max-w-full">
+                                    
+                                            <h1 class="pt-12 md:pt-20 font-Azonix md:text-[130px]  text-[#2dd4bf]  ">
+                                            About 
+                                            </h1>
+        
+                                            <div class="flex ava-image-wrapper md:bottom-0 block ml-[10rem] absolute w-[55vh]    ">
+                                                    <div class="max-w-[1030px] block ">
+                                                        <img alt role="presentation" aria-hidden="true" src={ava_about} class="max-w-full block static -ml-8 h-auto"></img>
                                                     </div>
+                                            </div>
+                                        </div> */}
+        
+                                            <section class="flex lg:w-2/5  mr-10 md:ml-0 ">
+                                                
+        
+                                                <div class=""> 
                                                     
-
-                                                    <div class="shadow-md flex mb-[20px]">
-
-                                                        <div class=" overflow-hidden border border-2 border-white-200 w-full ">
-                                                        <label class="">
-                                                            <input class="absolute opacity-0 peer" type="checkbox"/>
+                                                        <h1 class="pt-12 md:pt-15 md:text-[4em] text-[2em] text-[#2dd4bf] font-Azonix  "> About</h1>
+                                                 
+        
                                                         
-                                                            <h4 class="p-2 sm:p-5 text-white text-left text-sm md:text-base bg-transparent hover:bg-bridge/25 inline-block cursor-pointer w-auto uppercase focus:outline-none">
-                                                                How Do I Mint?
-                                                            </h4>
+                                                        <div class="flex flex-col w-full pt-8 z-50 min-h-screen">
+        
+        
+                                                            <h1 class=" pt-6 text-base pb-4 text-[#EFE6DD] font-bold font-Orbitron">「 FAQ 」</h1>
+                                    
+                                                        
                                                             
-                                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block float-right mt-5 mr-2 cursor-pointer peer-checked:rotate-90">
-                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                                                            </svg>
-
-                                                            <div class=" text-base md:text-xl tracking-wider  overflow-hidden bg-transparent max-h-0 peer-checked:max-h-screen px-[10px] md:px-[30px] ml-[calc(0.01rem_+_30px)] sm:ml-[calc(1.25rem_+_50px)]  md:mb-[10px] border-l-4 border-l-white border-double">
+        
+                                                            <div class="shadow-md flex mb-[20px]">
+        
+                                                                <div class=" overflow-hidden border border-2 border-white-200  ">
+                                                                <label class="">
+                                                                    <input class="absolute opacity-0 peer" type="checkbox"/>
+                                                                   
+                                                                    <h4 class="p-2 sm:p-5 text-white text-left text-sm md:text-base bg-transparent hover:bg-bridge/25 inline-block cursor-pointer w-auto uppercase focus:outline-none">
+                                                                    How many NFTs will be available? </h4>
+                                                                    
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block float-right mt-5 mr-2 cursor-pointer peer-checked:rotate-90">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                                                                    </svg>
+        
+                                                                    <div class=" text-base md:text-xl tracking-wider  overflow-hidden bg-transparent max-h-0 peer-checked:max-h-screen px-[10px] md:px-[30px] ml-[calc(0.01rem_+_30px)] sm:ml-[calc(1.25rem_+_50px)]  md:mb-[10px] border-l-4 border-l-white border-double"><p> 
+                                                                        There'll be 3,333 unique Raikyrie Angels residing in Shinnverse. This is the 1st out of 5 phases as shown on the Series Roadmap. All Raikyrie Holders reserve early exclusive rights to mint an NFT.
+                                                                        </p></div>
+                                                                    
+                                                                </label>
+                                                                </div>
                                                                 
-                                                           
-                                                                    <p>
-                                                                       
-                                                                        Mint can be found on 
-                                                                            <div>
-                                                                            <a href="https://raikyrie.xyz/mint" title="raikyrie.xyz/mint"    >
-                                                                                <span class=" font-bold text-[#d03800] underline" >raikyrie.xyz/mint</span>
-                                                                            </a>
-                                                                            </div>
+                                                            </div>
+
+                                                            <div class="shadow-md flex mb-[20px]">
+        
+                                                                    <div class=" overflow-hidden border border-2 border-white-200  ">
+                                                                    <label class="">
+                                                                        <input class="absolute opacity-0 peer" type="checkbox"/>
+                                                                    
+                                                                        <h4 class="p-2 sm:p-5 text-white text-left text-sm md:text-base bg-transparent hover:bg-bridge/25 inline-block cursor-pointer w-auto uppercase focus:outline-none">
+                                                                        What Is The Mint Price? </h4>
                                                                         
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block float-right mt-5 mr-2 cursor-pointer peer-checked:rotate-90">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                                                                        </svg>
 
+                                                                        <div class=" text-base md:text-xl tracking-wider  overflow-hidden bg-transparent max-h-0 peer-checked:max-h-screen px-[10px] md:px-[30px] ml-[calc(0.01rem_+_30px)] sm:ml-[calc(1.25rem_+_50px)]  md:mb-[10px] border-l-4 border-l-white border-double"><p> Price is 0.0045 ETH, Maximum limit of 2 Raikyries per person. </p></div>
+                                                                        
+                                                                    </label>
+                                                                    </div>
+        
+                                                            </div>
+                                                            
+                                                            
+                                                            
+        
+                                                            <div class="shadow-md flex mb-[20px]">
+        
+                                                                <div class=" overflow-hidden border border-2 border-white-200 w-full ">
+                                                                <label class="">
+                                                                    <input class="absolute opacity-0 peer" type="checkbox"/>
+                                                                
+                                                                    <h4 class="p-2 sm:p-5 text-white text-left text-sm md:text-base bg-transparent hover:bg-bridge/25 inline-block cursor-pointer w-auto uppercase focus:outline-none">
+                                                                        How Do I Mint?
+                                                                    </h4>
+                                                                    
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block float-right mt-5 mr-2 cursor-pointer peer-checked:rotate-90">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                                                                    </svg>
+        
+                                                                    <div class=" text-base md:text-xl tracking-wider  overflow-hidden bg-transparent max-h-0 peer-checked:max-h-screen px-[10px] md:px-[30px] ml-[calc(0.01rem_+_30px)] sm:ml-[calc(1.25rem_+_50px)]  md:mb-[10px] border-l-4 border-l-white border-double">
+                                                                        
+                                                                   
                                                                             <p>
-                                                                          Stay tuned as the mint portal will be opened an hour prior to when we make an announcement on twitter.
-                                                                          </p>
+                                                                               
+                                                                                Mint can be found on 
+                                                                                    <div>
+                                                                                    <a href="https://raikyrie.xyz/mint" title="raikyrie.xyz/mint"    >
+                                                                                        <span class=" font-bold text-[#d03800] underline" >raikyrie.xyz/mint</span>
+                                                                                    </a>
+                                                                                    </div>
+                                                                                
+        
+                                                                                    <p>
+                                                                                  Stay tuned as the mint portal will be opened an hour prior to when we make an announcement on twitter.
+                                                                                  </p>
+                                                                            </p>
+                                                                       
+                                                                     
+        
+        
+                                                                  
+                                                                    </div>
+                                                                    
+                                                                </label>
+                                                                </div>
+                                                                
+                                                            </div>
+        
+
+                                                            <div class="shadow-md flex mb-[20px]">
+        
+                                                                <div class=" overflow-hidden border border-2 border-white-200 w-full ">
+                                                                <label class="">
+                                                                    <input class="absolute opacity-0 peer" type="checkbox"/>
+                                                                
+                                                                    <h4 class="p-2 sm:p-5 text-white text-left text-sm md:text-base bg-transparent hover:bg-bridge/25 inline-block cursor-pointer w-auto uppercase focus:outline-none">
+                                                                    When Is Reveal?
+                                                                    </h4>
+                                                                    
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block float-right mt-5 mr-2 cursor-pointer peer-checked:rotate-90">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                                                                    </svg>
+        
+                                                                    <div class="text-base md:text-xl tracking-wider  overflow-hidden bg-transparent max-h-0 peer-checked:max-h-screen px-[10px] md:px-[30px] ml-[calc(0.01rem_+_30px)] sm:ml-[calc(1.25rem_+_50px)]  md:mb-[10px] border-l-4 border-l-white border-double"><p>
+        
+                                                                    Raikyries will reveal immediately after fully minting out.
+        
+                                                                   
+
                                                                     </p>
-                                                               
-                                                             
-
-
-                                                          
+        
+                                                                    </div>
+                                                                    
+                                                                </label>
+                                                                </div>
+                                                                
                                                             </div>
-                                                            
-                                                        </label>
-                                                        </div>
+        
+        
                                                         
-                                                    </div>
-
-
-                                                    <div class="shadow-md flex mb-[20px]">
-
-                                                        <div class=" overflow-hidden border border-2 border-white-200 w-full ">
-                                                        <label class="">
-                                                            <input class="absolute opacity-0 peer" type="checkbox"/>
-                                                        
-                                                            <h4 class="p-2 sm:p-5 text-white text-left text-sm md:text-base bg-transparent hover:bg-bridge/25 inline-block cursor-pointer w-auto uppercase focus:outline-none">
-                                                            When Is Reveal?
-                                                            </h4>
+        
                                                             
-                                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block float-right mt-5 mr-2 cursor-pointer peer-checked:rotate-90">
-                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                                                            </svg>
-
-                                                            <div class="text-base md:text-xl tracking-wider  overflow-hidden bg-transparent max-h-0 peer-checked:max-h-screen px-[10px] md:px-[30px] ml-[calc(0.01rem_+_30px)] sm:ml-[calc(1.25rem_+_50px)]  md:mb-[10px] border-l-4 border-l-white border-double"><p>
-
-                                                            Raikyries will reveal immediately after fully minting out.
-
-                                                           
-                                                            
-            {/*                                                 
-                                                        
-                                                            The Pilgrimage makes up a mechanic that grants access to hidden messages for Rebel Hunts, Clan building, Market priority, utilities, NFTs and team positions.
-
-                                                            Ranks are only disclosed once someone reaches them. 
-
-                                                            */}
-                                                            </p>
-
+        
+                                                            <div class="shadow-md flex mb-[20px]">
+        
+                                                                <div class=" overflow-hidden border border-2 border-white-200 w-full ">
+                                                                <label class="">
+                                                                    <input class="absolute opacity-0 peer" type="checkbox"/>
+                                                                
+                                                                    <h4 class="p-2 sm:p-5 text-white text-left text-sm md:text-base bg-transparent hover:bg-bridge/25 inline-block cursor-pointer w-auto uppercase focus:outline-none">
+                                                                    Why start an NFT collection?
+                                                                    </h4>
+                                                                    
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block float-right mt-5 mr-2 cursor-pointer peer-checked:rotate-90">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                                                                    </svg>
+        
+                                                                    <div class="text-base md:text-xl tracking-wider  overflow-hidden bg-transparent max-h-0 peer-checked:max-h-screen px-[10px] md:px-[30px] ml-[calc(0.01rem_+_30px)] sm:ml-[calc(1.25rem_+_50px)]  md:mb-[10px] border-l-4 border-l-white border-double"><p>
+        
+                                                                    The ACA was launched with two primary goals in mind : 
+                                                                    
+                                                                    <p>
+                                                                    1. We wanted to create an NFT collection that are beginner friendly for users to join. And we hope we can be that starting point to encourage people across the world to join us on our journey.
+                                                                    </p>
+                                                                    
+                                                                    <p>
+                                                                    2. To have people enjoy
+                                                                    watching their angels companion slowly evolve overtime while we take the Raikyrie's holders on a ride through the course of its lore, 
+                                                                    and anything that is incorporated within the Shinnverse.
+                                                                    </p>
+                                                                
+                                                                    
+                    {/*                                                 
+                                                                
+                                                                    The Pilgrimage makes up a mechanic that grants access to hidden messages for Rebel Hunts, Clan building, Market priority, utilities, NFTs and team positions.
+        
+                                                                    Ranks are only disclosed once someone reaches them. 
+        
+                                                                    */}
+                                                                    </p>
+        
+                                                                    </div>
+                                                                    
+                                                                </label>
+                                                                </div>
+                                                                
                                                             </div>
-                                                            
-                                                        </label>
-                                                        </div>
-                                                        
-                                                    </div>
-
-
-                                                
-
-                                                    
-
-                                                    <div class="shadow-md flex mb-[20px]">
-
-                                                        <div class=" overflow-hidden border border-2 border-white-200 w-full ">
-                                                        <label class="">
-                                                            <input class="absolute opacity-0 peer" type="checkbox"/>
-                                                        
-                                                            <h4 class="p-2 sm:p-5 text-white text-left text-sm md:text-base bg-transparent hover:bg-bridge/25 inline-block cursor-pointer w-auto uppercase focus:outline-none">
-                                                            Why start an NFT collection?
-                                                            </h4>
-                                                            
-                                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block float-right mt-5 mr-2 cursor-pointer peer-checked:rotate-90">
-                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                                                            </svg>
-
-                                                            <div class="text-base md:text-xl tracking-wider  overflow-hidden bg-transparent max-h-0 peer-checked:max-h-screen px-[10px] md:px-[30px] ml-[calc(0.01rem_+_30px)] sm:ml-[calc(1.25rem_+_50px)]  md:mb-[10px] border-l-4 border-l-white border-double"><p>
-
-                                                            The ACA was launched with two primary goals in mind : 
-                                                            
-                                                            <p>
-                                                            1. We wanted to create an NFT collection that are beginner friendly for users to join. And we hope we can be that starting point to encourage people across the world to join us on our journey.
-                                                            </p>
-                                                            
-                                                            <p>
-                                                            2. To have people enjoy
-                                                            watching their angels companion slowly evolve overtime while we take the Raikyrie's holders on a ride through the course of its lore, 
-                                                            and anything that is incorporated within the Shinnverse.
-                                                            </p>
-                                                        
-                                                            
-            {/*                                                 
-                                                        
-                                                            The Pilgrimage makes up a mechanic that grants access to hidden messages for Rebel Hunts, Clan building, Market priority, utilities, NFTs and team positions.
-
-                                                            Ranks are only disclosed once someone reaches them. 
-
-                                                            */}
-                                                            </p>
-
-                                                            </div>
-                                                            
-                                                        </label>
-                                                        </div>
-                                                        
-                                                    </div>
-
-                    
-
-                                                    <div class="shadow-md flex mb-[20px]">
-
-                                                        <div class=" overflow-hidden border border-2 border-white-200 w-full ">
-                                                        <label class="">
-                                                            <input class="absolute opacity-0 peer" type="checkbox"/>
-                                                        
-                                                            <h4 class="p-2 sm:p-5 text-white text-left text-sm md:text-base bg-transparent hover:bg-bridge/25 inline-block cursor-pointer w-auto uppercase focus:outline-none">
-                                                            Is there a presale or whitelist?
-
-                                                            </h4>
-                                                            
-                                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block float-right mt-5 mr-2 cursor-pointer peer-checked:rotate-90">
-                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                                                            </svg>
-
-                                                            <div class="text-base md:text-xl tracking-wider overflow-hidden bg-transparent max-h-0 peer-checked:max-h-screen px-[10px] md:px-[30px] ml-[calc(0.01rem_+_30px)] sm:ml-[calc(1.25rem_+_50px)]  md:mb-[10px] border-l-4 border-l-white border-double"><p>
-                                                             No. We've decided to take this route to create an organic enviroment where everyone is able to mint their Raikyries however as they choose. As we have quietly observed for the past 6 months
-                                                             of some of the drawbacks that came under a presale system. We think this is the best approach to keeping the public's best interest in mind.
-    
-                                                            
-                                        
-                                                            </p>
-                                                        
-                                                            </div>
-                                                            
-                                                        </label>
-                                                        </div>
-                                                        
-                                                    </div>
-
-                                    
-                                    
-
-                                                </div>
-
-                                        </div>
-                                        
-
-
-
-
-                                    </section>
-
-                                    {/* TABLET/PC - IMAGE */}
-                                    
-                                    {/* <div class="overflow-hidden self-center content-center	"> 
-                                            <div class="lg:block hidden max-w-[1030px] "><img class="bottom-8 -ml-[4em] w-[58vh] absolute max-w-full block " src={ava_about}></img></div>
-                                            
-                                    </div> */}
-
-                                    <div >
-                                        <div class=" xl:block hidden justify-center self-center items-center flex relative z-auto -bottom-28 ">
-                                            <img class="w-[60vh] " src={ava_about}></img>
-                                        </div>
-                                    </div>
-
-
-
+        
                             
-                                    <div class="flex float-right z-50 ml-auto justify-end ">
-                                        {/* COLUMN-RIGHT-ABOUT */}
-                                        {/* w-[100vw] lg:w-[40vw] pt-28 text-[#CACFD6] items-start */}
-                                        <div class="flex flex-col mx-12 lg:mx-auto w-full lg:w-[30vw] pt-28 text-[#CACFD5]  h-full block  ">
-                
-                                            <img  src={logo }  class="w-24 md:w-44 logo_raikyrie transition-all duration-450  hover:opacity-60  " alt="RAIKYRIES" ></img>
-
-                                            <div class="tracking-wide font-Orbitron  pt-6 pb-2 md:pt-8 md:pb-4   font-bold text-xl lg:text-2xl text-[#EFE6DD] ">Companion For Life</div>
-
-                                            <div class="md:text-xl text-base ">
-                                                {/* <div class="pb-6">Raikyrie is a collection of 3,333 bioengineered androids set in the apocalyptic world on the Ethereum blockchain, as they navigate through the land across timelines that has changed forever. 
-                                                            The Shinnverse consist of two different timelines that sets 7 years apart. The angel avatars are trait-rich with distinctive features, each attributable to the world & times in which they represent.</div> */}
-
-
-                                                <div class="pb-4 ">
-                                                Taken place in a dystopian society where a virus known as the TROJAN SHINNS has taken over the cities, forcing humans to seek outside of their shelther to survive, the lack of preparation
-                                                cause the human race to the brink of extinction.
-                                                </div>
-
-                                                <div class="pb-4 ">For decades, Raikyries and Humans have peacefully coexist while respecting each other differences. 
-                                                As an intelligent being with facial features closely resemble a human, they can morph into 4 different forms which grants them superhuman abilities in times of need, making them a formidable candidate against enemies.
+                                                            {/* presale */}
+                                                            {/* <div class="shadow-md flex mb-[20px]">
+        
+                                                                <div class=" overflow-hidden border border-2 border-white-200 w-full ">
+                                                                <label class="">
+                                                                    <input class="absolute opacity-0 peer" type="checkbox"/>
+                                                                
+                                                                    <h4 class="p-2 sm:p-5 text-white text-left text-sm md:text-base bg-transparent hover:bg-bridge/25 inline-block cursor-pointer w-auto uppercase focus:outline-none">
+                                                                    Is there a presale or whitelist?
+        
+                                                                    </h4>
+                                                                    
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block float-right mt-5 mr-2 cursor-pointer peer-checked:rotate-90">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                                                                    </svg>
+        
+                                                                    <div class="text-base md:text-xl tracking-wider overflow-hidden bg-transparent max-h-0 peer-checked:max-h-screen px-[10px] md:px-[30px] ml-[calc(0.01rem_+_30px)] sm:ml-[calc(1.25rem_+_50px)]  md:mb-[10px] border-l-4 border-l-white border-double"><p>
+                                                                     No. We've decided to take this route to create an organic enviroment where everyone is able to mint their Raikyries however as they choose. As we have quietly observed for the past 6 months
+                                                                     of some of the drawbacks that came under a presale system. We think this is the best approach to keeping the public's best interest in mind.
             
+                                                                    
+                                                
+                                                                    </p>
+                                                                
+                                                                    </div>
+                                                                    
+                                                                </label>
+                                                                </div>
+                                                                
+                                                            </div> */}
+        
+                                            
+                                            
+        
+                                                        </div>
+        
                                                 </div>
-
-                                                <div class="pb-6">
-                                                    Some Raikyries venture into dangerous territories beyond the city, with a goal in mind, to eradicate potential threats to the human race. 
+                                                
+        
+        
+        
+        
+                                            </section>
+        
+                                            {/* TABLET/PC - IMAGE */}
+                                            
+                                            {/* <div class="overflow-hidden self-center content-center	"> 
+                                                    <div class="lg:block hidden max-w-[1030px] "><img class="bottom-8 -ml-[4em] w-[58vh] absolute max-w-full block " src={ava_about}></img></div>
                                                     
-
-                                                    <br class="lg-block"></br>
-                                                   
-                                                    <span class="tracking-wide font-bold"> TROJAN SHINNS</span> lurks in the darkness, hidden from plain sight. They transform into its microscopic form as they prepare to unleash its deadly contagion, passing through systems and machines at ease.
+                                            </div> */}
+        
+                                            <div >
+                                                <div class=" xl:block hidden justify-center self-center items-center flex relative z-auto -bottom-28 ">
+                                                    <img class="w-[60vh] " src={ava_about}></img>
                                                 </div>
-
                                             </div>
-
-
-                             
-
-                                        </div>
-                                    </div>
-                                                            
-
-                                        {/* MOBILE */}
-                                       <div class="flex overflow-hidden block lg:hidden w-full min-h-screen items-center justify-center" >
-                                            <img class="  w-[55vh]  absolute max-w-full  " src={ava_about}>
-                                            </img>
+        
+        
+        
                                     
-                                    </div> 
-
+                                            <div class="flex float-right z-50 ml-auto justify-end ">
+                                                {/* COLUMN-RIGHT-ABOUT */}
+                                                {/* w-[100vw] lg:w-[40vw] pt-28 text-[#CACFD6] items-start */}
+                                                <div class="flex flex-col mx-12 lg:mx-auto w-full lg:w-[30vw] pt-28 text-[#CACFD5]  h-full block  ">
+                        
+                                                    <img  src={logo }  class="w-24 md:w-44 logo_raikyrie transition-all duration-450  hover:opacity-60  " alt="RAIKYRIES" ></img>
+        
+                                                    <div class="tracking-wide font-Orbitron  pt-6 pb-2 md:pt-8 md:pb-4   font-bold text-xl lg:text-2xl text-[#EFE6DD] ">Companion For Life</div>
+        
+                                                    <div class="md:text-xl text-base ">
+                                                        {/* <div class="pb-6">Raikyrie is a collection of 3,333 bioengineered androids set in the apocalyptic world on the Ethereum blockchain, as they navigate through the land across timelines that has changed forever. 
+                                                                    The Shinnverse consist of two different timelines that sets 7 years apart. The angel avatars are trait-rich with distinctive features, each attributable to the world & times in which they represent.</div> */}
+        
+        
+                                                        <div class="pb-4 ">
+                                                        Taken place in a dystopian society where a virus known as the TROJAN SHINNS has taken over the cities, forcing humans to seek outside of their shelther to survive, the lack of preparation
+                                                        cause the human race to the brink of extinction.
+                                                        </div>
+        
+                                                        <div class="pb-4 ">For decades, Raikyries and Humans have peacefully coexist while respecting each other differences. 
+                                                        As an intelligent being with facial features closely resemble a human, they can morph into 4 different forms which grants them superhuman abilities in times of need, making them a formidable candidate against enemies.
+                    
+                                                        </div>
+        
+                                                        <div class="pb-6">
+                                                            Some Raikyries venture into dangerous territories beyond the city, with a goal in mind, to eradicate potential threats to the human race. 
+                                                            
+        
+                                                            <br class="lg-block"></br>
+                                                           
+                                                            <span class="tracking-wide font-bold"> TROJAN SHINNS</span> lurks in the darkness, hidden from plain sight. They transform into its microscopic form as they prepare to unleash its deadly contagion, passing through systems and machines at ease.
+                                                        </div>
+        
+                                                    </div>
+        
+        
+                                     
+        
+                                                </div>
+                                            </div>
+                                                                    
+        
+                                                {/* MOBILE */}
+                                               <div class="flex overflow-hidden block lg:hidden w-full min-h-screen items-center justify-center" >
+                                                    <img class="  w-[55vh]  absolute max-w-full  " src={ava_about}>
+                                                    </img>
+                                            
+                                            </div> 
+        
+                                    </div>
+                                    
+        
+        
                             </div>
-                            
-
-
-                    </div>
    
 
                     {/* footer */}
@@ -836,15 +856,27 @@ class NavBar extends React.Component {
                                             
                                             <div class="flex md:section-block-2 tracking-wide text-[16px] md:text-[18px] justify-center place-content-center mt-20 " > 
 
-                                            Copyright © Silver Link Inc. All rights reserved.
+                                            Copyright © Koinon Studios Inc. All rights reserved. 
                                             
                                             </div>
+                                
                                 
 
 
                                             <p class=" flex  section-block-2 tracking-wide w-full  justify-center "> 
                                             
-                                            <a class="text-sm md:text-xl " href="https://etherscan.io/address/0xE0e603bd6522343ADc62FEe7C0904e903f71A2Ca#code"> <p class="text-center">0xE0e603bd6522343ADc62FEe7C0904e903f71A2Ca</p>   </a>
+                                            {/* <a class="text-sm md:text-xl " href="https://etherscan.io/address/0xE0e603bd6522343ADc62FEe7C0904e903f71A2Ca#code"> <p class="text-center">0xE0e603bd6522343ADc62FEe7C0904e903f71A2Ca</p>   </a> */}
+                                            
+                                              
+
+                                                <LinkDom to="/provenance" class="text-sm md:text-base"  ><p class="text-center  " id="underline" >Provenance
+                                                <sup class="-top-2 tracking-wide " id="non-underline">SOON</sup>
+                                                </p>
+                                                </LinkDom>
+                                                    
+                                              
+
+                                                
                                             </p> 
                                             
                                         </section>

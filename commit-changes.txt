@@ -8,3 +8,7 @@
 3. web design tweaks
 
 
+4. checklist
+-contract address
+-mint reenable /include mobile
+
