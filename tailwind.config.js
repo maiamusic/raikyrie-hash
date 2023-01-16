@@ -14,6 +14,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens:{
+        'h700' : { 'raw' : '(min-height: 720px)'} ,
+      },
+
       fontFamily:{
         IBMPlex: ['ibm-plex-mono'],
         AvantGarde: ['AvantGarde-Demi2'],

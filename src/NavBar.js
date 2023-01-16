@@ -498,7 +498,7 @@ class NavBar extends React.Component {
 
                     {/* 3RD DIV */}
 
-                    <div class=" flex div-about z-30 min-h-screen visible mx-auto  w-full top-0  bg-about2 bg-cover bg-center relative   ">
+                    <div class=" flex div-about z-30 min-h-screen visible mx-auto  w-full top-0  bg-black bg-cover bg-center relative   ">
                                     
                             
                                     {/* BLACK GRADIENT */}
@@ -554,7 +554,7 @@ class NavBar extends React.Component {
                                                                     </svg>
         
                                                                     <div class=" text-base md:text-xl tracking-wider  overflow-hidden bg-transparent max-h-0 peer-checked:max-h-screen px-[10px] md:px-[30px] ml-[calc(0.01rem_+_30px)] sm:ml-[calc(1.25rem_+_50px)]  md:mb-[10px] border-l-4 border-l-white border-double"><p> 
-                                                                        There'll be 3,333 unique Raikyrie Angels residing in Shinnverse. This is the 1st out of 5 phases as shown on the Series Roadmap. All Raikyrie Holders reserve early exclusive rights to mint an NFT.
+                                                                        The Raikyrie Genesis collection will be KOINON's 1st NFT collection of 3333 out of 5 phases anime PFPs that will serve as a mint pass to our future holders, granting exclusive access to minting the series collection.
                                                                         </p></div>
                                                                     
                                                                 </label>
@@ -575,7 +575,7 @@ class NavBar extends React.Component {
                                                                         <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
                                                                         </svg>
 
-                                                                        <div class=" text-base md:text-xl tracking-wider  overflow-hidden bg-transparent max-h-0 peer-checked:max-h-screen px-[10px] md:px-[30px] ml-[calc(0.01rem_+_30px)] sm:ml-[calc(1.25rem_+_50px)]  md:mb-[10px] border-l-4 border-l-white border-double"><p> Price is 0.0045 ETH, Maximum limit of 2 Raikyries per person. </p></div>
+                                                                        <div class=" text-base md:text-xl tracking-wider  overflow-hidden bg-transparent max-h-0 peer-checked:max-h-screen px-[10px] md:px-[30px] ml-[calc(0.01rem_+_30px)] sm:ml-[calc(1.25rem_+_50px)]  md:mb-[10px] border-l-4 border-l-white border-double"><p> Price is 0.0045 ETH, Maximum limit of 5 Raikyries per person. </p></div>
                                                                         
                                                                     </label>
                                                                     </div>
@@ -679,16 +679,18 @@ class NavBar extends React.Component {
         
                                                                     <div class="text-base md:text-xl tracking-wider  overflow-hidden bg-transparent max-h-0 peer-checked:max-h-screen px-[10px] md:px-[30px] ml-[calc(0.01rem_+_30px)] sm:ml-[calc(1.25rem_+_50px)]  md:mb-[10px] border-l-4 border-l-white border-double"><p>
         
-                                                                    The ACA was launched with two primary goals in mind : 
+                                                                    KOINON (Operation ACA) was launched with two primary goals in mind : 
                                                                     
                                                                     <p>
-                                                                    1. We wanted to create an NFT collection that are beginner friendly for users to join. And we hope we can be that starting point to encourage people across the world to join us on our journey.
+                                                                    1. We wanted to create an NFT collection that are beginner friendly for users to join. And we hope we can be that starting point to encourage people across the world to join us on this journey.
                                                                     </p>
                                                                     
                                                                     <p>
-                                                                    2. To have people enjoy
-                                                                    watching their angels companion slowly evolve overtime while we take the Raikyrie's holders on a ride through the course of its lore, 
-                                                                    and anything that is incorporated within the Shinnverse.
+                                                                    2. To be the first web3 lore-based ecosystem and allow the holders to be involved in the storyline and direction of the art,
+                                                                    an opportunity to interact with various well-known voice actors, directors in the animation industry and be the voice of the community as we 
+                                                                    collaborate with other Web3 projects as well as traditional businesses and IPs. The holders will be able to
+                                                                    watch their angels companion slowly evolve overtime while we take them on a ride through the course of its lore,  
+                                                                    and anything that is incorporated within the Shinnverse. 
                                                                     </p>
                                                                 
                                                                     
@@ -760,27 +762,61 @@ class NavBar extends React.Component {
                                                     
                                             </div> */}
         
-                                            <div >
-                                                <div class=" xl:block hidden justify-center self-center items-center flex relative z-auto -bottom-28 ">
-                                                    <img class="w-[60vh] " src={ava_about}></img>
+                                            <div  class="ava-about-image">
+                                                <div class=" xl:block hidden justify-center self-center items-center flex relative -bottom-28 ">
+                                                    <img class=" w-[60vh] " src={ava_about}></img>
                                                 </div>
                                             </div>
         
         
         
                                     
-                                            <div class="flex float-right z-50 ml-auto justify-end ">
+                                            <div class="flex float-right ml-auto justify-end  ">
                                                 {/* COLUMN-RIGHT-ABOUT */}
                                                 {/* w-[100vw] lg:w-[40vw] pt-28 text-[#CACFD6] items-start */}
-                                                <div class="flex flex-col mx-12 lg:mx-auto w-full lg:w-[30vw] pt-28 text-[#CACFD5]  h-full block  ">
-                        
-                                                    <img  src={logo }  class="w-24 md:w-44 logo_raikyrie transition-all duration-450  hover:opacity-60  " alt="RAIKYRIES" ></img>
+                                                <div class=" flex flex-col mx-12 lg:mx-auto w-full lg:w-[30vw] pt-28 text-[#CACFD5] h-full block   ">
+                      
+                                                    <img  src={logo }  class="z-50 w-24 md:w-44 logo_raikyrie transition-all duration-450  hover:opacity-60 -mb-2 " alt="RAIKYRIES" ></img>
+
+                                                    {/* pt-6 pb-2 md:pt-8 md:pb-4   */}
+                                            
+
+                                          
+
+                                                        <div class="h700:block hidden h-full w-full flex justify-center align-center pb-20">
+
+                                                           
+                                                                <div class="flex layoutVertical tracking-wide font-Orbitron font-bold text-[#EFE6DD]  ">
+                                                                
+                                                                        <h1 class="infojav en text-[#56E39F] pb-5  ">Culture</h1>
+                                                                        <h1 class="infojav de text-[#FE4A49] pb-5">Connection</h1>
+                                                                        <h1 class="infojav it text-[#FAFF00] pb-5">Companion </h1>
+                                                                    
+                                                                </div>
+                                                                <h1 class="closure "></h1>
+
+
+                                                     
+                                                            
+                                                        </div>
+
+
+
+
+                                                        
+
+                                                        <div class="h700:hidden block">
+                                                            <div class=" pt-6 pb-2  tracking-wide font-Orbitron font-bold text-[#EFE6DD] text-xl lg:text-2xl ">
+                                                            
+                                                                    Companion For Life
+                                                                
+                                                            </div>
+                                             
+
+                                                        </div>
+
         
-                                                    <div class="tracking-wide font-Orbitron  pt-6 pb-2 md:pt-8 md:pb-4   font-bold text-xl lg:text-2xl text-[#EFE6DD] ">Companion For Life</div>
-        
-                                                    <div class="md:text-xl text-base ">
-                                                        {/* <div class="pb-6">Raikyrie is a collection of 3,333 bioengineered androids set in the apocalyptic world on the Ethereum blockchain, as they navigate through the land across timelines that has changed forever. 
-                                                                    The Shinnverse consist of two different timelines that sets 7 years apart. The angel avatars are trait-rich with distinctive features, each attributable to the world & times in which they represent.</div> */}
+                                                    <div class="z-50 md:text-xl text-base pt-4  ">
         
         
                                                         <div class="pb-4 ">
@@ -802,8 +838,8 @@ class NavBar extends React.Component {
                                                             <span class="tracking-wide font-bold"> TROJAN SHINNS</span> lurks in the darkness, hidden from plain sight. They transform into its microscopic form as they prepare to unleash its deadly contagion, passing through systems and machines at ease.
                                                         </div>
         
-                                                    </div>
-        
+                                                    </div> 
+       
         
                                      
         
@@ -812,7 +848,7 @@ class NavBar extends React.Component {
                                                                     
         
                                                 {/* MOBILE */}
-                                               <div class="flex overflow-hidden block lg:hidden w-full min-h-screen items-center justify-center" >
+                                               <div class="flex overflow-hidden block lg:hidden w-full min-h-screen items-center justify-center ava-about-image" >
                                                     <img class="  w-[55vh]  absolute max-w-full  " src={ava_about}>
                                                     </img>
                                             
@@ -822,8 +858,8 @@ class NavBar extends React.Component {
                                     
         
         
-                            </div>
-   
+                    </div>
+
 
                     {/* footer */}
 
@@ -856,11 +892,11 @@ class NavBar extends React.Component {
                                             
                                             <div class="flex md:section-block-2 tracking-wide text-[16px] md:text-[18px] justify-center place-content-center mt-20 " > 
 
-                                            Copyright © Koinon Studios Inc. All rights reserved. 
+                                            © 2022 Koinon Studios
                                             
                                             </div>
                                 
-                                
+                                            
 
 
                                             <p class=" flex  section-block-2 tracking-wide w-full  justify-center "> 

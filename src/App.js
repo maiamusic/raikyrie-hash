@@ -12,6 +12,7 @@ import Menu from './Menu';
 import NavBar from './NavBar';
 import License from './Components/License';
 import MintLoc from './Components/MintLoc';
+
 import NotFound from './ErrorPage';
 import { render } from '@testing-library/react';
 
@@ -63,6 +64,7 @@ function App() {
 
               {/* <Route path="/" element={<NavBar />}/>  */}
               <Route  path="/shinnverse" element={<NavBar />}/>
+
               {/* <Route  path="/" element={() => (<Navigate to='/shinnverse'/>)} />   */}
               
 

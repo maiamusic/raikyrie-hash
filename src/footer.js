@@ -26,7 +26,7 @@
         
         <div class="flex md:section-block-2 tracking-wide text-[16px] md:text-[18px] justify-center place-content-center mt-20 " > 
 
-        Copyright © Koinon Studios Inc. All rights reserved. 
+        © 2022 Koinon Studios in partnership with SILVER LINK Inc
         
         </div>
 

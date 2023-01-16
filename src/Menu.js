@@ -106,6 +106,7 @@ const Menu=()=>{
                                 <button class="font-body p-[5px] disabled hover:text-neutral-900 hover:bg-neutral-300  w-28   " onClick={()=>{
                                         sound.pause();
                                         setIsPlaying(false);
+                                    
                                      
                                     }}> 
                                 SHINNVERSE
