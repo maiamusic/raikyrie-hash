@@ -327,7 +327,7 @@ class NavBar extends React.Component {
                                                             STORM RAIKYRIE
                                                             </div>
                                                             <div class="font-base inline-block">
-                                                            「MERGE」
+              
                                                             </div>
                                                         </div>
                                                         
@@ -547,19 +547,44 @@ class NavBar extends React.Component {
                                                                     <input class="absolute opacity-0 peer" type="checkbox"/>
                                                                    
                                                                     <h4 class="p-2 sm:p-5 text-white text-left text-sm md:text-base bg-transparent hover:bg-bridge/25 inline-block cursor-pointer w-auto uppercase focus:outline-none">
-                                                                    How many NFTs will be available? </h4>
+                                                                    Who are Raikyries? </h4>
                                                                     
                                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block float-right mt-5 mr-2 cursor-pointer peer-checked:rotate-90">
                                                                     <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
                                                                     </svg>
         
                                                                     <div class=" text-base md:text-xl tracking-wider  overflow-hidden bg-transparent max-h-0 peer-checked:max-h-screen px-[10px] md:px-[30px] ml-[calc(0.01rem_+_30px)] sm:ml-[calc(1.25rem_+_50px)]  md:mb-[10px] border-l-4 border-l-white border-double"><p> 
-                                                                        The Raikyrie Genesis collection will be KOINON's 1st NFT collection of 3333 out of 5 phases anime PFPs that will serve as a mint pass to our future holders, granting exclusive access to minting the series collection.
+                                                                    Raikyrie is KOINON's 1st out of 5 Tamagotchi inspired anime PFPs collection which will also serve as a mint pass for holders to unlocking the series collection. Gaining exclusive access to new characters, customizable items and features to further assist you to the evolution of the character, raising them into a loving and healthy virtual digital companion.
+                                                                   
+
                                                                         </p></div>
                                                                     
                                                                 </label>
                                                                 </div>
                                                                 
+                                                            </div>
+                                                            <div class="shadow-md flex mb-[20px]">
+                                                                    
+                                                                    <div class=" overflow-hidden border border-2 border-white-200  ">
+                                                                    <label class="">
+                                                                        <input class="absolute opacity-0 peer" type="checkbox"/>
+                                                                    
+                                                                        <h4 class="p-2 sm:p-5 text-white text-left text-sm md:text-base bg-transparent hover:bg-bridge/25 inline-block cursor-pointer w-auto uppercase focus:outline-none">
+                                                                        HOW MANY NFTS WILL BE AVAILABLE? </h4>
+                                                                        
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block float-right mt-5 mr-2 cursor-pointer peer-checked:rotate-90">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                                                                        </svg>
+
+                                                                        <div class=" text-base md:text-xl tracking-wider  overflow-hidden bg-transparent max-h-0 peer-checked:max-h-screen px-[10px] md:px-[30px] ml-[calc(0.01rem_+_30px)] sm:ml-[calc(1.25rem_+_50px)]  md:mb-[10px] border-l-4 border-l-white border-double"><p> 
+                                                                        There will be 3,333 Raikyrie avatars to be adopted.
+                                                                    
+
+                                                                            </p></div>
+                                                                        
+                                                                    </label>
+                                                                    </div>
+                                                                    
                                                             </div>
 
                                                             <div class="shadow-md flex mb-[20px]">
@@ -613,7 +638,7 @@ class NavBar extends React.Component {
                                                                                 
         
                                                                                     <p>
-                                                                                  Stay tuned as the mint portal will be opened an hour prior to when we make an announcement on twitter.
+                                                                                  Stay tuned as the mint portal will be opened when we make an announcement on twitter.
                                                                                   </p>
                                                                             </p>
                                                                        
@@ -660,7 +685,6 @@ class NavBar extends React.Component {
         
         
                                                         
-        
                                                             
         
                                                             <div class="shadow-md flex mb-[20px]">
@@ -682,25 +706,61 @@ class NavBar extends React.Component {
                                                                     KOINON (Operation ACA) was launched with two primary goals in mind : 
                                                                     
                                                                     <p>
-                                                                    1. We wanted to create an NFT collection that are beginner friendly for users to join. And we hope we can be that starting point to encourage people across the world to join us on this journey.
-                                                                    </p>
-                                                                    
+                                                                    1. To introduce a unique perspective in the world of Web3 where we bring the fun and addictiveness of the classic game concept in the form of NFTs. As a virtual caretaker, your main task is to accommadate its needs. The choices you make matters.
+                                                                 
+                                                                    {/* We strive to look for innovative ways to
+                                                                        make use of the vast information that are constantly evolving, just like the how Raikyrie evolves over time.   */}
+                                                                        </p>
                                                                     <p>
-                                                                    2. To be the first web3 lore-based ecosystem and allow the holders to be involved in the storyline and direction of the art,
-                                                                    an opportunity to interact with various well-known voice actors, directors in the animation industry and be the voice of the community as we 
-                                                                    collaborate with other Web3 projects as well as traditional businesses and IPs. The holders will be able to
-                                                                    watch their angels companion slowly evolve overtime while we take them on a ride through the course of its lore,  
+                                                                    2. To be the first interactive lore-based ecosystem allowing the holders to be involved in the storyline and character development;
+                                                                    We create a space for holders to interact with various well-known voice actors, directors in the animation industry and be the voice of the community as we 
+                                                                    collaborate with other Web3 projects as well as traditional businesses and IPs. 
+                                                                    </p>
+                                                                    <p>
+                                                                    The adoptees can enjoy
+                                                                    watching their angels companion slowly evolve over time while we take the community through the course of its lore,  
                                                                     and anything that is incorporated within the Shinnverse. 
                                                                     </p>
                                                                 
                                                                     
                     {/*                                                 
                                                                 
-                                                                    The Pilgrimage makes up a mechanic that grants access to hidden messages for Rebel Hunts, Clan building, Market priority, utilities, NFTs and team positions.
+                                                                    The Pilgrimage makes up a mechanic that grants access to quest for Food Hunts,  Faction building, Character Stats, Market priority and
         
-                                                                    Ranks are only disclosed once someone reaches them. 
+                                                                    **Ranks are only disclosed until Phase 2 **
         
                                                                     */}
+                                                                    </p>
+        
+                                                                    </div>
+                                                                    
+                                                                </label>
+                                                                </div>
+                                                                
+                                                            </div>
+        
+
+        
+                                                            <div class="shadow-md flex mb-[20px]">
+        
+                                                                <div class=" overflow-hidden border border-2 border-white-200 w-full ">
+                                                                <label class="">
+                                                                    <input class="absolute opacity-0 peer" type="checkbox"/>
+                                                                
+                                                                    <h4 class="p-2 sm:p-5 text-white text-left text-sm md:text-base bg-transparent hover:bg-bridge/25 inline-block cursor-pointer w-auto uppercase focus:outline-none">
+                                                                    What is a Dynamic NFT?
+                                                                    </h4>
+                                                                    
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block float-right mt-5 mr-2 cursor-pointer peer-checked:rotate-90">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                                                                    </svg>
+        
+                                                                    <div class="text-base md:text-xl tracking-wider  overflow-hidden bg-transparent max-h-0 peer-checked:max-h-screen px-[10px] md:px-[30px] ml-[calc(0.01rem_+_30px)] sm:ml-[calc(1.25rem_+_50px)]  md:mb-[10px] border-l-4 border-l-white border-double"><p>
+        
+                                                                    a Dynamic NFT changes and evolves based on the actions you take. Our NFTs will be able to update their image and metadata fluidly. Inspired by classic virtual pets game design, we’ve introduced leveling and inventory, skill points, stats and trait unlock system to NFTs, while also retaining all the more traditional functionalities that NFTs offer.
+        
+                                                                   
+
                                                                     </p>
         
                                                                     </div>
@@ -782,11 +842,11 @@ class NavBar extends React.Component {
                                             
 
                                           
-
-                                                        <div class="h700:block hidden h-full w-full flex justify-center align-center pb-20">
+                                                        {/* h-full w-full flex */}
+                                                        <div class="h700:block hidden  justify-center align-center pb-20">
 
                                                            
-                                                                <div class="flex layoutVertical tracking-wide font-Orbitron font-bold text-[#EFE6DD]  ">
+                                                                <div class=" layoutVertical tracking-wide font-Orbitron font-bold text-[#EFE6DD]  ">
                                                                 
                                                                         <h1 class="infojav en text-[#56E39F] pb-5  ">Culture</h1>
                                                                         <h1 class="infojav de text-[#FE4A49] pb-5">Connection</h1>
@@ -794,16 +854,10 @@ class NavBar extends React.Component {
                                                                     
                                                                 </div>
                                                                 <h1 class="closure "></h1>
-
-
                                                      
                                                             
                                                         </div>
-
-
-
-
-                                                        
+    
 
                                                         <div class="h700:hidden block">
                                                             <div class=" pt-6 pb-2  tracking-wide font-Orbitron font-bold text-[#EFE6DD] text-xl lg:text-2xl ">
