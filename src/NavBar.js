@@ -706,7 +706,7 @@ class NavBar extends React.Component {
                                                                     KOINON (Operation ACA) was launched with two primary goals in mind : 
                                                                     
                                                                     <p>
-                                                                    1. To introduce a unique perspective in the world of Web3 where we bring the fun and addictiveness of the classic game concept in the form of NFTs. As a caretaker, your task is to accommadate your NFT companion with its basic needs. The choices you make matters.
+                                                                    1. To introduce a unique perspective in the world of Web3 where we combine the fun and addictiveness of the classic game concept in the form of NFTs. 
                                                                  
                                                                     {/* We strive to look for innovative ways to
                                                                         make use of the vast information that are constantly evolving, just like the how Raikyrie evolves over time.   */}
