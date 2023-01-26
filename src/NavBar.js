@@ -555,7 +555,7 @@ class NavBar extends React.Component {
                                                                     </svg>
         
                                                                     <div class=" text-base md:text-xl tracking-wider  overflow-hidden bg-transparent max-h-0 peer-checked:max-h-screen px-[10px] md:px-[30px] ml-[calc(0.01rem_+_30px)] sm:ml-[calc(1.25rem_+_50px)]  md:mb-[10px] border-l-4 border-l-white border-double"><p> 
-                                                                    Raikyrie is KOINON's 1st Tamagotchi inspired anime PFPs collection which will serve as a mint pass that will also act as a mint pass for holders to unlock KOINON's NFT series. Gaining exclusive access to an array of new characters, customizable items and necessity goods that holders can use to assist in the evolution of the Raikyrie, raising them into a loving and healthy virtual digital companion.
+                                                                    Raikyrie is KOINON's 1st Tamagotchi inspired anime PFPs collection which will serve as a mint pass for holders to unlock KOINON's NFT series collection. Gaining exclusive access to an array of new characters, customizable items and necessity goods that holders can use to assist in the evolution of the Raikyrie, raising them into a loving and healthy virtual digital companion.
                                                                    
 
                                                                         </p></div>
