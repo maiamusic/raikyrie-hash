@@ -344,6 +344,7 @@ export default function MintLoc()  {
                                             <p class=" -mb-4 font-Orbitron mint-info text-neutral-700 text-sm">Ethereum</p>
                                             <p class=" mb-4 font-Orbitron mint-info text-neutral-500"> Network のウォレットを接続してください。</p>
                                             <p class="  lg:mt-8 font-Orbitron mint-info text-neutral-500"> Please connect to an Ethereum wallet</p>
+                                            <p class="  lg:mt-8 font-Orbitron mint-info text-neutral-500"> First 555 free | 最初の 555 無料</p>
 
 
             
