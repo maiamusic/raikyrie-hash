@@ -22,7 +22,7 @@ import { render } from '@testing-library/react';
 function App() {
   
   // const [accounts, setAccounts] = useState([]);
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState(true);
   // const [nfts] = useGlobalState('nfts');
 
 

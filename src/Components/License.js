@@ -45,7 +45,6 @@ const License = () => {
                     <button class="font-body p-[5px] disabled hover:text-defaultdark hover:bg-neutral-300 w-20">
                     MINT 
                     </button>
-                    <sup class="-top-2 right-4 tracking-wide ">PAUSED</sup>
                 </Link>
 
 
